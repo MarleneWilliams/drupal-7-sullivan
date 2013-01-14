@@ -21,6 +21,7 @@ body {
 }
 
 #page {
+  @include single-box-shadow(darken($body-bgc, 20%), 0, 0, 10px, 0, false);
   background-color: $white;
   margin: 0 auto;
   width: 90%;
@@ -102,9 +103,14 @@ body {
  * User region
  */
 .region-user {
+  background-color: $user-bgc;
+  border-bottom: 1px solid darken($user-bgc, 10%);
   height: 4em;
+  margin: 0 -10px;
+  padding: 0 0 1em 0;
   position: fixed;
   top: 56px;
+  width: 90%;
   z-index: 500;
   .block {
     float: left;

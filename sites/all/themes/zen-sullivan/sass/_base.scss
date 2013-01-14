@@ -89,12 +89,13 @@ $darkblue:    #202B38;
 $orange:      #F7941E;
 
 $white:       #fff;
-$gray:        darken($white, 50%);
 $black:       #000;
+$gray:        lighten($black, 50%);
 
 $body-bgc: $blue;
 $heading-c: $orange;
 $link-c: $blue;
+$user-bgc: lighten($gray, 25%);
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
