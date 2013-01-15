@@ -40,12 +40,20 @@ $legacy-support-for-ie8: true;
 $base-font-size:   16px; // The font size set on the root html element.
 $base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
 
-$h1-font-size: 2    * $base-font-size;
-$h2-font-size: 1.5  * $base-font-size;
-$h3-font-size: 1.17 * $base-font-size;
-$h4-font-size: 1    * $base-font-size;
-$h5-font-size: 0.83 * $base-font-size;
-$h6-font-size: 0.75 * $base-font-size;
+// Originals
+// $h1-font-size: 2    * $base-font-size;
+// $h2-font-size: 1.5  * $base-font-size;
+// $h3-font-size: 1.17 * $base-font-size;
+// $h4-font-size: 1    * $base-font-size;
+// $h5-font-size: 0.83 * $base-font-size;
+// $h6-font-size: 0.75 * $base-font-size;
+
+$h1-font-size: 2.5  * $base-font-size;
+$h2-font-size: 2    * $base-font-size;
+$h3-font-size: 1.25 * $base-font-size;
+$h4-font-size: 1.17 * $base-font-size;
+$h5-font-size: 1   * $base-font-size;
+$h6-font-size: 0.83 * $base-font-size;
 
 // The following font family declarations are based on the Microsoft core web
 // fonts which are common fonts available on most computer systems. The DejaVu
@@ -62,6 +70,7 @@ $h6-font-size: 0.75 * $base-font-size;
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 $times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
 $georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+$forum:           "Forum", $times-new-roman;
 
 $verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
@@ -76,26 +85,85 @@ $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 $base-font-family: $verdana; // The font family set on the html element.
 $font-body:        $verdana;
 $font-monospace:   $courier;
+$heading-f:        $forum;
 
 
 //
 // Colors, etc.
 //
 
-$lightblue:   #89C7E9;
+// $lightblue:   #89C7E9;
 // $blue:        #336699;
-$blue:        #528BAE;
-$darkblue:    #202B38;
-$orange:      #F7941E;
+// $blue:        #528BAE;
+// $darkblue:    #202B38;
+// $orange:      #F7941E;
+
+// Van Gogh
+$vg-lightyellow:   #FBEF99;
+$vg-gold:          #FDD041;
+$vg-mint:          #D6ECAE;
+$vg-lightolive:    #CBD893;
+$vg-lightblue:     #73AFB7;
+$vg-lightteal:     #5F9794;
+$vg-darkblue:      #14556B;
+$vg-darkteal:      #294E56;
+$vg-blackblue:     #102536;
+
+// Japanese Garden
+$jg-green:         #80B525;
+$jg-brown:         #993E12;
+$jg-orange:        #E4930A;
+$jg-blue:          #4361AE;
+$jg-yellow:        #F4CD1F;
+
+// Ice dawn
+$id-lightblue:     #B8EAF5;
+$id-blue:          #85C0FC;
+$id-darkblue:      #5B9DEB;
+$id-yellow:        #F0F157;
+$id-orange:        #F8C842;
+$id-tan:           #EEB276;
+$id-brown:         #C6733F;
+
+// Tea time
+$tt-beige:         #E5E0C7;
+$tt-tan:           #E5C886;
+$tt-orange:        #E5B530;
+$tt-lightbrown:    #E2B376;
+$tt-brown:         #AB734B;
+$tt-light-blue:    #86CEDE;
+$tt-blue:          #27ADCC;
+$tt-darkblue:      #1A7599;
+
+// Mountain sunset
+$ms-blue:          #6484B3;
+$ms-darkblue:      #4D6388;
+$ms-slate:         #4B5C63;
+$ms-darkred:       #915756;
+$ms-dustyred:      #BC664F;
+$ms-orange:        #FA984F;
+$ms-lightorange:   #FEC864;
+$ms-yellow:        #FFE779;
+$ms-beige:         #F5F4D6;
+
+// Mine
+$blue:             #2E5F80;
+$yellow:           #f5d800;
+$yellow-gold:      #d9ae1a;
+$gold:             #b1a321;
+$green:            #8bae52;
+$beige:            #f2edc7;
 
 $white:       #fff;
 $black:       #000;
 $gray:        lighten($black, 50%);
 
+// Color variables
 $body-bgc: $blue;
-$heading-c: $orange;
+$body-c: lighten($black, 20%);
+$heading-c: $gold;
 $link-c: $blue;
-$user-bgc: lighten($gray, 25%);
+$user-bgc: lighten($beige, 10%);
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;

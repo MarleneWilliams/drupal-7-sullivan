@@ -79,6 +79,9 @@ stylesheets[all][] = css/print.css
 
 scripts[] = js/script.js
 
+; Fonts
+fonts[google_fonts_api][] = "Forum&subset=latin#regular"
+
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
