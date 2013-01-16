@@ -1469,9 +1469,9 @@ li a.active {
 #navigation {
   /* overflow: hidden; */
   /* Sometimes you want to prevent overlapping with main div. */
-  background-color: #c3daea;
-  border-bottom: #b1cfe3;
-  border-top: #b1cfe3;
+  background-color: #e9f1f7;
+  border-bottom: #d6e6f0;
+  border-top: #d6e6f0;
   margin-bottom: 2em;
 }
 /* line 55, ../sass/navigation.scss */
@@ -1529,28 +1529,28 @@ li a.active {
 }
 /* line 91, ../sass/navigation.scss */
 #navigation ul.sf-menu li a:hover, #navigation ul.sf-menu li a:active, #navigation ul.sf-menu li a:focus, #navigation ul.sf-menu li a.sfHover {
-  text-shadow: #66a0c8 0 0 0.1em, white 0 0 0.5em;
+  text-shadow: #8bb7d5 0 0 0.1em, white 0 0 0.5em;
   background-color: transparent;
 }
 /* line 96, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul {
-  background-color: #c3daea;
-  border-bottom: #78accf;
-  border-top: #78accf;
+  background-color: #e9f1f7;
+  border-bottom: #9ec3dc;
+  border-top: #9ec3dc;
   font-size: .7em;
   margin-top: .9em;
   text-align: left;
 }
 /* line 104, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a {
-  border-bottom: 1px solid #c3daea;
-  border-top: 1px solid #c3daea;
+  border-bottom: 1px solid #e9f1f7;
+  border-top: 1px solid #e9f1f7;
 }
 /* line 107, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a:hover, #navigation ul.sf-menu li ul li a:active, #navigation ul.sf-menu li ul li a:focus {
-  background-color: #b8d3e6;
-  border-bottom: 1px solid #b1cfe3;
-  border-top: 1px solid #b1cfe3;
+  background-color: #deeaf3;
+  border-bottom: 1px solid #d6e6f0;
+  border-top: 1px solid #d6e6f0;
 }
 
 /*
