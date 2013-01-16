@@ -7,6 +7,10 @@
 // curly brackets:
 //   @include mix-in-name;
 
+// Imports
+@import "base"; // To provide any needed variables
+@import "fontello"; // Fontello icons
+
 
 // element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin element-invisible {
@@ -56,4 +60,42 @@
       position: relative; // Otherwise these elements will appear below the "Unpublished" text.
     }
   }
+}
+
+@mixin button {
+  background-color: $button-c; // Old browsers
+  @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+  border: 1px solid darken($button-c, 15%);
+  border-bottom: 1px solid darken($button-c, 25%);
+  @include border-radius(3px);
+  color: $body-c;
+  line-height: 1;
+  padding: .5em 2em;
+  text-align: center;
+  text-shadow: 0 1px 0 $button-c;
+  &:hover {
+    $button-c: lighten($button-c, 5%);
+    background-color: $button-c; // Old browsers
+    @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+    cursor: pointer;
+    text-shadow: 0 1px 0 $button-c;
+  }
+  &:active {
+    $button-c: darken($button-c, 5%);
+    border: 1px solid darken($button-c, 10%);
+    border-bottom: 1px solid darken($button-c, 20%);
+    -webkit-box-shadow: inset 0 0 5px 2px darken($button-c, 10%), 0 1px 0 0 $button-c;
+    -moz-box-shadow: inset 0 0 5px 2px darken($button-c, 10%), 0 1px 0 0 $button-c;
+    box-shadow: inset 0 0 5px 2px darken($button-c, 10%), 0 1px 0 0 $button-c;
+  }
+}
+@mixin button-green {
+  $button-c: lighten($green, 20%);
+  @include button;
 }

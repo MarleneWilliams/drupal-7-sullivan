@@ -7,7 +7,7 @@
  * ul.links, .pager, .more-link, etc.
  */
 
-@import "base";
+@import "custom";
 
 
 /*
@@ -16,16 +16,21 @@
 
 body {
   background-color: $body-bgc;
+  @include filter-gradient(darken($body-bgc, 10%), $body-bgc, vertical); // IE6-8
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient(top, darken($body-bgc, 10%) 0%,$body-bgc 300px));
+  background-attachment: fixed;
   color: $body-c;
   margin: 0;
   padding: 0;
 }
 
 #page {
-  @include single-box-shadow(darken($body-bgc, 20%), 0, 0, 10px, 0, false);
-  background-color: $white;
+  @include single-box-shadow(darken($body-bgc, 20%), 0, 0, 15px, 0, false);
+  background-color: $page-bgc;
   margin: 0 auto;
-  padding-top: 5em;
+  padding-top: 4.5em;
   width: 90%;
 }
 
@@ -71,9 +76,9 @@ body {
 }
 
 #site-name { /* The name of the website */
-  margin: 0 0 2em 0;
-  font-size: 2em;
-  line-height: 1.5em;
+  margin: 0 0 .75em 0;
+  font-size: 3em;
+  line-height: 1;
   text-align: center;
 
   a:link,
@@ -97,6 +102,31 @@ body {
   // clear: both; /* Clear the logo */
   #block-views-exp-display-products-page {
     float: right;
+    padding: .75em 0 0 0;
+    .views-exposed-widget {
+      padding: 0;
+      input {
+        margin: 0 0 0 .5em;
+      }
+    }
+    .views-widget-filter-search_api_views_fulltext {
+      font-size: .85em;
+      margin: 0;
+      input {
+        @include border-radius(.75em);
+        @include box-shadow(darken($page-bgc, 15%) 1px 1px 4px 0 inset);
+        background-color: darken($page-bgc, 3%);
+        border: 1px solid darken($page-bgc, 20%);
+        padding: .25em .75em;
+        &:focus {
+          background-color: darken($page-bgc, 1%);
+          border: 1px solid darken($page-bgc, 22%);
+        }
+      }
+    }
+    .views-submit-button {
+      display: none;
+    }
   }
 }
 
@@ -106,23 +136,15 @@ body {
 .region-user {
   background-color: $user-bgc;
   border-bottom: 1px solid darken($user-bgc, 10%);
-  height: 4em;
+  font-size: .85em;
+  height: 2.75em;
   margin: 0 -10px;
   position: fixed;
-  top: 56px;
+  top: 0;
   width: 90%;
   z-index: 500;
   .block {
     float: left;
-    ul.menu {
-      li {
-        float: left;
-        list-style: none;
-        list-style-image: none;
-        margin: 0;
-        padding: 0;
-      }
-    }
   }
 }
 
@@ -131,6 +153,7 @@ body {
  */
 
 #main {
+  padding-top: 4em;
 }
 
 /*
@@ -162,7 +185,7 @@ h2.block-title, /* Block title */
 h2.title, /* Comment section heading */
 h2.comment-form, /* Comment form heading */
 h3.title { /* Comment title */
-  margin: 0;
+  margin: 0 0 .25em 0;
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
@@ -247,7 +270,7 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 .sidebars {
   .block-title {
-    font-size: 1.2em;
+    font-size: 1.25em;
     line-height: 1.25em;
   }
 }

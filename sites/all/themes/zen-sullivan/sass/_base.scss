@@ -81,6 +81,9 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
+// Fontello
+$fontello:        "Fontello";
+
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $verdana; // The font family set on the html element.
 $font-body:        $verdana;
@@ -160,10 +163,15 @@ $gray:        lighten($black, 50%);
 
 // Color variables
 $body-bgc: $blue;
+$page-bgc: $white;
 $body-c: lighten($black, 20%);
 $heading-c: $gold;
 $link-c: $blue;
 $user-bgc: lighten($beige, 10%);
+$nav-bgc: lighten($blue, 50%);
+$nav-c: darken($blue, 50%);
+
+$button-c: lighten($gray, 40%);
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
@@ -180,4 +188,4 @@ $indent-amount: 30px;
 @import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
 @import "zen";              // Add the Zen Grids responsive layout mixins.
 
-@import "custom";           // Import our custom mixins last.
+// @import "custom";           // Import our custom mixins last.

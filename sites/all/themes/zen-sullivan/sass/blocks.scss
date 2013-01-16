@@ -25,6 +25,21 @@
   }
 }
 
+.block-menu {
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      list-style-image: none;
+      a {
+        display: block;
+        padding: .25em 0;
+      }
+    }
+  }
+}
+
 
 #block-aggregator-category-1 { /* Block for the latest news items in the first category */
 }
@@ -107,15 +122,41 @@
 #block-user-online { /* "Who's online" block for a list of the online users */
 }
 
+// User menu blocks
+#block-menu-menu-user-menu {
+  ul.menu {
+    margin: 0;
+    padding: .5em 0 0 10px;
+    li {
+      float: left;
+      list-style: none;
+      list-style-image: none;
+      margin: 0;
+      padding: 0 1em 0 0;
+      a {
+        padding: 0;
+      }
+    }
+  }
+}
 #block-views-shopping-cart-block {
+  float: right;
+  padding: .5em 10px 0 0;
   .view-empty {
     p {
       float: left;
+      margin: 0;
+      padding: 0 .5em 0 0;
     }
   }
   .line-item-summary,
   .line-item-total,
   .line-item-summary-checkout {
     float: left;
+    margin: 0;
+    padding: 0;
+  }
+  .line-item-total {
+    padding: 0 .5em 0 0;
   }
 }

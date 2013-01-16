@@ -16,10 +16,12 @@
   Drupal.behaviors.customToolbar = {
     attach: function(context, settings) {
       if ($('body').hasClass('toolbar')) {
-        $(window, context).resize(function() {
-          var toolbarHeight = $('div#toolbar').height();
-          $('.region-user').css('top', toolbarHeight + 'px');
-        });
+        var toolbarHeight = $('div#toolbar').height();
+        $('.region-user').css('top', toolbarHeight + 'px');
+        // $(window, context).resize(function() {
+        //   console.log('Testing console');
+        //   $('.region-user').css('top', toolbarHeight + 'px');
+        // });
       }
     }
   };

@@ -3,7 +3,7 @@
  * Navigation Styling
  */
 
-@import "base";
+@import "custom";
 
 
 /*
@@ -47,6 +47,11 @@ li a.active {
 #navigation {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
 
+  background-color: $nav-bgc;
+  border-bottom: darken($nav-bgc, 5%);
+  border-top: darken($nav-bgc, 5%);
+  margin-bottom: 2em;  
+
   .block {
     margin-bottom: 0;
   }
@@ -67,6 +72,46 @@ li a.active {
       padding: 0 10px 0 0; /* LTR */
       list-style-type: none;
       list-style-image: none;
+    }
+  }
+  ul.sf-menu {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    li {
+      background-color: transparent;
+      display: inline-block;
+      float: none;
+      font-family: $forum;
+      font-size: 1.25em;
+      a {
+        border: 0 none;
+        color: $nav-c;
+        text-decoration: none;
+        &:hover, &:active, &:focus, &.sfHover {
+          @include text-shadow(darken($nav-bgc, 25%) 0 0 .1em, lighten($nav-bgc, 70%) 0 0 .5em);
+          background-color: transparent;
+        }
+      }
+      ul {
+        background-color: $nav-bgc;
+        border-bottom: darken($nav-bgc, 20%);
+        border-top: darken($nav-bgc, 20%);
+        font-size: .7em;
+        margin-top: .9em;
+        text-align: left;
+        li {
+          a {
+            border-bottom: 1px solid $nav-bgc;
+            border-top: 1px solid $nav-bgc;
+            &:hover, &:active, &:focus {
+              background-color: darken($nav-bgc, 3%);
+              border-bottom: 1px solid darken($nav-bgc, 5%);
+              border-top: 1px solid darken($nav-bgc, 5%);
+            }
+          }
+        }
+      }
     }
   }
 }
