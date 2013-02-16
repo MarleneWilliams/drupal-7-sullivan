@@ -89,6 +89,18 @@
 .field-type-user-reference {
 }
 
+.field-slideshow-wrapper {
+  .field-slideshow-pager {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      margin: 0 3% 0 0;
+    }
+  }
+}
+
 /*
  * Named fields
  */

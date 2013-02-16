@@ -1473,10 +1473,22 @@
   /* Always use "datetime" when creating new CCK date fields. "date" and "datestamp" are legacy types. */
 }
 
+/* line 93, ../sass/fields.scss */
+.field-slideshow-wrapper .field-slideshow-pager {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 97, ../sass/fields.scss */
+.field-slideshow-wrapper .field-slideshow-pager li {
+  float: left;
+  margin: 0 3% 0 0;
+}
+
 /*
  * Named fields
  */
-/* line 105, ../sass/fields.scss */
+/* line 117, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }

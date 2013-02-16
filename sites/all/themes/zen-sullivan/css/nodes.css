@@ -1501,12 +1501,28 @@
 }
 
 /* line 58, ../sass/nodes.scss */
+.node-product-display {
+  /* Product display */
+}
+/* line 59, ../sass/nodes.scss */
+.node-product-display .field {
+  clear: none;
+  float: right;
+  width: 70%;
+}
+/* line 64, ../sass/nodes.scss */
+.node-product-display .field-name-field-images {
+  float: left;
+  width: 20%;
+}
+
+/* line 70, ../sass/nodes.scss */
 .node-unpublished {
   /* Unpublished nodes */
   /* background-color: #fff4f4; */
   /* Drupal core uses a #fff4f4 background */
 }
-/* line 61, ../sass/nodes.scss */
+/* line 73, ../sass/nodes.scss */
 .node-unpublished p.unpublished {
   /* The word "Unpublished" displayed underneath the content. */
   height: 0;
