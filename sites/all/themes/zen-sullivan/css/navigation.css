@@ -1469,16 +1469,16 @@ li a.active {
 #navigation {
   /* overflow: hidden; */
   /* Sometimes you want to prevent overlapping with main div. */
-  background-color: #e9f1f7;
-  border-bottom: #d6e6f0;
-  border-top: #d6e6f0;
+  background-color: rgba(177, 207, 227, 0.8);
+  border-bottom: rgba(139, 183, 213, 0.8);
+  border-top: rgba(139, 183, 213, 0.8);
   margin-bottom: 2em;
 }
-/* line 55, ../sass/navigation.scss */
+/* line 56, ../sass/navigation.scss */
 #navigation .block {
   margin-bottom: 0;
 }
-/* line 60, ../sass/navigation.scss */
+/* line 61, ../sass/navigation.scss */
 #navigation .block-menu .block-title,
 #navigation .block-menu-block .block-title {
   position: absolute !important;
@@ -1487,7 +1487,7 @@ li a.active {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 65, ../sass/navigation.scss */
+/* line 66, ../sass/navigation.scss */
 #navigation ul.links,
 #navigation ul.menu {
   /* Menu block links */
@@ -1496,7 +1496,7 @@ li a.active {
   text-align: left;
   /* LTR */
 }
-/* line 70, ../sass/navigation.scss */
+/* line 71, ../sass/navigation.scss */
 #navigation ul.links li,
 #navigation ul.menu li {
   /* A simple method to get navigation links to appear in one line. */
@@ -1507,13 +1507,13 @@ li a.active {
   list-style-type: none;
   list-style-image: none;
 }
-/* line 77, ../sass/navigation.scss */
+/* line 78, ../sass/navigation.scss */
 #navigation ul.sf-menu {
   margin: 0;
   text-align: center;
   width: 100%;
 }
-/* line 81, ../sass/navigation.scss */
+/* line 82, ../sass/navigation.scss */
 #navigation ul.sf-menu li {
   background-color: transparent;
   display: inline-block;
@@ -1521,42 +1521,42 @@ li a.active {
   font-family: "Forum", "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
   font-size: 1.25em;
 }
-/* line 87, ../sass/navigation.scss */
+/* line 88, ../sass/navigation.scss */
 #navigation ul.sf-menu li a {
   border: 0 none;
   color: black;
   text-decoration: none;
 }
-/* line 91, ../sass/navigation.scss */
+/* line 92, ../sass/navigation.scss */
 #navigation ul.sf-menu li a:hover, #navigation ul.sf-menu li a:active, #navigation ul.sf-menu li a:focus, #navigation ul.sf-menu li a.sfHover {
-  text-shadow: #8bb7d5 0 0 0.1em, white 0 0 0.5em;
+  text-shadow: #142a38 0 0 0.1em, white 0 0 0.5em;
   background-color: transparent;
 }
-/* line 96, ../sass/navigation.scss */
+/* line 97, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul {
-  background-color: #e9f1f7;
-  border-bottom: #9ec3dc;
-  border-top: #9ec3dc;
+  background-color: rgba(177, 207, 227, 0.8);
+  border-bottom: rgba(102, 160, 200, 0.8);
+  border-top: rgba(102, 160, 200, 0.8);
   font-size: .7em;
   margin-top: .9em;
   text-align: left;
 }
-/* line 104, ../sass/navigation.scss */
+/* line 105, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a {
-  border-bottom: 1px solid #e9f1f7;
-  border-top: 1px solid #e9f1f7;
+  border-bottom: 1px solid rgba(177, 207, 227, 0.8);
+  border-top: 1px solid rgba(177, 207, 227, 0.8);
 }
-/* line 107, ../sass/navigation.scss */
+/* line 108, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a:hover, #navigation ul.sf-menu li ul li a:active, #navigation ul.sf-menu li ul li a:focus {
-  background-color: #deeaf3;
-  border-bottom: 1px solid #d6e6f0;
-  border-top: 1px solid #d6e6f0;
+  background-color: rgba(165, 200, 223, 0.8);
+  border-bottom: 1px solid rgba(158, 195, 220, 0.8);
+  border-top: 1px solid rgba(158, 195, 220, 0.8);
 }
 
 /*
  * Main menu and Secondary menu links
  */
-/* line 129, ../sass/navigation.scss */
+/* line 130, ../sass/navigation.scss */
 #secondary-menu {
   float: right;
   /* LTR */

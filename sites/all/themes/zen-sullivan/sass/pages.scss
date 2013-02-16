@@ -28,7 +28,7 @@ body {
 
 #page {
   @include single-box-shadow(darken($body-bgc, 20%), 0, 0, 15px, 0, false);
-  background-color: $page-bgc;
+  background: $page-bgc url("../images/coins1-600.png") no-repeat scroll 170% 1em;
   margin: 0 auto;
   padding-top: 4.5em;
   width: 90%;
@@ -83,6 +83,7 @@ body {
 
   a:link,
   a:visited {
+    @include text-shadow($page-bgc 0 0 .2em);
     color: $heading-c;
     text-decoration: none;
   }

@@ -46,11 +46,12 @@ li a.active {
 
 #navigation {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
+  $nav-bgc: transparentize($nav-bgc, 0.2);
 
   background-color: $nav-bgc;
-  border-bottom: darken($nav-bgc, 5%);
-  border-top: darken($nav-bgc, 5%);
-  margin-bottom: 2em;  
+  border-bottom: darken($nav-bgc, 10%);
+  border-top: darken($nav-bgc, 10%);
+  margin-bottom: 2em;
 
   .block {
     margin-bottom: 0;
@@ -89,7 +90,7 @@ li a.active {
         color: $nav-c;
         text-decoration: none;
         &:hover, &:active, &:focus, &.sfHover {
-          @include text-shadow(darken($nav-bgc, 25%) 0 0 .1em, lighten($nav-bgc, 70%) 0 0 .5em);
+          @include text-shadow(lighten($nav-c, 15%) 0 0 .1em, $page-bgc 0 0 .5em);
           background-color: transparent;
         }
       }

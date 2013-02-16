@@ -156,6 +156,7 @@ $yellow-gold:      #d9ae1a;
 $gold:             #b1a321;
 $green:            #8bae52;
 $beige:            #f2edc7;
+$brown:            #533212;
 
 $white:       #fff;
 $black:       #000;
@@ -165,10 +166,10 @@ $gray:        lighten($black, 50%);
 $body-bgc: $blue;
 $page-bgc: $white;
 $body-c: lighten($black, 20%);
-$heading-c: $gold;
+$heading-c: $brown;
 $link-c: $blue;
 $user-bgc: lighten($beige, 10%);
-$nav-bgc: lighten($blue, 60%);
+$nav-bgc: lighten($blue, 45%);
 $nav-c: darken($blue, 50%);
 
 $button-c: lighten($gray, 40%);
