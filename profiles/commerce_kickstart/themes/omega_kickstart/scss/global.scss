@@ -184,7 +184,7 @@ input[type="week"] {
   //height: 25px;
   margin: 1px;
   max-width: 100%;
-  padding: 5px;
+  padding: 0px 5px;
 }
 
 select {
@@ -655,6 +655,9 @@ select {
   min-height: 500px;
   height: 100%;
 }
+.front .section-content {
+  min-height: 100%;
+}
 /**********************************************
 * 3.1. Zone preface
 **********************************************/
@@ -860,35 +863,22 @@ select {
 #block-views-demo-content-slideshow-block-1 {
   /* HP blocks: Slideshow */
   position: relative;
-
-  .bx-wrapper,
-  .bx-wrapper .bx-window {
-    @include clearfix();
-    height: auto;
-    padding-bottom: 0;
-    overflow: visible !important;
-    width: 100% !important;
-    //max-width: 100% !important;
+  .bx-wrapper {
+    position: relative;
   }
-
+  .bx-wrapper .bx-window,
+  .bx-wrapper .bx-viewport {
+    overflow: visible !important;
+  }
   .bx-wrapper ul.event-slider {
-    width: 100%;
-
     li {
-      @include clearfix();
-      margin: 0 auto;
+      margin: 0;
       overflow: hidden;
-      width: 100%;
 
       a {
         display: block;
       }
 
-      img {
-        height: auto;
-        overflow: hidden;
-        width: 100%;
-      }
     }
   }
   .views-field-nothing,
@@ -1564,23 +1554,16 @@ body.activebar-container .zone-footer2-wrapper {
 div.messages.commerce-add-to-cart-confirmation {
   background-color: #E4F5FE;
   border-color: #D7D7D7;
-  @include rounded-corners(3px);
-  -moz-box-shadow: 0 2px 15px #57595A;
-  -webkit-box-shadow: 0 2px 15px #57595A;
-  box-shadow: 0 2px 15px #57595A;
-  filter: progid:DXImageTransform.Microsoft.Shadow(color='#57595A', direction='180', strength='5');
-  color: #aeaaa5;
-  overflow: hidden;
   margin-left: -30% !important; /* width/2 */
-  padding: 0;
-  position: absolute;
   top: 50px;
-  left: 50%;
   text-align: center;
   width: 60%;
-  z-index: 201;
 
   .message-inner {
+    .commerce-add-to-cart-confirmation-close {
+      background: url('../images/btn_close.png') no-repeat 0 0;
+    }
+
     .added-product-title {
       color: #696458;
       float: none;
@@ -1592,63 +1575,29 @@ div.messages.commerce-add-to-cart-confirmation {
       //width: 180px;
     }
     .button-wrapper {
-
-      background-color: #e4eef3;
-      clear: both;
       height: auto;
-      padding: 40px 30px;
       position: relative;
       right: none;
+      width: auto;
 
-      //width: 166px;
-      &:after {
-        display: block;
-        clear: both;
-        content: ".";
-        height: 0;
-        visibility: hidden;
-      }
       .button {
-        @include rounded-corners(3px);
-        color: white;
-        font-weight: bold;
-        margin-bottom: 10px;
-        text-align: center;
-
         &.checkout {
           background-color: $color1;
         }
         &.continue {
           background-color: #b3b3b3;
-
-          .commerce-add-to-cart-confirmation-close {
-            background: none;
-            display: block;
-            position: static;
-            white-space: nowrap;
-            width: auto;
-          }
-        }
-        a {
-          color: #ffffff;
-          display: block;
-          font-weight: bold;
-          //padding: 10px;
-        }
-        &:hover {
-          cursor: pointer;
         }
       }
     }
+
     .view-confirm-message-product-display {
       clear: both;
       float: none;
-      width: 180px;
+      width: auto;
 
       .view-content {
-        margin-left: 0;
+        margin: 0;
         margin-bottom: 15px;
-        padding: 15px 10px 0 15px; /* LTR */
         text-align: left; /* LTR */
         width: 90%;
 
@@ -1665,6 +1614,8 @@ div.messages.commerce-add-to-cart-confirmation {
           }
           .content {
             .field-name-field-images {
+              position: relative;
+              left: 0;
               img {
                 border: #D7D7D7 solid 1px;
                 text-align: left; /* LTR */
@@ -1725,15 +1676,7 @@ div.messages.commerce-add-to-cart-confirmation {
         }
       }
     }
-    .commerce-add-to-cart-confirmation-close {
-      background: url('../images/btn_close.png') no-repeat 0 0;
-      display: block;
-      height: 17px;
-      position: absolute;
-      top: 15px;
-      right: 15px; /* LTR */
-      width: 18px;
-    }
+
   }
   .views-field-title {
     text-align: left; /* LTR */
@@ -1929,6 +1872,13 @@ div.messages.commerce-add-to-cart-confirmation {
 /**
 * Checkout progress
 */
+ul.inline.commerce-checkout-progress {
+  li {
+    display: block;
+    float: left;
+  }
+}
+ul.inline.commerce-checkout-progress,
 ol.inline.commerce-checkout-progress {
   margin-bottom: 0;
   margin-left: 10px;
@@ -2345,7 +2295,7 @@ ol.inline.commerce-checkout-progress {
 /* Page user review order */
 .page-user-orders {
   .field-name-commerce-order-total {
-    @include clearfix();
+    @include clearfix;
 
     &:after {
       content: ".";
@@ -2678,7 +2628,13 @@ article.comment {
 .comment-form {
   background-color: #ececec;
   padding: 15px;
+  .form-wrapper {
+    @include clearfix;
+    clear: both;
+    float: none;
+  }
   .form-item {
+    clear: left;
     label {
       float: left;
       padding-right: 8px;
@@ -2689,22 +2645,28 @@ article.comment {
         content: ":";
       }
     }
-    .form-radios {
-      .form-item {
-        display: inline;
-        float: left;
-        margin-right: 15px;
-        white-space: nowrap;
-        .form-radio {
-          float: right;
-          margin-top: 4px;
+    .form-radios,
+    .form-checkboxes {
+      float: left;
+      label {
+        float: inherit;
+        text-align: inherit;
+        width: auto;
+        &:after {
+          content: none;
         }
+      }
+      .form-item {
+        white-space: nowrap;
         label {
-          float: inherit;
+          float: none;
           text-align: inherit;
           width: auto;
         }
       }
+    }
+    .description {
+      clear: both;
     }
   }
   #edit-author--2 {
@@ -2736,6 +2698,9 @@ article.comment {
       font: normal 16px/21px "Open Sans", Arial, sans-serif;
       line-height: 30px;
       padding: 4px 15px;
+    }
+    .form-actions {
+      clear: both;
     }
   }
 }

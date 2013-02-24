@@ -15,20 +15,6 @@
  */
 class commerce_backoffice_handler_field_term_entity_tid extends views_handler_field_prerender_list {
 
-  function init(&$view, &$options) {
-    parent::init($view, $options);
-
-    // Convert legacy vids option to machine name vocabularies.
-    if (!empty($this->options['vids'])) {
-      $vocabularies = taxonomy_get_vocabularies();
-      foreach ($this->options['vids'] as $vid) {
-        if (isset($vocabularies[$vid], $vocabularies[$vid]->machine_name)) {
-          $this->options['vocabularies'][$vocabularies[$vid]->machine_name] = $vocabularies[$vid]->machine_name;
-        }
-      }
-    }
-  }
-
   function option_definition() {
     $options = parent::option_definition();
 
@@ -98,22 +84,25 @@ class commerce_backoffice_handler_field_term_entity_tid extends views_handler_fi
             continue;
           }
           $items = field_get_items($this->entity_type, $entity, $field_name);
-          foreach ($items as $item) {
-            $tids[$item['tid']][$row_id] = $row_id;
+          if ($items) {
+            foreach ($items as $item) {
+              $tids[$item['tid']][$row_id] = $row_id;
+            }
           }
         }
       }
       if (!empty($tids)) {
         // Load all the associated taxonomy terms.
         $terms = entity_load('taxonomy_term', array_keys($tids));
+        $vocabularies = taxonomy_vocabulary_load_multiple(NULL, array('machine_name' => array_keys($vocabularies_to_fetch)));
         // Sort by taxonomy weight.
-        uasort($terms, array('views_handler_field_term_entity_tid', 'sort_taxonomy_weight'));
+        uasort($terms, array('commerce_backoffice_handler_field_term_entity_tid', 'sort_taxonomy_weight'));
         foreach ($terms as $tid => $term) {
           foreach ($tids[$tid] as $row_id) {
             $this->items[$row_id][$term->tid]['name'] = check_plain($term->name);
             $this->items[$row_id][$term->tid]['tid'] = $term->tid;
             $this->items[$row_id][$term->tid]['vocabulary_machine_name'] = check_plain($term->vocabulary_machine_name);
-            $this->items[$row_id][$term->tid]['vocabulary'] = check_plain($term->vocabulary);
+            $this->items[$row_id][$term->tid]['vocabulary'] = check_plain($vocabularies[$term->vid]->name);
 
             if (!empty($this->options['link_to_taxonomy'])) {
               $this->items[$row_id][$term->tid]['make_link'] = TRUE;
@@ -137,7 +126,7 @@ class commerce_backoffice_handler_field_term_entity_tid extends views_handler_fi
   }
 
   function get_items($values) {
-    return $values->{'taxonomy_term_' . $this->options['id']};
+    return isset($values->{'taxonomy_term_' . $this->options['id']}) ? $values->{'taxonomy_term_' . $this->options['id']} : array();
   }
 
   function render_item($count, $item) {

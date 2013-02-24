@@ -1244,6 +1244,12 @@ function drupal_check_module($module) {
  * - distribution_name: The name of the Drupal distribution that is being
  *   installed, to be shown throughout the installation process. Defaults to
  *   'Drupal'.
+ * - exclusive: If the install profile is intended to be the only eligible
+ *   choice in a distribution, setting exclusive = TRUE will auto-select it
+ *   during installation, and the install profile selection screen will be
+ *   skipped. If more than one profile is found where exclusive = TRUE then
+ *   this property will have no effect and the profile selection screen will
+ *   be shown as normal with all available profiles shown.
  *
  * Note that this function does an expensive file system scan to get info file
  * information for dependencies. If you only need information from the info
@@ -1277,6 +1283,7 @@ function install_profile_info($profile, $locale = 'en') {
       'version' => NULL,
       'hidden' => FALSE,
       'php' => DRUPAL_MINIMUM_PHP,
+      'php_memory_limit' => DRUPAL_MINIMUM_PHP_MEMORY_LIMIT,
     );
     $info = drupal_parse_info_file("profiles/$profile/$profile.info") + $defaults;
     $info['dependencies'] = array_unique(array_merge(

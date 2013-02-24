@@ -20,8 +20,8 @@ function commerce_shipping_pane_settings_form($checkout_pane) {
 
   $form['commerce_shipping_recalculate_services'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Recalculate shipping rates via AJAX as addresses are updated on the checkout form.'),
-    '#description' => t('Recalculation is triggered when all required fields have been entered and the shipping services pane is visible on the page.'),
+    '#title' => t('Calculate shipping rates via AJAX as addresses are updated on the checkout form.'),
+    '#description' => t('Calculation is only triggered when all required fields have been entered and the shipping services pane is visible on the page.'),
     '#default_value' => variable_get('commerce_shipping_recalculate_services', TRUE),
   );
 
@@ -38,6 +38,11 @@ function commerce_shipping_pane_checkout_form($form, &$form_state, $checkout_pan
   $pane_form = array(
     '#prefix' => '<div id="commerce-shipping-service-ajax-wrapper">',
     '#suffix' => '</div>',
+  );
+
+  $pane_form['shipping_rates'] = array(
+    '#type' => 'value',
+    '#value' => FALSE,
   );
 
   // TODO: integrate with Commerce Physical Product to ensure an order contains
@@ -86,7 +91,7 @@ function commerce_shipping_pane_checkout_form($form, &$form_state, $checkout_pan
 
           // If the service details value is empty, see if there are any values
           // in the line item to merge into the array as defaults.
-          if (empty($pane_values['service_details'])) {
+          if (empty($pane_values['service_details']) && !empty($line_item_wrapper->value()->data['service_details'])) {
             $pane_values['service_details'] = $line_item_wrapper->value()->data['service_details'];
           }
 
@@ -123,14 +128,25 @@ function commerce_shipping_pane_checkout_form($form, &$form_state, $checkout_pan
     $pane_form['service_details']['#prefix'] = '<div id="commerce-shipping-service-details">';
     $pane_form['service_details']['#suffix'] = '</div>';
   }
-  elseif (variable_get('commerce_shipping_pane_require_service', FALSE)) {
-    $pane_form['message'] = array(
-      '#markup' => '<div>' . t('Unfortunately we could not calculate any valid shipping rates for your order, and we require shipping service selection to complete checkout.') . '<br /><strong>' . t('Please contact us to resolve any issues with your order.') . '</strong></div>',
-    );
+  else {
+    // Otherwise display a message indicating whether or not we need a shipping
+    // service to be selected to complete checkout.
+    if (variable_get('commerce_shipping_pane_require_service', FALSE)) {
+      $message = t('No valid shipping rates found for your order, and we require shipping service selection to complete checkout.') . '<br /><strong>' . t('Please verify you have supplied all required information or contact us to resolve the issue.') . '</strong>';
+    }
+    else {
+      // If live shipping rate recalculation is required, check if we can show shipping options.
+      if (commerce_shipping_recalculate_services($form, NULL, TRUE) && empty($form_state['recalculate'])) {
+        $message = t('Please supply all of the required information requested above to reveal your shipping options.');
+      }
+      else {
+        $message = t('No shipping rates found for your order. Please continue the checkout process.');
+      }
+    }
 
-    $pane_form['shipping_rates'] = array(
-      '#type' => 'value',
-      '#value' => FALSE,
+    $pane_form['message'] = array(
+      '#markup' => '<div>' . $message . '</div>',
+      '#weight' => -20,
     );
   }
 
@@ -153,11 +169,46 @@ function commerce_shipping_recalculate_services_refresh($form, $form_state) {
 }
 
 /**
+ * Validate callback for recalculating shipping services.
+ */
+function commerce_shipping_recalculate_services_validate($form, &$form_state) {
+  // Call all validation callbacks.
+  $recalculate = commerce_shipping_recalculate_services($form, $form_state);
+
+  // Retrieve the form validation errors.
+  $errors = drupal_get_messages('error');
+
+  // If there were any errors, we clear them.
+  if (!empty($errors)) {
+    form_clear_error();
+    $recalculate = FALSE;
+  }
+
+  // If we previously validated, and now validation fails, then we need to
+  // rebuild the form.
+  if (!empty($form_state['recalculate']) && !$recalculate) {
+    $form_state['rebuild'] = TRUE;
+  }
+
+  // Store the validation result so that it can be examined in the submit handler.
+  $form_state['recalculate'] = $recalculate;
+
+  return TRUE;
+}
+
+/**
  * Submit callback for recalculating shipping services.
  */
 function commerce_shipping_recalculate_services_submit($form, &$form_state) {
   $order = $form_state['order'];
   $rebuild = FALSE;
+
+  // If recalculation shouldn't happen, halt the process in this submit handler
+  // as opposed to doing it in the validate step which would result in an empty
+  // validation error message.
+  if (empty($form_state['recalculate'])) {
+    return;
+  }
 
   // If any customer profile pane exists on the form, process its input before
   // recalculating shipping rates. This may mean submitting the checkout pane
@@ -169,7 +220,7 @@ function commerce_shipping_recalculate_services_submit($form, &$form_state) {
     // If this pane is actually present in the form...
     if (!empty($form[$pane_id])) {
       // If the profile copy button has been checked for this customer profile...
-      if (!empty($order->data['profile_copy'][$pane_id]['status'])) {
+      if (!empty($form_state['values'][$pane_id]['commerce_customer_profile_copy'])) {
         $source_id = 'customer_profile_' . variable_get('commerce_' . $pane_id . '_profile_copy_source', '');
         $info = array('commerce_customer_profile', $type, $pane_id);
 
@@ -215,17 +266,11 @@ function commerce_shipping_recalculate_services_submit($form, &$form_state) {
       // go ahead and validate the data through the checkout pane's validation
       // handler.
       $checkout_pane = commerce_checkout_pane_load($pane_id);
-      $validate = TRUE;
 
-      if ($callback = commerce_checkout_pane_callback($checkout_pane, 'checkout_form_validate')) {
-        $validate &= $callback($form, $form_state, $checkout_pane, $order);
-
-        // Submit the pane if it validated, which will result in the customer
-        // profile being saved.
-        if ($validate && $callback = commerce_checkout_pane_callback($checkout_pane, 'checkout_form_submit')) {
-          $callback($form, $form_state, $checkout_pane, $order);
-          $rebuild = TRUE;
-        }
+      // Submit the pane and save the customer profiles.
+      if ($callback = commerce_checkout_pane_callback($checkout_pane, 'checkout_form_submit')) {
+        $callback($form, $form_state, $checkout_pane, $order);
+        $rebuild = TRUE;
       }
     }
   }
@@ -254,7 +299,7 @@ function commerce_shipping_pane_checkout_form_validate($form, &$form_state, $che
     }
 
     // Only attempt validation if there were shipping services available.
-    if ($pane_values['shipping_rates']) {
+    if (!empty($pane_values['shipping_rates'])) {
       // If the selected shipping service was changed...
       if ($pane_values['shipping_service'] != $pane_form['shipping_service']['#default_value']) {
         // And the newly selected service has a valid details form callback...
@@ -281,7 +326,7 @@ function commerce_shipping_pane_checkout_form_validate($form, &$form_state, $che
     }
     elseif (variable_get('commerce_shipping_pane_require_service', FALSE)) {
       // But fail validation if no rates were returned and we require selection.
-      drupal_set_message(t('You cannot continue checkout without selecting a valid shipping service. Please contact us if an error is preventing you from seeing valid shipping rates for your order.'), 'error');
+      drupal_set_message(t('You cannot continue checkout without selecting a valid shipping service. Please verify your address information or contact us if an error is preventing you from seeing valid shipping rates for your order.'), 'error');
       return FALSE;
     }
   }

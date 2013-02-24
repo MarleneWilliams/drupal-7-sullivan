@@ -1,8 +1,9 @@
 Provides the backoffice functionality present in Commerce Kickstart v2.
 
 Contains three submodules: commerce_backoffice_product, commerce_backoffice_order, commerce_backoffice_content.
-Commerce Backoffice Product
 
+Commerce Backoffice Product
+---------------------------
 Provides a better experience for stores using nodes as product displays for grouping product variations (commerce_product entities).
 
     The node/add screen is now split into two tabs, "Create content" (ordinary node types), and "Create product" (product display node types).
@@ -14,16 +15,17 @@ Provides a better experience for stores using nodes as product displays for grou
 * - Every node type with a product reference field is considered a product display node type.
 
 Dependencies: Inline Entity Form, Views Megarow, Views Bulk Operations
-Commerce Backoffice Order
 
+Commerce Backoffice Order
+-------------------------
 Provides a better order management experience.
 
     The order view has been redesigned for better usability, and contains exposed filters for the order status and creation date.
     Provides rules-powered bulk operations for modifying the order statuses.
-    Provides Message integration for orders, including a custom "checkout complete" mail that contains the list of line items.
-    Uses the megarow pattern to provide a "Quick Edit" link in the view, that shows the line items, customer information, payments, recent messages. Allows the admin to add a new message or change the order status.
+    Uses the megarow pattern to provide a "Quick Edit" link in the view, that shows the line items, customer information, payments, recent messages (if Commerce Message is enabled). Allows the admin to add a new message or change the order status.
 
-Dependencies: Message, Message Notify, Date, Entityreference, EVA, Views Megarow, Views Bulk Operations
+Dependencies: Date, EVA, Views Megarow, Views Bulk Operations
+
 Commerce Backoffice Content
-
+---------------------------
 Provides views for managing content (excluding all product display types, and their categories) and comments.

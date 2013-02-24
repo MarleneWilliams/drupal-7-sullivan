@@ -19,6 +19,7 @@
  */
 
 module_load_include('inc', 'title', 'title.core');
+module_load_include('inc', 'title', 'title.field');
 
 /**
  * Implements hook_module_implements_alter().
@@ -233,7 +234,6 @@ function title_field_replacement_enabled($entity_type, $bundle, $legacy_field) {
  */
 function title_field_replacement_toggle($entity_type, $bundle, $legacy_field) {
   $info = title_field_replacement_info($entity_type, $legacy_field);
-
   if (!$info) {
     return;
   }
@@ -449,7 +449,7 @@ function title_field_sync_set($entity_type, $entity, $legacy_field, $info) {
  */
 function title_entity_language($entity_type, $entity) {
   if (module_exists('entity_translation') && entity_translation_enabled($entity_type)) {
-    $handler = entity_translation_get_handler($entity_type, $entity);
+    $handler = entity_translation_get_handler($entity_type, $entity, TRUE);
     $langcode = $handler->getLanguage();
   }
   else {
@@ -471,6 +471,13 @@ function title_field_attach_form($entity_type, $entity, &$form, &$form_state, $l
   if (!empty($fr_info)) {
     foreach ($fr_info as $legacy_field => $info)  {
       if (isset($form[$legacy_field]) && title_field_replacement_enabled($entity_type, $bundle, $legacy_field)) {
+        // Inherit the access from the title widget, so that other modules
+        // restricting access to it keep working.
+        if (isset($form[$legacy_field]['#access'])) {
+          $form[$info['field']['field_name']]['#access'] = $form[$legacy_field]['#access'];
+        }
+        // Restrict access to the legacy field form element and mark it as
+        // replaced.
         $form[$legacy_field]['#access'] = FALSE;
         $form[$legacy_field]['#field_replacement'] = TRUE;
       }
@@ -587,7 +594,7 @@ function title_field_extra_fields_alter(&$info) {
         foreach ($entity_info[$entity_type]['field replacement'] as $field_name => $field_replacement_info) {
           if (title_field_replacement_enabled($entity_type, $bundle_name, $field_name)) {
             // Remove the replaced legacy field.
-            unset($info[$entity_type][$bundle_name]['form'][$field_name]);
+            unset($info[$entity_type][$bundle_name]['form'][$field_name],  $info[$entity_type][$bundle_name]['display'][$field_name]);
           }
         }
       }
@@ -609,27 +616,40 @@ function title_form_field_ui_field_overview_form_alter(&$form, &$form_state) {
  * Make sure tokens are properly translated.
  */
 function title_tokens_alter(array &$replacements, array $context) {
-  $fr_info = title_field_replacement_info($context['type']);
-  if ($fr_info && !empty($context['data'][$context['type']])) {
-    $entity = $context['data'][$context['type']];
-    $options = $context['options'];
-
-    $langcode = NULL;
-    if (isset($options['language'])) {
-      $langcode = $options['language']->language;
+  $mapping = &drupal_static(__FUNCTION__);
+  if (empty($mapping)) {
+    foreach (entity_get_info() as $entity_type => $info) {
+      if (!empty($info['token type'])) {
+        $mapping[$info['token type']] = $entity_type;
+      }
     }
+  }
 
-    if ($fr_info) {
-      foreach ($fr_info as $legacy_field => $info) {
-        if (title_field_replacement_enabled($context['type'], $entity->type, $legacy_field)) {
-          if (isset($context['tokens'][$legacy_field])) {
-            title_field_sync_get($context['type'], $entity, $legacy_field, $info, $langcode);
-            $item = $entity->{$legacy_field};
-            if (!empty($item)) {
-              if (is_array($item)) {
-                $item = reset($item);
+  if (isset($mapping[$context['type']])) {
+    $entity_type = $mapping[$context['type']];
+    $fr_info = title_field_replacement_info($entity_type);
+    if ($fr_info && !empty($context['data'][$context['type']])) {
+      $entity = $context['data'][$context['type']];
+      list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
+      $options = $context['options'];
+
+      $langcode = NULL;
+      if (isset($options['language'])) {
+        $langcode = $options['language']->language;
+      }
+
+      if ($fr_info) {
+        foreach ($fr_info as $legacy_field => $info) {
+          if (title_field_replacement_enabled($entity_type, $bundle, $legacy_field)) {
+            if (isset($context['tokens'][$legacy_field])) {
+              title_field_sync_get($entity_type, $entity, $legacy_field, $info, $langcode);
+              $item = $entity->{$legacy_field};
+              if (!empty($item)) {
+                if (is_array($item)) {
+                  $item = reset($item);
+                }
+                $replacements[$context['tokens'][$legacy_field]] = $item;
               }
-              $replacements[$context['tokens'][$legacy_field]] = $item;
             }
           }
         }
@@ -805,18 +825,19 @@ function title_field_attach_create_bundle($entity_type, $bundle) {
     }
 
     // Do not continue if the replacement field already exists.
-    if (field_info_instance($entity_type, $field_name, $bundle)) {
+    if (field_info_instance($entity_type, $entity_info['field replacement'][$field_name]['field']['field_name'], $bundle)) {
       continue;
     }
 
     title_field_replacement_toggle($entity_type, $bundle, $field_name);
+    $instance = field_info_instance($entity_type, $entity_info['field replacement'][$field_name]['field']['field_name'], $bundle);
+    if ($instance) {
+      $params = array(
+        '@entity_label' => drupal_strtolower($entity_info['label']),
+        '%field_name' => t($entity_info['field replacement'][$field_name]['instance']['label']),
+       );
 
-    $instance = field_info_instance($entity_type, $field_name, $bundle);
-    $params = array(
-      '@entity_label' => drupal_strtolower($entity_info['label']),
-      '%field_name' => t($entity_info['field replacement'][$field_name]['instance']['label']),
-     );
-
-    drupal_set_message(t('The @entity_label %field_name field was automatically replaced.', $params));
+      drupal_set_message(t('The @entity_label %field_name field was automatically replaced.', $params));
+    }
   }
 }

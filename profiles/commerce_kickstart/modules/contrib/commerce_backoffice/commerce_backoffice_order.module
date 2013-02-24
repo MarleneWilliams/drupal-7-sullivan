@@ -1,8 +1,5 @@
 <?php
 
-// Until Entity API can load this itself.
-require_once dirname(__FILE__) . '/includes/commerce_backoffice_order.message.inc';
-
 /**
  * Implements hook_views_api().
  */
@@ -17,16 +14,6 @@ function commerce_backoffice_order_views_api() {
  * Implements hook_menu().
  */
 function commerce_backoffice_order_menu() {
-  // History tab on orders.
-  $items['admin/commerce/orders/%commerce_order/history'] = array(
-    'title' => t('History'),
-    'page callback' => 'commerce_backoffice_order_history',
-    'page arguments' => array(3),
-    'access callback' => 'commerce_order_access',
-    'access arguments' => array('view', 3),
-    'type' => MENU_LOCAL_TASK,
-    'weight' => 11,
-  );
   // Megarow callback.
   $items['commerce_backoffice/order/%commerce_order'] = array(
     'title callback' => 'commerce_order_ui_order_title',
@@ -50,19 +37,6 @@ function commerce_backoffice_order_admin_paths() {
     'commerce_backoffice/order/*' => TRUE,
   );
   return $paths;
-}
-
-/**
- * Displays the complete history for the given order.
- */
-function commerce_backoffice_order_history($order) {
-  $arguments = array($order->order_id);
-  $view = views_get_view('commerce_backoffice_order_messages');
-  $view->set_display('block_1');
-  $view->set_arguments($arguments);
-  $view->override_url = $_GET['q'];
-
-  return $view->preview();
 }
 
 /**
@@ -222,62 +196,4 @@ function commerce_backoffice_order_status_form_submit($form, &$form_state) {
 
   $form_state['rebuild'] = TRUE;
   $form_state['order_saved'] = TRUE;
-}
-
-/**
- * Implements hook_commerce_order_update().
- */
-function commerce_backoffice_order_commerce_order_update($order) {
-  commerce_backoffice_order_statistics_reset();
-}
-
-/**
- * Implements hook_commerce_order_insert().
- */
-function commerce_backoffice_order_commerce_order_insert($order) {
-  commerce_backoffice_order_statistics_reset();
-}
-
-/**
- * Rebuild the statistics for orders.
- */
-function commerce_backoffice_order_statistics_reset() {
-  drupal_static_reset('commerce_backoffice_order_statistics');
-  cache_clear_all('commerce_order_statistics', 'cache');
-}
-
-/**
- * Get the statistics for orders.
- */
-function commerce_backoffice_order_statistics() {
-  $statistics = &drupal_static(__FUNCTION__, array());
-
-  if (empty($statistics)) {
-    $cache = cache_get('commerce_order_statistics', 'cache');
-    if ($cache) {
-      $statistics = $cache->data;
-    }
-  }
-  if (empty($statistics)) {
-    foreach (commerce_order_states() as $state_name => $state_info) {
-      $statistics['by state'][$state_name] = 0;
-      foreach (commerce_order_statuses(array('state' => $state_name)) as $status_name => $status_info) {
-        $query = new EntityFieldQuery();
-        $query->entityCondition('entity_type', 'commerce_order');
-        $query->propertyCondition('status', $status_name);
-        $query->count();
-        $statistics['by status'][$status_name] = $query->execute();
-        $statistics['by state'][$state_name] += $statistics['by status'][$status_name];
-      }
-    }
-    cache_set('commerce_order_statistics', $statistics, 'cache');
-  }
-  return $statistics;
-}
-
-/**
- * Implements hook_flush_caches().
- */
-function commerce_backoffice_order_flush_caches() {
-  commerce_backoffice_order_message_field_refresh();
 }

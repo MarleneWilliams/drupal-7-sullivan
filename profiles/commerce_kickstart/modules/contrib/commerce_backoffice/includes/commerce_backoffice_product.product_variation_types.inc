@@ -162,8 +162,7 @@ function commerce_backoffice_product_form_commerce_product_ui_product_type_form_
  */
 function commerce_backoffice_product_variation_type_form_submit($form, &$form_state) {
   commerce_product_ui_product_type_form_submit($form, $form_state);
-
-  if ($form_state['values']['create_product_display']) {
+  if (!empty($form_state['values']['create_product_display'])) {
     $type_name = trim($form_state['values']['product_type']['type']);
 
     // Create the product display type.
@@ -175,6 +174,26 @@ function commerce_backoffice_product_variation_type_form_submit($form, &$form_st
     $status = node_type_save($type);
     // node_type_save doesn't invoke this.
     field_attach_create_bundle('node', $type_name);
+    // Don't display author information
+    variable_set('node_submitted_' . $type_name, 0);
+    // Remove promoted to front page.
+    variable_set('node_options_' . $type_name, array('status'));
+    $entity_info = entity_get_info('node');
+    // Update the weight of the "title" field.
+    if (!empty($entity_info['field replacement'])) {
+      if ($instance = field_info_instance('node', 'title_field', $type_name)) {
+        if (isset($instance['display'])) {
+          foreach ($instance['display'] as $view_mode_key => $view_mode_settings) {
+            $instance['display'][$view_mode_key]['weight'] = -20;
+            $instance['display'][$view_mode_key]['type'] = 'title_linked';
+            $instance['display'][$view_mode_key]['label'] = 'hidden';
+            $instance['display'][$view_mode_key]['module'] = 'title';
+            $instance['display'][$view_mode_key]['settings']['title_link'] = 'content';
+          }
+        }
+        field_update_instance($instance);
+      }
+    }
 
     // Create the product reference field.
     $field = field_info_field('field_product');
@@ -185,7 +204,7 @@ function commerce_backoffice_product_variation_type_form_submit($form, &$form_st
         'cardinality' => FIELD_CARDINALITY_UNLIMITED,
         'entity_types' => array('node'),
         'translatable' => FALSE,
-        'locked' => TRUE,
+        'locked' => FALSE,
       );
       $field = field_create_field($field);
     }
@@ -255,7 +274,7 @@ function commerce_backoffice_product_variation_type_form_submit($form, &$form_st
   drupal_set_message(t('Product variation type saved.'));
 
   if ($form_state['triggering_element']['#parents'][0] == 'save_continue') {
-    $form_state['redirect'] = 'admin/commerce/config/product-variation-types/' . strtr($product_type['type'], '_', '-') . '/fields';
+    $form_state['redirect'] = 'admin/commerce/config/product-variation-types/' . strtr($type_name, '_', '-') . '/fields';
   }
   else {
     $form_state['redirect'] = 'admin/commerce/config/product-variation-types';

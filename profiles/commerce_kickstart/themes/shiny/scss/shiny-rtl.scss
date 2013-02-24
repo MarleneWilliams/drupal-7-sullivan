@@ -3,7 +3,7 @@
 .form-actions #edit-submit,
 .form-actions #edit-save,
 ul.action-links li,
-html.js .view-commerce-backoffice-order-messages .view-footer fieldset.collapsible .fieldset-legend a,
+html.js .view-commerce-message-messages .view-footer fieldset.collapsible .fieldset-legend a,
 .field-widget-inline-entity-form .container-inline input.form-submit,
 input.ief-entity-submit,
 .field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit,
@@ -91,7 +91,9 @@ input.form-radio + label::before {
     padding: 0 10px 0 0;
   }
 }
-
+#powered_by_drupal_commerce {
+  float: right;
+}
 #credit {
   float: left;
 
@@ -113,8 +115,11 @@ input.form-radio + label::before {
   width: auto;
 
   a, span {
-    float: none;
     margin: 0 0 0 5px;
+  }
+
+  span {
+    background: transparent url("../images/breadcrumb-rtl.png") no-repeat 0 0;
   }
 }
 

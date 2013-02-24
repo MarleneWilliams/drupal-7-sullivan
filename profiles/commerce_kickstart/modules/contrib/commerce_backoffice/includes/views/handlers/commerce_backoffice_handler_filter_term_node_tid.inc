@@ -49,6 +49,7 @@ class commerce_backoffice_handler_filter_term_node_tid extends views_handler_fil
       $form['markup'] = array(
         '#markup' => '<div class="form-item">' . t('No terms found in the provided vocabularies.') . '</div>',
       );
+      $form['value'] = array();
       return;
     }
 
@@ -172,7 +173,7 @@ class commerce_backoffice_handler_filter_term_node_tid extends views_handler_fil
     }
 
     $identifier = $this->options['expose']['identifier'];
-    if ($form_state['values'][$identifier] != 'All')  {
+    if (isset($form_state['values'][$identifier]) && $form_state['values'][$identifier] != 'All')  {
       $this->validated_exposed_input = (array) $form_state['values'][$identifier];
     }
     return;

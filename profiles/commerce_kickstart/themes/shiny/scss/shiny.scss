@@ -1,5 +1,5 @@
 /* Import Font Families */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600,800);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600,800);
 @import "_base.scss";
 
 /* Base Admin Theme Styles */
@@ -248,7 +248,7 @@ input.form-radio + label {
 }
 /* Using "foo" to make unsupporting browsers ignore */
 #foo:checked::before,
-input.form-checkbox,
+input.form-checkbox ,
 input.form-radio {
   opacity: 0;
   width: 20px;
@@ -304,11 +304,58 @@ select.form-select {
     color: #000;
   }
 }
-/* Targeting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+/* Form Fixes for Webkit Browsers. */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   select.form-select {
     padding: 5px 35px 5px 5px; /* LTR */
     background: #fff url("../images/drop-filter.png") no-repeat right center; /* LTR */
+  }
+  form table {
+
+    input.form-checkbox,
+    input.form-radio {
+      -webkit-appearance: none;
+      appearance: none;
+      border: 0;
+      opacity: 1;
+      height: 20px;
+      width: 20px;
+      background: transparent url("../images/toggles.png") no-repeat 0 0;
+    }
+    input.form-checkbox:checked {
+      background-position: 0 -20px;
+    }
+    input.form-radio {
+      background-position: 0 -40px;
+    }
+    input.form-radio:checked {
+      background-position: 0 -60px;
+    }
+    .form-disabled input.form-checkbox {
+      opacity: .4;
+    }
+  }
+}
+/* Form Fix for Firefox */
+@-moz-document url-prefix() {
+  form table {
+    input.form-checkbox,
+    input.form-radio {
+      opacity: 1;
+      height: auto;
+      width: auto;
+    }
+    .fieldset-wrapper input.form-radio,
+    .fieldset-wrapper input.form-checkbox {
+      opacity: 0;
+    }
+  }
+}
+/* Form Fix for Opera */
+noindex:-o-prefocus, form table {
+  input.form-checkbox,
+  input.form-radio {
+    opacity: 1;
   }
 }
 .exposed-filters .form-item label {
@@ -485,21 +532,22 @@ h1#overlay-title {
 #overlay-titlebar .add-or-remove-shortcuts {
   padding-bottom: .9em;
 }
-.footer-messages {
+#footer {
   border-top: 1px solid #efefef;
   clear: both;
   font: normal 13px/13px "Open Sans", Arial, sans-serif;
   margin: 0 40px;
 }
-body.in-maintenance .footer-messages {
+body.in-maintenance #footer {
   border: 0;
   margin: 0 auto;
   width: 960px;
 }
-#overlay #overlay-content .footer-messages {
+#overlay #overlay-content #footer {
   border-top: 0;
   color: #fff;
-  margin: 0;
+  margin: 0 0 0 -8px;
+  padding: 0 8px;
   position: absolute;
   top: 100%;
   width: 100%;
@@ -508,7 +556,8 @@ body.in-maintenance .footer-messages {
   float: right; /* LTR */
   padding: 20px 0 40px;
 }
-#powered {
+#powered_by_drupal_commerce {
+  float: left; /* LTR */
   padding-top: 20px;
 }
 body.in-maintenance #credit {
@@ -684,7 +733,7 @@ ul.action-links li {
 .form-actions #edit-submit,
 .form-actions #edit-save,
 ul.action-links li,
-html.js .view-commerce-backoffice-order-messages .view-footer fieldset.collapsible .fieldset-legend a,
+html.js .view-commerce-message-messages .view-footer fieldset.collapsible .fieldset-legend a,
 .field-widget-inline-entity-form .container-inline input.form-submit,
 input.ief-entity-submit {
   @include blue-button;
@@ -694,7 +743,7 @@ input.ief-entity-submit {
   .form-actions #edit-submit,
   .form-actions #edit-save,
   ul.action-links li,
-  html.js .view-commerce-backoffice-order-messages .view-footer fieldset.collapsible .fieldset-legend a,
+  html.js .view-commerce-message-messages .view-footer fieldset.collapsible .fieldset-legend a,
   .field-widget-inline-entity-form .container-inline input.form-submit,
   input.ief-entity-submit {
     padding: 2px 30px;

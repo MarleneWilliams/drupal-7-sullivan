@@ -48,15 +48,15 @@ function _commerce_kickstart_user_page_title($account = NULL) {
     $account = $GLOBALS['user'];
   }
 
-  $title = t('Hello');
+  $username = $account->name;
   if (module_exists('commerce_addressbook')) {
     $billing_profile_id = commerce_addressbook_get_default_profile_id($account->uid, 'billing');
     if ($billing_profile_id) {
       $billing_profile = commerce_customer_profile_load($billing_profile_id);
-      $title .= ', ' . check_plain($billing_profile->commerce_customer_address[LANGUAGE_NONE][0]['name_line']);
+      $username = $billing_profile->commerce_customer_address[LANGUAGE_NONE][0]['name_line'];
     }
   }
-  return $title;
+  return t('Hello, @user', array('@user' => $username));
 }
 
 /**
@@ -121,8 +121,8 @@ function commerce_kickstart_user_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_register_form') {
     $form['account']['name']['#prefix'] = '<div id="' . $form_id . '">';
     $form['account']['name']['#prefix'] .= '<h1>' . t('Register') . '</h1>';
-    $form['actions']['submit']['#suffix'] = '</div>';
-    $form['actions']['submit']['#suffix'] = '<div class="back-to-login clearfix">' . l(t('Back to login'), 'user/login', array('attributes' => array('class' => 'login-account', 'title' => t('Sign in')))) . '</div></div>';
+    $form['actions']['submit']['#suffix'] = '<div class="back-to-login clearfix">' . l(t('Back to login'), 'user/login', array('attributes' => array('class' => 'login-account', 'title' => t('Sign in')))) . '</div>';
+    $form['actions']['submit']['#suffix'] .= '</div>';
   }
 }
 
@@ -188,6 +188,7 @@ function commerce_kickstart_user_user_view($account, $view_mode, $langcode) {
     '#title' => t('Recent orders'),
     '#markup' => '',
     '#attributes' => array('class' => array('user-recent-orders', 'clearfix')),
+    '#access' => user_access('view own commerce_order entities', $account),
   );
 
   $account->content['recent_orders']['view'] = array(
@@ -236,8 +237,15 @@ function commerce_kickstart_user_preprocess_user_profile_category(&$variables) {
  * Implements hook_theme_registry_alter().
  */
 function commerce_kickstart_user_theme_registry_alter(&$theme_registry) {
-  $theme_registry['user_profile_category']['template'] = drupal_get_path('module', 'commerce_kickstart_user') . '/user-profile-category';
-  $theme_registry['user_profile_item']['template'] = drupal_get_path('module', 'commerce_kickstart_user') . '/user-profile-item';
+  $path = drupal_get_path('module', 'commerce_kickstart_user');
+
+  // Only alter the template if it is not already overridden in a theme
+  if (strpos($theme_registry['user_profile_category']['theme path'], "themes/") === FALSE) {
+    $theme_registry['user_profile_category']['template'] = $path . '/user-profile-category';
+  }
+  if (strpos($theme_registry['user_profile_item']['theme path'], "themes/") === FALSE) {
+    $theme_registry['user_profile_item']['template'] = $path . '/user-profile-item';
+  }
 }
 
 /**

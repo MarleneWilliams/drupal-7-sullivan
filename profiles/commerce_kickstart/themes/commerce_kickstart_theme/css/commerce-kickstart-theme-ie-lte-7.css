@@ -6,13 +6,6 @@
 /**********************************************
 * 2.2. Zone branding
 **********************************************/
-/*.zone-branding .region-branding {
-  margin-top: 50px;
-  margin-right: inherit !important;
-}
-#region-branding {
-  width: inherit !important;
-}*/
 /**
 * Search block
 */
@@ -72,19 +65,13 @@
 /**********************************************
 * 5.3. Product page
 **********************************************/
-/**
-* Add to cart popin.
-*/
-div.commerce_kickstart_add_to_cart_overlay {
-  display: none; }
-
 /* Cloud zoom */
 .node-product-type .cloud-zoom-gallery-thumbs {
   clear: none;
   width: 120px; }
 
 .node-product-type .cloud-zoom-container .cloud-zoom {
-  float: right;
+  float: left;
   /* LTR */ }
 
 .commerce-add-to-cart-confirmation .message-inner {

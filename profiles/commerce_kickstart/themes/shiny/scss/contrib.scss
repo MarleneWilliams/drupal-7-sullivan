@@ -87,6 +87,10 @@
     padding-left: 0; /* LTR */
     margin-left: 0; /* LTR */
   }
+  fieldset.collapsible .fieldset-legend {
+    padding-left: 15px; /* LTR */
+    margin-top: 0;
+  }
   > fieldset .fieldset-wrapper {
     margin-top: 10px;
   }
@@ -97,6 +101,10 @@
 }
 .field-widget-inline-entity-form fieldset {
   padding: 1.5em 0 0;
+
+  fieldset {
+    padding: 2em 0 0;
+  }
 }
 .field-widget-inline-entity-form > fieldset {
   padding: 2em 0 0;
@@ -191,10 +199,15 @@ tr.even {
   color: #36a2f6;
   padding: 0;
 }
-.ief-product-attributes .form-wrapper,
-.ief-product-details .form-wrapper {
+.ief-product-attributes > .fieldset-wrapper > .form-wrapper,
+.ief-product-details > .fieldset-wrapper > .form-wrapper {
   float: left; /* LTR */
   margin-right: 25px; /* LTR */
+}
+/* Commerce File Correction */
+.ief-product-details > .fieldset-wrapper > .field-type-commerce-file {
+  float: none;
+  clear: left;
 }
 .field-widget-inline-entity-form .fieldset-legend {
   left: 0; /* LTR */
@@ -205,12 +218,33 @@ tr.even {
 .field-widget-inline-entity-form .fieldset-wrapper .fieldset-wrapper .fieldset-legend {
   padding: 3px 0;
 }
+.field-widget-inline-entity-form .fieldset-wrapper .collapsible .fieldset-legend {
+  padding-left: 15px;
+  margin-top: 0;
+}
 .ief-product-details .fieldset-wrapper {
   width: 33%
 }
 .ief-product-details .form-item label {
   float: left; /* LTR */
   margin-right: 10px; /* LTR */
+}
+/* Handle Radios and Checkboxes a bit differently */
+.ief-product-details .form-radios,
+.ief-product-details .form-checkboxes {
+  display: inline-block;
+}
+.ief-product-details .form-type-radio,
+.ief-product-details .form-type-checkbox {
+  float: left; /* LTR */
+
+  label {
+    float: none;
+  }
+}
+.ief-product-details fieldset .form-type-radio,
+.ief-product-details fieldset .form-type-checkbox {
+  clear: left; /* LTR */
 }
 #module-filter-squeeze .form-item-module-filter-name {
   clear: none;
@@ -251,7 +285,7 @@ tr.even {
   margin-top: 0px;
 }
 .entity-commerce-order .commerce-backoffice-order-status-form .form-submit,
-.view-commerce-backoffice-order-messages #commerce-backoffice-message-form input.form-submit {
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit {
   @include blue-button;
 }
 .field-name-commerce-customer-billing .name-block,
@@ -263,6 +297,7 @@ tr.even {
 }
 .entity-commerce-order .field-name-commerce-order-total {
   background: transparent;
+  float: right;
 }
 .entity-commerce-order .field-name-commerce-order-total .field-items {
   background: #DFF2FB;
@@ -272,6 +307,13 @@ tr.even {
   border-radius: 10px;
   margin-bottom: 30px;
   padding: 8px 15px;
+}
+.commerce-order-commerce-order .field-type-commerce-customer-profile-reference {
+  clear: both;
+  margin-bottom: 20px;
+}
+.entity-commerce-order .field-name-commerce-order-total .field-items table {
+  width: 100%;
 }
 .entity-commerce-order .field-name-commerce-order-total .field-items tr.even,
 .entity-commerce-order .field-name-commerce-order-total .field-items tr.odd {
@@ -308,12 +350,12 @@ tr td:last-child {
 .content-right > div.field {
   border: 0;
 }
-.view-commerce-backoffice-order-messages h2 {
+.view-commerce-message-messages h2 {
   border-bottom: 10px solid #d8d8d8;
   font-weight: 500;
   padding-bottom: 10px;
 }
-.view-commerce-backoffice-order-messages th {
+.commerce-order-commerce-order .view-commerce-message-messages th{
   background: transparent url("../images/th-border.gif") repeat-x 0 bottom;
   border: 1px solid #d8d8d8;
   border-width: 0 0 1px 0;
@@ -324,31 +366,35 @@ tr td:last-child {
   font-weight: 500;
   margin-bottom: 2px;
 }
-.view-commerce-backoffice-order-messages tbody {
+.view-commerce-message-messages tbody {
   padding-top: 2px;
 }
-.view-commerce-backoffice-order-messages .views-row-first {
+.view-commerce-message-messages .views-row-first {
   border-top: 1px solid #d8d8d8;
 }
-.view-commerce-backoffice-order-messages tr.odd,
-.view-commerce-backoffice-order-messages tr.even {
+.commerce-order-commerce-order .view-commerce-message-messages tr.odd,
+.commerce-order-commerce-order .view-commerce-message-messages tr.even {
   background: transparent;
   border: 1px solid #d8d8d8;
   border-width: 0 0 1px 0;
 }
-.view-commerce-backoffice-order-messages .commerce_order_state,
-.view-commerce-backoffice-order-messages .commerce_order_admin_comment,
-.view-commerce-backoffice-order-messages .commerce_order_payment_entered {
+.view-commerce-message-messages .commerce_order_created,
+.view-commerce-message-messages .commerce_order_state,
+.view-commerce-message-messages .commerce_order_admin_comment,
+.view-commerce-message-messages .commerce_order_payment_entered,
+.view-commerce-message-messages .commerce_order_payment_full,
+.view-commerce-message-messages .commerce_order_cart_add {
+  background: #fff;
   border: 1px solid #d8d8d8;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
   padding: 2px 10px;
 }
-.view-commerce-backoffice-order-messages .form-type-textarea .resizable-textarea {
+.view-commerce-message-messages .form-type-textarea .resizable-textarea {
   margin: 0 2px 30px 0; /* LTR */
 }
-.view-commerce-backoffice-order-messages .form-type-textarea .filter-wrapper {
+.view-commerce-message-messages .form-type-textarea .filter-wrapper {
   border: 1px solid #eee;
   padding: 0 15px 10px;
 }
@@ -359,16 +405,16 @@ tr td:last-child {
 .commerce-backoffice-view tr.views-row-active td {
   background: transparent;
 }
-.view-commerce-backoffice-order-messages {
+.view-commerce-message-messages {
   margin-bottom: 20px;
 }
-.view-commerce-backoffice-order-messages > .view-footer {
+.view-commerce-message-messages > .view-footer {
   padding-top: 20px;
 }
-.view-commerce-backoffice-order-messages form > div > fieldset > legend {
+.view-commerce-message-messages form > div > fieldset > legend {
   height: 30px;
 }
-.view-commerce-backoffice-order-messages form > div > fieldset > legend .fieldset-legend {
+.view-commerce-message-messages form > div > fieldset > legend .fieldset-legend {
   margin: 0 0 10px 0;
   border: 0;
 }
@@ -381,6 +427,11 @@ div.views-megarow-content {
 .commerce-backoffice-view div.views-megarow-content .megarow-header {
   background-image: url("../images/mega-arrow.png");
 }
+.field-widget-inline-entity-form tr.ief-row-form .ief-form-row {
+  background: transparent url("../images/mega-arrow.png") no-repeat 50px -1px;
+  display: inline-block;
+  width: 100%;
+}
 /* Comments View Fix */
 .view-commerce-backoffice-comments .vbo-views-form {
   padding-top: 45px;
@@ -388,13 +439,17 @@ div.views-megarow-content {
 /* Customizing the View Filters */
 html.js .view-filters fieldset.collapsible,
 html.js .vbo-views-form fieldset,
-html.js .vbo-views-form .fieldset-wrapper {
+html.js .vbo-views-form .fieldset-wrapper,
+html.js .view-commerce-message-messages .view-footer fieldset.collapsible {
   background: transparent;
   border: 0;
   height: auto;
   margin: 0;
   outline: 0;
   padding: 0;
+}
+html.js .view-filters fieldset.collapsible {
+  min-height: 30px;
 }
 html.js .view-filters fieldset.collapsible .fieldset-wrapper,
 html.js .vbo-views-form fieldset .fieldset-wrapper {
@@ -419,7 +474,7 @@ html.js .view-filters fieldset.collapsible .fieldset-legend {
 html.js .vbo-views-form fieldset .fieldset-legend {
   background: transparent url("../images/bulk-update.png") no-repeat 0 0;
 }
-html.js .view-commerce-backoffice-order-messages .view-footer fieldset.collapsible .fieldset-legend {
+html.js .view-commerce-message-messages .view-footer fieldset.collapsible .fieldset-legend {
   background: transparent;
   padding-left: 0; /* LTR */
   text-transform: none;
@@ -565,14 +620,27 @@ td.views-field-operations-dropbutton {
 .ui-datepicker .ui-datepicker-title select {
   border: 1px solid #ccc;
 }
-.field-type-commerce-line-item-reference .add-line-item .form-submit {
-  margin-top: 11px;
+.field-type-commerce-line-item-reference .add-line-item {
+  padding-top: 11px;
+
+  .form-type-select {
+    padding-top: 2px;
+  }
 }
+.field-type-commerce-line-item-reference .add-line-item
 .field-name-commerce-discounts input.field-add-more-submit {
   margin-top: 20px;
 }
-.view-commerce-payment-order #commerce-payment-order-transaction-add-form .add-payment input.form-submit {
-  margin-top: 9px;
+.view-commerce-payment-order #commerce-payment-order-transaction-add-form .add-payment {
+  padding-top: 9px;
+  clear: left;
+
+  .form-item-payment-method {
+    padding-top: 1px;
+  }
+  .form-submit {
+    margin-top: 0;
+  }
 }
 .view-commerce-discount-overview .views-reset-button input.form-submit {
   margin-top: 23px;
@@ -611,7 +679,7 @@ html.js #-commerce-kickstart-help-store fieldset.collapsible {
   max-width: 250px;
 }
 /* Making wide enough to fit min and max date fields inline */
-.views-exposed-form #edit-date-filter-wrapper {
+.commerce-backoffice-view .views-exposed-form #edit-date-filter-wrapper {
   width: 650px;
 }
 .commerce-backoffice-view .views-exposed-form #edit-date-filter-wrapper .views-widget {
@@ -650,8 +718,11 @@ html.js .views-exposed-form .form-item input.throbbing {
   padding: 3px 20px 3px 5px; /* LTR */
 }
 .vbo-views-form #edit-select .fieldset-wrapper {
-  padding: 3px 0 0 16px; /* LTR */
+  padding: 3px 0 0; /* LTR */
   width: auto;
+}
+.commerce-backoffice-view .vbo-views-form #edit-select .fieldset-wrapper {
+  padding: 3px 0 0 16px; /* LTR */
 }
 .vbo-views-form #edit-select .fieldset-wrapper input.form-submit {
   float: left; /* LTR */
@@ -681,13 +752,6 @@ html.js .views-exposed-form .form-item input.throbbing {
     #edit-select .fieldset-wrapper input.form-submit {
       padding: 1px 20px;
     }
-
-    input.form-checkbox,
-    input.form-radio {
-      opacity: 1;
-      height: auto;
-      width: auto;
-    }
   }
   .vbo-views-form #edit-select .fieldset-wrapper input.form-submit {
     padding: 2px 20px;
@@ -706,32 +770,13 @@ html.js .views-exposed-form .form-item input.throbbing {
   td.views-field-operations-dropbutton {
     display: block;
   }
+  .field-widget-inline-entity-form tr.ief-row-form .ief-form-row {
+    margin-top: -1px;
+  }
 }
 /* Edit Checkboxes only in Webkit which will render properly. */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-  form table {
-
-    input.form-checkbox,
-    input.form-radio {
-      -webkit-appearance: none;
-      appearance: none;
-      border: 0;
-      opacity: 1;
-      height: 20px;
-      width: 20px;
-      background: transparent url("../images/toggles.png") no-repeat 0 0;
-    }
-    input.form-checkbox:checked {
-      background-position: 0 -20px;
-    }
-    input.form-radio {
-      background-position: 0 -40px;
-    }
-    input.form-radio:checked {
-      background-position: 0 -60px;
-    }
-  }
-  .vbo-views-form {
+  .commerce-backoffice-view .vbo-views-form {
     #edit-select .fieldset-wrapper {
       padding: 3px 0 0 20px; /* LTR */
     }
@@ -752,18 +797,47 @@ html.js .views-exposed-form .form-item input.throbbing {
       }
     }
   }
+  .form-type-taxonomy-manager-tree {
+    input.form-checkbox,
+    input.form-radio {
+      -webkit-appearance: none;
+      appearance: none;
+      border: 0;
+      opacity: 1;
+      height: 20px;
+      width: 20px;
+      background: transparent url("../images/toggles.png") no-repeat 0 0;
+    }
+    input.form-checkbox:checked {
+      background-position: 0 -20px;
+    }
+    input.form-radio {
+      background-position: 0 -40px;
+    }
+    input.form-radio:checked {
+      background-position: 0 -60px;
+    }
+    .form-disabled input.form-checkbox {
+      opacity: .4;
+    }
+  }
 }
-/* Fix for Opera */
-noindex:-o-prefocus, form table {
-  input.form-checkbox,
-  input.form-radio {
-    opacity: 1;
+/* Form Fix for Firefox */
+@-moz-document url-prefix() {
+  .form-type-taxonomy-manager-tree {
+    input.form-checkbox,
+    input.form-radio {
+      opacity: 1;
+    }
   }
 }
 /* Bulk Operations Select */
 .vbo-views-form .form-item-operation {
   float: left; /* LTR */
   margin-top: 9px;
+  padding: 2px 10px 0 0;
+}
+.commerce-backoffice-view .vbo-views-form .form-item-operation {
   padding: 2px 10px 0 30px; /* LTR */
 }
 .vbo-views-form .form-item-operation #edit-operation {
@@ -1019,7 +1093,12 @@ html.js .vbo-views-form #edit-select fieldset .fieldset-wrapper{
   margin-bottom: -50px;
 }
 
-
+/* Admin module link fix */
+div#admin-toolbar * {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
 /* @end */
 
 /* @end */

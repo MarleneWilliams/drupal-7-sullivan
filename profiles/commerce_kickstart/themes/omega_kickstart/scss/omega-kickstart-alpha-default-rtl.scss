@@ -116,6 +116,9 @@
 * Add to cart popin.
 */
 div.messages.commerce-add-to-cart-confirmation .message-inner {
+  .added-product-title {
+    float: right;
+  }
   .button-wrapper {
     right: auto !important;
     left: 0 !important;

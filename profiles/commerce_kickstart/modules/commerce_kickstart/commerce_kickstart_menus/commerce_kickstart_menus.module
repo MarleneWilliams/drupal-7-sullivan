@@ -12,10 +12,11 @@ function commerce_kickstart_menus_menu() {
     'access arguments' => array('access administration pages'),
     'file path' => drupal_get_path('module', 'system'),
     'file' => 'system.admin.inc',
-    'weight' => 100,
+    'weight' => 40,
     'options' => array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'site-settings',
     ),
   );
   // Products
@@ -30,6 +31,7 @@ function commerce_kickstart_menus_menu() {
     'options' => array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'products',
     ),
   );
   // Products > Actions
@@ -44,6 +46,7 @@ function commerce_kickstart_menus_menu() {
     'options' => array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'actions',
     ),
   );
   // Products > Settings
@@ -88,6 +91,7 @@ function commerce_kickstart_menus_menu() {
     'options' => array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'orders',
     ),
   );
   // Orders > Actions
@@ -116,6 +120,7 @@ function commerce_kickstart_menus_menu() {
     'options' => array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'content',
     ),
   );
   // Content > Actions
@@ -320,17 +325,20 @@ function commerce_kickstart_menus_menu_alter(&$items) {
   if (isset($items['admin/commerce/config'])) {
     $items['admin/commerce/config']['title'] = 'Store settings';
     $items['admin/commerce/config']['parent'] = 'admin';
-    $items['admin/commerce/config']['weight'] = 50;
+    $items['admin/commerce/config']['weight'] = 30;
     $items['admin/commerce/config']['options'] = array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'store-settings',
     );
   }
 
   if (isset($items['admin/help'])) {
+    $items['admin/help']['weight'] = 50;
     $items['admin/help']['options'] = array(
       'toolbar_expanded' => TRUE,
       'toolbar_break' => TRUE,
+      'toolbar_css' => 'help',
     );
   }
 
@@ -388,6 +396,7 @@ function commerce_kickstart_menus_menu_alter(&$items) {
     $items['admin/commerce/jirafe']['title'] = 'Reports';
     $items['admin/commerce/jirafe']['parent'] = 'admin';
     $items['admin/commerce/jirafe']['weight'] = -25;
+    $items['admin/commerce/jirafe']['options']['toolbar_css'] = 'reports';
   }
   if (isset($items['admin/commerce/config/jirafe'])) {
     $items['admin/commerce/config/jirafe']['hidden'] = TRUE;
@@ -418,6 +427,11 @@ function commerce_kickstart_menus_menu_link_alter(&$link) {
   // Check if the item belongs to a shortcut menu.
   if (module_exists('shortcut') && shortcut_set_load($link['menu_name'])) {
     // Don't change the plid of shortcut menu items.
+    return;
+  }
+
+  // Don't change the plid for customized menu items.
+  if (!empty($link['customized'])) {
     return;
   }
 

@@ -31,7 +31,7 @@
 }
 
 .field-type-commerce-product-reference fieldset .fieldset-legend {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
   margin: 0 0 0 15px;
   /* LTR */
   padding: 5px 0 5px 0;
@@ -56,7 +56,7 @@
   padding-top: 40px;
 }
 .field-widget-inline-entity-form .ief-form-bottom > .fieldset-wrapper {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   padding: 15px;
 }
 .field-widget-inline-entity-form .ief-form-bottom > .fieldset-wrapper .fieldset-legend,
@@ -91,7 +91,7 @@
 }
 
 .field-type-commerce-product-reference > div > div.form-wrapper > fieldset > div.fieldset-wrapper {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   padding: 5px 15px;
 }
 .field-type-commerce-product-reference > div > div.form-wrapper > fieldset > div.fieldset-wrapper > fieldset .fieldset-wrapper,
@@ -100,6 +100,11 @@
   /* LTR */
   margin-left: 0;
   /* LTR */
+}
+.field-type-commerce-product-reference > div > div.form-wrapper > fieldset > div.fieldset-wrapper fieldset.collapsible .fieldset-legend {
+  padding-left: 15px;
+  /* LTR */
+  margin-top: 0;
 }
 .field-type-commerce-product-reference > div > div.form-wrapper > fieldset > div.fieldset-wrapper > fieldset .fieldset-wrapper {
   margin-top: 10px;
@@ -132,10 +137,11 @@
 .ief-row-form .ief-entity-submit:focus {
   color: #fff;
 }
-.field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:hover, .field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:focus, .field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:active,
+.field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:hover, .field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:focus, .field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:active, .field-widget-inline-entity-form fieldset fieldset .fieldset-wrapper .ief-entity-submit:disabled,
 .ief-row-form .ief-entity-submit:hover,
 .ief-row-form .ief-entity-submit:focus,
-.ief-row-form .ief-entity-submit:active {
+.ief-row-form .ief-entity-submit:active,
+.ief-row-form .ief-entity-submit:disabled {
   background: #359ff2;
   box-shadow: 0 1px 2px #cccccc, inset 0 1px 1px #7bb8ef;
   color: #fff;
@@ -144,6 +150,9 @@
 
 .field-widget-inline-entity-form fieldset {
   padding: 1.5em 0 0;
+}
+.field-widget-inline-entity-form fieldset fieldset {
+  padding: 2em 0 0;
 }
 
 .field-widget-inline-entity-form > fieldset {
@@ -197,7 +206,7 @@
 .field-widget-inline-entity-form .ief-entity-table tr.even,
 .field-widget-inline-entity-form .ief-entity-table tr.odd {
   background: #f1f1f1;
-  border-bottom: 1px solid #BEBFB9;
+  border-bottom: 1px solid #bebfb9;
 }
 
 .field-widget-inline-entity-form .ief-entity-table tr:hover,
@@ -207,16 +216,16 @@ tr.even {
 
 .field-widget-inline-entity-form .ief-entity-table .ief-row-entity-form {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-width: 0 1px 1px;
 }
 
 .field-widget-inline-entity-form .ief-entity-table tr.ief-row-entity-form {
   background: #DFF2FB;
-  border: 1px solid #AFDBE9;
-  -moz-box-shadow: 0 0 5px #fff;
-  -webkit-box-shadow: 0 0 5px #fff;
-  box-shadow: 0 0 5px #fff;
+  border: 1px solid #afdbe9;
+  -moz-box-shadow: 0 0 5px white;
+  -webkit-box-shadow: 0 0 5px white;
+  box-shadow: 0 0 5px white;
 }
 
 .ief-row-entity .ief-entity-operations {
@@ -260,12 +269,18 @@ tr.even {
   padding: 0;
 }
 
-.ief-product-attributes .form-wrapper,
-.ief-product-details .form-wrapper {
+.ief-product-attributes > .fieldset-wrapper > .form-wrapper,
+.ief-product-details > .fieldset-wrapper > .form-wrapper {
   float: left;
   /* LTR */
   margin-right: 25px;
   /* LTR */
+}
+
+/* Commerce File Correction */
+.ief-product-details > .fieldset-wrapper > .field-type-commerce-file {
+  float: none;
+  clear: left;
 }
 
 .field-widget-inline-entity-form .fieldset-legend {
@@ -280,6 +295,11 @@ tr.even {
   padding: 3px 0;
 }
 
+.field-widget-inline-entity-form .fieldset-wrapper .collapsible .fieldset-legend {
+  padding-left: 15px;
+  margin-top: 0;
+}
+
 .ief-product-details .fieldset-wrapper {
   width: 33%;
 }
@@ -288,6 +308,28 @@ tr.even {
   float: left;
   /* LTR */
   margin-right: 10px;
+  /* LTR */
+}
+
+/* Handle Radios and Checkboxes a bit differently */
+.ief-product-details .form-radios,
+.ief-product-details .form-checkboxes {
+  display: inline-block;
+}
+
+.ief-product-details .form-type-radio,
+.ief-product-details .form-type-checkbox {
+  float: left;
+  /* LTR */
+}
+.ief-product-details .form-type-radio label,
+.ief-product-details .form-type-checkbox label {
+  float: none;
+}
+
+.ief-product-details fieldset .form-type-radio,
+.ief-product-details fieldset .form-type-checkbox {
+  clear: left;
   /* LTR */
 }
 
@@ -329,14 +371,14 @@ tr.even {
 .entity-commerce-order .content-right .commerce-backoffice-order-status-label {
   background: #ffedcb;
   border: 1px solid #ffcb69;
-  -moz-box-shadow: inset 0 0 5px #fff;
-  -webkit-box-shadow: inset 0 0 5px #fff;
-  box-shadow: inset 0 0 5px #fff;
+  -moz-box-shadow: inset 0 0 5px white;
+  -webkit-box-shadow: inset 0 0 5px white;
+  box-shadow: inset 0 0 5px white;
   margin-top: 0px;
 }
 
 .entity-commerce-order .commerce-backoffice-order-status-form .form-submit,
-.view-commerce-backoffice-order-messages #commerce-backoffice-message-form input.form-submit {
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit {
   background: #2f88cd;
   background: -moz-linear-gradient(top, #36a2f6 0%, #2f88cd 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #36a2f6), color-stop(100%, #2f88cd));
@@ -359,13 +401,14 @@ tr.even {
   color: #fff;
 }
 .entity-commerce-order .commerce-backoffice-order-status-form .form-submit:focus,
-.view-commerce-backoffice-order-messages #commerce-backoffice-message-form input.form-submit:focus {
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit:focus {
   color: #fff;
 }
-.entity-commerce-order .commerce-backoffice-order-status-form .form-submit:hover, .entity-commerce-order .commerce-backoffice-order-status-form .form-submit:focus, .entity-commerce-order .commerce-backoffice-order-status-form .form-submit:active,
-.view-commerce-backoffice-order-messages #commerce-backoffice-message-form input.form-submit:hover,
-.view-commerce-backoffice-order-messages #commerce-backoffice-message-form input.form-submit:focus,
-.view-commerce-backoffice-order-messages #commerce-backoffice-message-form input.form-submit:active {
+.entity-commerce-order .commerce-backoffice-order-status-form .form-submit:hover, .entity-commerce-order .commerce-backoffice-order-status-form .form-submit:focus, .entity-commerce-order .commerce-backoffice-order-status-form .form-submit:active, .entity-commerce-order .commerce-backoffice-order-status-form .form-submit:disabled,
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit:hover,
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit:focus,
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit:active,
+.view-commerce-message-messages #commerce-backoffice-message-form input.form-submit:disabled {
   background: #359ff2;
   box-shadow: 0 1px 2px #cccccc, inset 0 1px 1px #7bb8ef;
   color: #fff;
@@ -383,16 +426,26 @@ tr.even {
 
 .entity-commerce-order .field-name-commerce-order-total {
   background: transparent;
+  float: right;
 }
 
 .entity-commerce-order .field-name-commerce-order-total .field-items {
   background: #DFF2FB;
-  border: 1px solid #AFDBE9;
+  border: 1px solid #afdbe9;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin-bottom: 30px;
   padding: 8px 15px;
+}
+
+.commerce-order-commerce-order .field-type-commerce-customer-profile-reference {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.entity-commerce-order .field-name-commerce-order-total .field-items table {
+  width: 100%;
 }
 
 .entity-commerce-order .field-name-commerce-order-total .field-items tr.even,
@@ -406,7 +459,7 @@ tr.even {
 }
 
 .entity-commerce-order .field-name-commerce-order-total .field-items .component-type-commerce-price-formatted-amount td {
-  border-top: 2px solid #AFDBE9;
+  border-top: 2px solid #afdbe9;
   font-weight: 700;
 }
 
@@ -429,12 +482,12 @@ tr td:last-child {
 }
 
 #panes tr td:last-child {
-  border-right: 1px solid #BEBFB9;
+  border-right: 1px solid #bebfb9;
   /* LTR */
 }
 
 #blocks tr td:last-child {
-  border-right: 1px solid #BEBFB9;
+  border-right: 1px solid #bebfb9;
   /* LTR */
 }
 
@@ -442,13 +495,13 @@ tr td:last-child {
   border: 0;
 }
 
-.view-commerce-backoffice-order-messages h2 {
+.view-commerce-message-messages h2 {
   border-bottom: 10px solid #d8d8d8;
   font-weight: 500;
   padding-bottom: 10px;
 }
 
-.view-commerce-backoffice-order-messages th {
+.commerce-order-commerce-order .view-commerce-message-messages th {
   background: transparent url("../images/th-border.gif") repeat-x 0 bottom;
   border: 1px solid #d8d8d8;
   border-width: 0 0 1px 0;
@@ -460,24 +513,28 @@ tr td:last-child {
   margin-bottom: 2px;
 }
 
-.view-commerce-backoffice-order-messages tbody {
+.view-commerce-message-messages tbody {
   padding-top: 2px;
 }
 
-.view-commerce-backoffice-order-messages .views-row-first {
+.view-commerce-message-messages .views-row-first {
   border-top: 1px solid #d8d8d8;
 }
 
-.view-commerce-backoffice-order-messages tr.odd,
-.view-commerce-backoffice-order-messages tr.even {
+.commerce-order-commerce-order .view-commerce-message-messages tr.odd,
+.commerce-order-commerce-order .view-commerce-message-messages tr.even {
   background: transparent;
   border: 1px solid #d8d8d8;
   border-width: 0 0 1px 0;
 }
 
-.view-commerce-backoffice-order-messages .commerce_order_state,
-.view-commerce-backoffice-order-messages .commerce_order_admin_comment,
-.view-commerce-backoffice-order-messages .commerce_order_payment_entered {
+.view-commerce-message-messages .commerce_order_created,
+.view-commerce-message-messages .commerce_order_state,
+.view-commerce-message-messages .commerce_order_admin_comment,
+.view-commerce-message-messages .commerce_order_payment_entered,
+.view-commerce-message-messages .commerce_order_payment_full,
+.view-commerce-message-messages .commerce_order_cart_add {
+  background: #fff;
   border: 1px solid #d8d8d8;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -485,38 +542,38 @@ tr td:last-child {
   padding: 2px 10px;
 }
 
-.view-commerce-backoffice-order-messages .form-type-textarea .resizable-textarea {
+.view-commerce-message-messages .form-type-textarea .resizable-textarea {
   margin: 0 2px 30px 0;
   /* LTR */
 }
 
-.view-commerce-backoffice-order-messages .form-type-textarea .filter-wrapper {
-  border: 1px solid #eee;
+.view-commerce-message-messages .form-type-textarea .filter-wrapper {
+  border: 1px solid #eeeeee;
   padding: 0 15px 10px;
 }
 
 .commerce-backoffice-view tr.views-row-active {
-  background: #DFF2FB !important;
-  border: 1px solid #AFDBE9;
+  background: #dff2fb !important;
+  border: 1px solid #afdbe9;
 }
 
 .commerce-backoffice-view tr.views-row-active td {
   background: transparent;
 }
 
-.view-commerce-backoffice-order-messages {
+.view-commerce-message-messages {
   margin-bottom: 20px;
 }
 
-.view-commerce-backoffice-order-messages > .view-footer {
+.view-commerce-message-messages > .view-footer {
   padding-top: 20px;
 }
 
-.view-commerce-backoffice-order-messages form > div > fieldset > legend {
+.view-commerce-message-messages form > div > fieldset > legend {
   height: 30px;
 }
 
-.view-commerce-backoffice-order-messages form > div > fieldset > legend .fieldset-legend {
+.view-commerce-message-messages form > div > fieldset > legend .fieldset-legend {
   margin: 0 0 10px 0;
   border: 0;
 }
@@ -533,6 +590,12 @@ div.views-megarow-content {
   background-image: url("../images/mega-arrow.png");
 }
 
+.field-widget-inline-entity-form tr.ief-row-form .ief-form-row {
+  background: transparent url("../images/mega-arrow.png") no-repeat 50px -1px;
+  display: inline-block;
+  width: 100%;
+}
+
 /* Comments View Fix */
 .view-commerce-backoffice-comments .vbo-views-form {
   padding-top: 45px;
@@ -541,13 +604,18 @@ div.views-megarow-content {
 /* Customizing the View Filters */
 html.js .view-filters fieldset.collapsible,
 html.js .vbo-views-form fieldset,
-html.js .vbo-views-form .fieldset-wrapper {
+html.js .vbo-views-form .fieldset-wrapper,
+html.js .view-commerce-message-messages .view-footer fieldset.collapsible {
   background: transparent;
   border: 0;
   height: auto;
   margin: 0;
   outline: 0;
   padding: 0;
+}
+
+html.js .view-filters fieldset.collapsible {
+  min-height: 30px;
 }
 
 html.js .view-filters fieldset.collapsible .fieldset-wrapper,
@@ -579,7 +647,7 @@ html.js .vbo-views-form fieldset .fieldset-legend {
   background: transparent url("../images/bulk-update.png") no-repeat 0 0;
 }
 
-html.js .view-commerce-backoffice-order-messages .view-footer fieldset.collapsible .fieldset-legend {
+html.js .view-commerce-message-messages .view-footer fieldset.collapsible .fieldset-legend {
   background: transparent;
   padding-left: 0;
   /* LTR */
@@ -589,10 +657,10 @@ html.js .view-commerce-backoffice-order-messages .view-footer fieldset.collapsib
 /* Rules Pages */
 /* This fixes a firefox outline bug */
 #rules-ui-edit-element fieldset .fieldset-wrapper {
-  border: 1px solid #ccc;
-  -moz-box-shadow: inset 0 0 1px #fff;
-  -webkit-box-shadow: inset 0 0 1px #fff;
-  box-shadow: inset 0 0 1px #fff;
+  border: 1px solid #cccccc;
+  -moz-box-shadow: inset 0 0 1px white;
+  -webkit-box-shadow: inset 0 0 1px white;
+  box-shadow: inset 0 0 1px white;
   outline: 0;
 }
 
@@ -700,7 +768,7 @@ td.views-field-operations-dropbutton .ctools-dropbutton-processed {
 }
 
 .commerce-discount-form .form-item-commerce-discount-type label {
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px solid #cccccc;
 }
 
 .commerce-discount-form .form-item-commerce-discount-type .form-radios label {
@@ -751,23 +819,34 @@ td.views-field-operations-dropbutton .ctools-dropbutton-processed {
 
 #ui-datepicker-div {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 
 .ui-datepicker .ui-datepicker-title select {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 
-.field-type-commerce-line-item-reference .add-line-item .form-submit {
-  margin-top: 11px;
+.field-type-commerce-line-item-reference .add-line-item {
+  padding-top: 11px;
+}
+.field-type-commerce-line-item-reference .add-line-item .form-type-select {
+  padding-top: 2px;
 }
 
+.field-type-commerce-line-item-reference .add-line-item
 .field-name-commerce-discounts input.field-add-more-submit {
   margin-top: 20px;
 }
 
-.view-commerce-payment-order #commerce-payment-order-transaction-add-form .add-payment input.form-submit {
-  margin-top: 9px;
+.view-commerce-payment-order #commerce-payment-order-transaction-add-form .add-payment {
+  padding-top: 9px;
+  clear: left;
+}
+.view-commerce-payment-order #commerce-payment-order-transaction-add-form .add-payment .form-item-payment-method {
+  padding-top: 1px;
+}
+.view-commerce-payment-order #commerce-payment-order-transaction-add-form .add-payment .form-submit {
+  margin-top: 0;
 }
 
 .view-commerce-discount-overview .views-reset-button input.form-submit {
@@ -809,7 +888,7 @@ html.js #-commerce-kickstart-help-store fieldset.collapsible {
 }
 
 /* Making wide enough to fit min and max date fields inline */
-.views-exposed-form #edit-date-filter-wrapper {
+.commerce-backoffice-view .views-exposed-form #edit-date-filter-wrapper {
   width: 650px;
 }
 
@@ -822,7 +901,7 @@ html.js #-commerce-kickstart-help-store fieldset.collapsible {
 }
 
 .views-exposed-form .form-item input {
-  border: 1px solid #C8C8C8;
+  border: 1px solid #c8c8c8;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -858,9 +937,14 @@ html.js .views-exposed-form .form-item input.throbbing {
 }
 
 .vbo-views-form #edit-select .fieldset-wrapper {
-  padding: 3px 0 0 16px;
+  padding: 3px 0 0;
   /* LTR */
   width: auto;
+}
+
+.commerce-backoffice-view .vbo-views-form #edit-select .fieldset-wrapper {
+  padding: 3px 0 0 16px;
+  /* LTR */
 }
 
 .vbo-views-form #edit-select .fieldset-wrapper input.form-submit {
@@ -892,12 +976,6 @@ html.js .views-exposed-form .form-item input.throbbing {
   form table #edit-select .fieldset-wrapper input.form-submit {
     padding: 1px 20px;
   }
-  form table input.form-checkbox,
-  form table input.form-radio {
-    opacity: 1;
-    height: auto;
-    width: auto;
-  }
 
   .vbo-views-form #edit-select .fieldset-wrapper input.form-submit {
     padding: 2px 20px;
@@ -916,31 +994,15 @@ html.js .views-exposed-form .form-item input.throbbing {
   td.views-field-operations-dropbutton {
     display: block;
   }
+
+  .field-widget-inline-entity-form tr.ief-row-form .ief-form-row {
+    margin-top: -1px;
+  }
 }
 
 /* Edit Checkboxes only in Webkit which will render properly. */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  form table input.form-checkbox,
-  form table input.form-radio {
-    -webkit-appearance: none;
-    appearance: none;
-    border: 0;
-    opacity: 1;
-    height: 20px;
-    width: 20px;
-    background: transparent url("../images/toggles.png") no-repeat 0 0;
-  }
-  form table input.form-checkbox:checked {
-    background-position: 0 -20px;
-  }
-  form table input.form-radio {
-    background-position: 0 -40px;
-  }
-  form table input.form-radio:checked {
-    background-position: 0 -60px;
-  }
-
-  .vbo-views-form #edit-select .fieldset-wrapper {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .commerce-backoffice-view .vbo-views-form #edit-select .fieldset-wrapper {
     padding: 3px 0 0 20px;
     /* LTR */
   }
@@ -956,11 +1018,36 @@ html.js .views-exposed-form .form-item input.throbbing {
   .vbo-select-all-markup .vbo-fieldset-select-all input.form-checkbox:checked {
     background-position: 0 -20px;
   }
+
+  .form-type-taxonomy-manager-tree input.form-checkbox,
+  .form-type-taxonomy-manager-tree input.form-radio {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    opacity: 1;
+    height: 20px;
+    width: 20px;
+    background: transparent url("../images/toggles.png") no-repeat 0 0;
+  }
+  .form-type-taxonomy-manager-tree input.form-checkbox:checked {
+    background-position: 0 -20px;
+  }
+  .form-type-taxonomy-manager-tree input.form-radio {
+    background-position: 0 -40px;
+  }
+  .form-type-taxonomy-manager-tree input.form-radio:checked {
+    background-position: 0 -60px;
+  }
+  .form-type-taxonomy-manager-tree .form-disabled input.form-checkbox {
+    opacity: .4;
+  }
 }
-/* Fix for Opera */
-noindex:-o-prefocus input.form-checkbox,
-noindex:-o-prefocus input.form-radio, form table input.form-checkbox, form table input.form-radio {
-  opacity: 1;
+/* Form Fix for Firefox */
+@-moz-document url-prefix() {
+  .form-type-taxonomy-manager-tree input.form-checkbox,
+  .form-type-taxonomy-manager-tree input.form-radio {
+    opacity: 1;
+  }
 }
 
 /* Bulk Operations Select */
@@ -968,6 +1055,10 @@ noindex:-o-prefocus input.form-radio, form table input.form-checkbox, form table
   float: left;
   /* LTR */
   margin-top: 9px;
+  padding: 2px 10px 0 0;
+}
+
+.commerce-backoffice-view .vbo-views-form .form-item-operation {
   padding: 2px 10px 0 30px;
   /* LTR */
 }
@@ -1027,10 +1118,10 @@ html.js .vbo-views-form #edit-select fieldset .fieldset-wrapper {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #C8C8C8;
-  -moz-box-shadow: inset 0 0 1px #fff;
-  -webkit-box-shadow: inset 0 0 1px #fff;
-  box-shadow: inset 0 0 1px #fff;
+  border: 1px solid #c8c8c8;
+  -moz-box-shadow: inset 0 0 1px white;
+  -webkit-box-shadow: inset 0 0 1px white;
+  box-shadow: inset 0 0 1px white;
   font-size: 14px;
   line-height: 1em;
   text-transform: capitalize;
@@ -1062,7 +1153,7 @@ html.js .vbo-views-form #edit-select fieldset .fieldset-wrapper {
 }
 
 .ctools-dropbutton-processed .ctools-content {
-  border-right: 1px solid #fff;
+  border-right: 1px solid white;
   /* LTR */
 }
 
@@ -1215,6 +1306,13 @@ html.js .vbo-views-form #edit-select fieldset .fieldset-wrapper {
 #commerce-kickstart-inline-help-button #edit-commerce-kickstart-inline-help-button {
   margin-top: 10px;
   margin-bottom: -50px;
+}
+
+/* Admin module link fix */
+div#admin-toolbar * {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 /* @end */

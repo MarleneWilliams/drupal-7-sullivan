@@ -11,21 +11,16 @@ dependencies[] = commerce_payment
 
 dependencies[] = date_popup
 dependencies[] = date_views
-dependencies[] = entityreference
 dependencies[] = eva
 dependencies[] = entity_token
-dependencies[] = message
-dependencies[] = message_notify
 dependencies[] = views_bulk_operations
 dependencies[] = views_megarow
 
-files[] = includes/views/handlers/commerce_backoffice_order_handler_area_add_message.inc
 files[] = includes/views/handlers/commerce_backoffice_order_handler_field_order_operations.inc
-files[] = includes/views/handlers/commerce_backoffice_order_handler_filter_message_type.inc
 
-; Information added by drupal.org packaging script on 2012-11-07
-version = "7.x-1.0-rc1"
+; Information added by drupal.org packaging script on 2013-02-13
+version = "7.x-1.1"
 core = "7.x"
 project = "commerce_backoffice"
-datestamp = "1352282156"
+datestamp = "1360751727"
 

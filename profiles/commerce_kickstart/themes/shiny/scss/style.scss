@@ -404,8 +404,7 @@ dl.node-type-list dt {
 ul.admin-list {
   padding: 0;
 }
-.admin-panel .item-list ul,
-ul.admin-list.compact {
+.admin-panel .item-list ul {
   margin: 8px 0;
 }
 .admin-panel .item-list li,
@@ -687,6 +686,7 @@ input.form-button-disabled:active {
   border-color: #eee;
   text-shadow: none;
   color: #999;
+  opacity: .75;
 }
 input.form-autocomplete,
 input.form-text,
@@ -866,7 +866,7 @@ ol.task-list li.done {
 }
 .overlay #branding h1.page-title,
 .overlay #left,
-.overlay #footer {
+.overlay #feed-icons {
   display: none;
 }
 .overlay #page {

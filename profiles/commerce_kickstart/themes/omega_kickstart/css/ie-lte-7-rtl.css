@@ -187,8 +187,11 @@
   margin-right: 0;
   padding-right: 130px;
   position: relative; }
+  .node-product-type .cloud-zoom-container a#cloud-zoom,
+  .node-product-type .cloud-zoom-container a#cloud-zoom img {
+    float: left !important; }
   .node-product-type .cloud-zoom-container #wrap img {
-    float: left; }
+    float: right !important; }
   .node-product-type .cloud-zoom-container .cloud-zoom-gallery-thumbs {
     position: absolute;
     top: 0;
@@ -218,8 +221,24 @@ div.messages.commerce-add-to-cart-confirmation {
   div.messages.commerce-add-to-cart-confirmation .message-inner .added-product-title {
     float: right !important; }
   div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
-    clear: none;
-    float: left; }
+    right: auto !important;
+    left: 0 !important; }
+  div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display {
+    float: none !important;
+    /* LTR */
+    text-align: left; }
+    div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display .view-content {
+      float: right;
+      margin-left: 0px !important;
+      margin-right: 130px; }
+      div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display .view-content .views-field-commerce-product .content {
+        text-align: right; }
+        div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display .view-content .views-field-commerce-product .content .field-name-field-images {
+          left: auto;
+          right: -115px; }
+      div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display .view-content .views-field-commerce-total .field-content {
+        float: right !important;
+        text-align: right; }
 
 /**********************************************
 * 5.4. Checkout process
@@ -227,6 +246,7 @@ div.messages.commerce-add-to-cart-confirmation {
 /**
 * Checkout progress
 */
+ul.inline.commerce-checkout-progress li,
 ol.inline.commerce-checkout-progress li {
   background-image: url("../images/bg_checkout_progress_ie-rtl.png");
   background-position: left center;
@@ -237,15 +257,15 @@ ol.inline.commerce-checkout-progress li {
   left: -5px;
   padding-right: 25px;
   padding-left: 50px; }
-
-ol.inline.commerce-checkout-progress li.active {
-  background-image: url("../images/bg_checkout_progress_ie-rtl.png"); }
-
-ol.inline.commerce-checkout-progress li.previous {
-  background-image: url("../images/bg_checkout_progress_ie_visited-rtl.png"); }
-
-ol.inline.commerce-checkout-progress li.last {
-  background-image: url("../images/bg_checkout_progress_ie_last-rtl.png"); }
-
-ol.inline.commerce-checkout-progress li.active.last {
-  background-image: url("../images/bg_checkout_progress_ie_last-rtl.png"); }
+  ul.inline.commerce-checkout-progress li.active,
+  ol.inline.commerce-checkout-progress li.active {
+    background-image: url("../images/bg_checkout_progress_ie-rtl.png"); }
+  ul.inline.commerce-checkout-progress li.previous,
+  ol.inline.commerce-checkout-progress li.previous {
+    background-image: url("../images/bg_checkout_progress_ie_visited-rtl.png"); }
+  ul.inline.commerce-checkout-progress li.last,
+  ol.inline.commerce-checkout-progress li.last {
+    background-image: url("../images/bg_checkout_progress_ie_last-rtl.png"); }
+  ul.inline.commerce-checkout-progress li.active.last,
+  ol.inline.commerce-checkout-progress li.active.last {
+    background-image: url("../images/bg_checkout_progress_ie_last-rtl.png"); }

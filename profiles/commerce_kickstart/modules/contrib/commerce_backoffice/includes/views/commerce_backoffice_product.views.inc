@@ -23,6 +23,7 @@ function commerce_backoffice_product_views_data_alter(&$data) {
     ),
   );
   $data['commerce_product']['quick_edit_form'] = array(
+    'real field' => 'product_id',
     'field' => array(
       'title' => t('Quick Edit Form'),
       'help' => t('Display a form for editing the price and status of a variation.'),

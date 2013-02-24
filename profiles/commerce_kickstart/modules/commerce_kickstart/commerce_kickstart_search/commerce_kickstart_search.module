@@ -45,10 +45,9 @@ function commerce_kickstart_search_default_search_api_sort() {
     "default_order" : "asc",
     "options" : { "field_name" : "Date created" }
   }');
-  $price_sort_field = variable_get('commerce_kickstart_demo_store', FALSE) ? 'field_product_commerce_price_amount_decimal_asc' : 'field_product:commerce_price:amount_decimal';
   $items['product_display__field_product_commerce_price_amount_decimal'] = entity_import('search_api_sort', '{
     "index_id" : "product_display",
-    "field" : "' . $price_sort_field . '",
+    "field" : "field_product_commerce_price_amount_decimal_asc",
     "name" : "Price",
     "enabled" : "1",
     "weight" : "0",
@@ -172,9 +171,8 @@ function theme_commerce_kickstart_search_current_search_text(array $variables) {
  * Implements hook_block_info_alter().
  */
 function commerce_kickstart_search_block_info_alter(&$blocks, $theme, $code_blocks) {
-  // Override facetapi blocks label.
-  if (isset($blocks['facetapi']['TFVaQKSORCPdrULxfXDnLQZ40xH0Nper'])) {
+  // Provide a default label for the facetapi block.
+  if (isset($blocks['facetapi']['TFVaQKSORCPdrULxfXDnLQZ40xH0Nper']) && empty($blocks['facetapi']['TFVaQKSORCPdrULxfXDnLQZ40xH0Nper']['title'])) {
     $blocks['facetapi']['TFVaQKSORCPdrULxfXDnLQZ40xH0Nper']['title'] = t('Price');
-    $blocks['facetapi']['TFVaQKSORCPdrULxfXDnLQZ40xH0Nper']['weight'] = -1;
   }
 }

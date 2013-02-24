@@ -1,14 +1,24 @@
 <?php
 
 /**
+ * @file
+ * Product display data alteration callback.
+ */
+
+/**
  * Data alteration callback that filters out nodes that aren't
  * product displays.
  */
 class CommerceSearchApiProductDisplayFilter extends SearchApiAbstractAlterCallback {
 
   /**
+   * Check whether this data-alter callback is applicable for a certain index.
+   *
    * @param SearchApiIndex $index
+   *   The SearchApiIndex this data alteration callback resides on.
+   *
    * @return bool
+   *   A boolean whether or not this index is supported.
    */
   public function supportsIndex(SearchApiIndex $index) {
     $bundles = commerce_product_reference_node_types();
@@ -16,8 +26,7 @@ class CommerceSearchApiProductDisplayFilter extends SearchApiAbstractAlterCallba
   }
 
   /**
-   * Exclude items that doesn't have a product reference field attached to
-   * the bundle.
+   * Exclude nodes that aren't product displays.
    */
   public function alterItems(array &$items) {
     if ($bundles = commerce_product_reference_node_types()) {

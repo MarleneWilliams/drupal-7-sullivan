@@ -31,9 +31,25 @@ img {
     width: 225px;
   }
 }
+/**
+* Add to cart popin.
+*/
+div.messages.commerce-add-to-cart-confirmation {
+  .message-inner {
+    .button-wrapper {
+      width: 25%;
+    }
+    .view-confirm-message-product-display {
+      .view-content {
+        width: 180px !important;
+      }
+    }
+  }
+}
 /**********************************************
 * 5.3. Product page
 **********************************************/
+
 /* Cloud zoom */
 .node-product-type .cloud-zoom-container {
   margin-left: 130px;
@@ -56,6 +72,7 @@ img {
 /**
 * Checkout progress
 */
+ul.inline.commerce-checkout-progress,
 ol.inline.commerce-checkout-progress {
   li {
     padding-right: 50px;
@@ -94,4 +111,3 @@ ol.inline.commerce-checkout-progress {
     }
   }
 }
-

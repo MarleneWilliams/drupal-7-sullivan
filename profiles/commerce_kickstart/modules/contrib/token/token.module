@@ -562,7 +562,10 @@ function _token_module($type, $name) {
  * uasort() callback to sort tokens by the 'name' property.
  */
 function token_asort_tokens($token_a, $token_b) {
-  return strnatcmp($token_a['name'], $token_b['name']);
+  if(isset($token_a['name']) && is_string($token_a['name']) && isset($token_b['name']) && is_string($token_b['name'])) {
+    return strnatcmp($token_a['name'], $token_b['name']);
+  }
+  return FALSE;
 }
 
 /**
@@ -739,7 +742,7 @@ function token_element_validate_token_context(&$element, &$form_state) {
  * Implements hook_form_FORM_ID_alter().
  */
 function token_form_field_ui_field_edit_form_alter(&$form, $form_state) {
-  if (!isset($form['instance'])) {
+  if (!isset($form['instance']) || !empty($form['#field']['locked'])) {
     return;
   }
 

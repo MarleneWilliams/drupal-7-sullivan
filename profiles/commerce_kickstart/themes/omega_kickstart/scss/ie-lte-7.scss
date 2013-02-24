@@ -167,16 +167,15 @@ img {
 /**
 * Add to cart popin.
 */
+div.commerce_add_to_cart_confirmation_overlay {
+  display: none;
+}
 div.messages.commerce-add-to-cart-confirmation {
   .message-inner {
-    .added-product-title {
-      float: left; /* LTR */
-      width: 180px;
-    }
-    .button-wrapper {
-      clear: none;
-      float: right; /* LTR */
-      width: 166px;
+    .view-confirm-message-product-display {
+      .view-content {
+        width: 180px !important;
+      }
     }
   }
 }
@@ -186,22 +185,25 @@ div.messages.commerce-add-to-cart-confirmation {
 /**
 * Checkout progress
 */
-ol.inline.commerce-checkout-progress li {
-  background-image: url('../images/bg_checkout_progress_ie.png');
-  background-position: right center; /* LTR */
-  background-repeat: no-repeat;
-  padding-right: 50px; /* LTR */
-  padding-left: 25px; /* LTR */
-  right: -5px; /* LTR */
-}
-ol.inline.commerce-checkout-progress li.active {
-  background-image: url('../images/bg_checkout_progress_ie.png');
-}
-ol.inline.commerce-checkout-progress li.previous {
-  background-image: url('../images/bg_checkout_progress_ie_visited.png');
-}
-ol.inline.commerce-checkout-progress li.last {
-  background-image: url('../images/bg_checkout_progress_ie_last.png');
+ul.inline.commerce-checkout-progress,
+ol.inline.commerce-checkout-progress {
+  li {
+    background-image: url('../images/bg_checkout_progress_ie.png');
+    background-position: right center; /* LTR */
+    background-repeat: no-repeat;
+    padding-right: 50px; /* LTR */
+    padding-left: 25px; /* LTR */
+    right: -5px; /* LTR */
+    &.active {
+      background-image: url('../images/bg_checkout_progress_ie.png');
+    }
+    &.previous {
+      background-image: url('../images/bg_checkout_progress_ie_visited.png');
+    }
+    &.last {
+      background-image: url('../images/bg_checkout_progress_ie_last.png');
+    }
+  }
 }
 /**************************************************
 * --
@@ -211,7 +213,7 @@ ol.inline.commerce-checkout-progress li.last {
 .page-user,
 .page-checkout {
   .section-footer {
-    @include clearfix();
+    @include clearfix;
   }
 }
 

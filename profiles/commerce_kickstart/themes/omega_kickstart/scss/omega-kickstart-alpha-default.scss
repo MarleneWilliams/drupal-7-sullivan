@@ -179,30 +179,7 @@
 */
 #block-views-demo-content-slideshow-block-1 {
   /* HP blocks: Slideshow */
-  .bx-wrapper,
-  .bx-wrapper .bx-window {
-    /*max-height: 168px;
-    width: 100% !important;*/
-  }
-  .bx-wrapper ul.event-slider {
-    //max-height: 165px;
-    //width: 100%;
-    //min-width: 344px;
-    //max-width: 344px;
-    li {
-      height: 168px;
-      margin: 0 auto;
-      width: 344px;
-      img {
-        overflow: hidden;
-      }
-      /*img {
-
-        height: auto;
-        width: 100%;
-      }*/
-    }
-  }
+  @include clearfix;
 }
 /**********************************************
 * 3.3. Zone postscript
@@ -298,19 +275,33 @@
 /**
 * Add to cart popin.
 */
+.view-confirm-message-product-display {
+  clear: both;
+  float: none;
+  width: auto;
+}
+
 div.messages.commerce-add-to-cart-confirmation .message-inner {
+  .added-product-title {
+    float: left; /* LTR */
+    width: 180px;
+  }
   .button-wrapper {
-    float: none;
+    //float: none;
     height: 100%;
     position: absolute;
     right: 0; /* LTR */
   }
   .view-confirm-message-product-display {
     float: left; /* LTR */
-    .view-content .views-field-commerce-product .content {
-      .field-name-field-images {
-        clear: left; /* LTR */
-        float: left; /* LTR */
+    padding-bottom: 20px;
+    .view-content {
+      //margin-left: 115px; /* LTR */
+      .views-field-commerce-product .content {
+        .field-name-field-images {
+          position: relative;
+          left: 0;
+        }
       }
     }
   }

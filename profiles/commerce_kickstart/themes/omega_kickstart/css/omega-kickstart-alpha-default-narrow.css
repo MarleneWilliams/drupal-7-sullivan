@@ -31,19 +31,6 @@
   #block-views-demo-content-slideshow-block-1 .bx-wrapper,
   #block-views-demo-content-slideshow-block-1 .bx-wrapper .bx-window {
     padding-bottom: 0; }
-  #block-views-demo-content-slideshow-block-1 .bx-wrapper ul.event-slider {
-    /*li {
-      min-height: 168px;
-      height: 357px;
-      max-height: 480px;
-      margin: 0;
-      min-width: 330px;
-      width: 700px;
-      max-width: 940px;
-    }*/ }
-    #block-views-demo-content-slideshow-block-1 .bx-wrapper ul.event-slider li {
-      height: 357px;
-      width: 700px; }
 
 /**************************************************
 * --
@@ -61,6 +48,27 @@
 /**********************************************
 * 5.3. Product page
 **********************************************/
+/**
+* Add to cart popin.
+*/
+div.messages.commerce-add-to-cart-confirmation .message-inner .added-product-title {
+  float: left;
+  /* LTR */
+  width: 180px; }
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  /* LTR */ }
+div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display {
+  float: left;
+  /* LTR */ }
+  div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-message-product-display .view-content .views-field-commerce-product .content .field-name-field-images {
+    clear: left;
+    /* LTR */
+    float: left;
+    /* LTR */ }
+
 .node-product-type .cloud-zoom-container #wrap {
   float: right !important;
   /* LTR */ }

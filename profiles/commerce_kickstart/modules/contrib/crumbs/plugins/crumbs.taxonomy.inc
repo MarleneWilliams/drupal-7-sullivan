@@ -75,7 +75,13 @@ class _taxonomy_CrumbsMultiPlugin_termReference implements crumbs_MultiPlugin {
 
     // Return the path of the first found term, if any.
     foreach ($terms as $tid => $term_info) {
-      return 'taxonomy/term/' . $tid;
+      $term = taxonomy_term_load($tid);
+      if (!empty($term)) {
+        $uri = entity_uri('taxonomy_term', $term);
+        if (!empty($uri)) {
+          return $uri['path'];
+        }
+      }
     }
   }
 
@@ -162,7 +168,7 @@ class taxonomy_CrumbsMultiPlugin_termParent implements crumbs_MultiPlugin {
       $api->addRule($voc->machine_name, 'Vocabulary: '. $voc->name);
     }
     // Now set a generic title for the entire plugin.
-    $api->addRule('*', t('Set taxonomy/term/% as the parent for node/%, if the node is tagged with a term.'));
+    $api->addRule('*', t('Set taxonomy/term/123 as the parent for taxonomy/term/456, if 123 is the parent term of 456.'));
   }
 
   /**
@@ -178,8 +184,10 @@ class taxonomy_CrumbsMultiPlugin_termParent implements crumbs_MultiPlugin {
     $result = array();
     foreach ($parents as $parent_tid => $parent_term) {
       if ($parent_term->vocabulary_machine_name == $term->vocabulary_machine_name) {
-        $path = 'taxonomy/term/' . $parent_tid;
-        return array($term->vocabulary_machine_name => $path);
+        $uri = entity_uri('taxonomy_term', $parent_term);
+        if (!empty($uri)) {
+          return array($term->vocabulary_machine_name => $uri['path']);
+        }
       }
     }
   }

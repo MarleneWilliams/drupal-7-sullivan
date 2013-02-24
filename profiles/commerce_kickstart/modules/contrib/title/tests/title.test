@@ -168,7 +168,7 @@ class TitleAdminSettingsTestCase extends DrupalWebTestCase {
    * Check for automated title_field attachment.
    */
   function testAutomatedFieldAttachement() {
-    $admin_user = $this->drupalCreateUser(array('administer content types', 'administer taxonomy'));
+    $admin_user = $this->drupalCreateUser(array('administer site configuration', 'administer taxonomy'));
     $this->drupalLogin($admin_user);
 
     $edit = array(

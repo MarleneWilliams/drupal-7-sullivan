@@ -1,10 +1,18 @@
 <?php
 
 /**
+ * @file
+ * FacetApiFilter, filter out items that do not change search results.
+ */
+
+/**
  * Filter out items that do not change search results.
  */
 class CommerceSearchApiSameSearch extends FacetapiFilter {
 
+  /**
+   * Executes the filter by returning an altered render array.
+   */
   public function execute(array $build) {
     $this->filterItems($build, $this->adapter->getResultCount());
     return $build;
