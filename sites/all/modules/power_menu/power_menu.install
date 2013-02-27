@@ -88,3 +88,19 @@ function power_menu_update_7200() {
 
   // Migrate the properties to fields
 }
+
+/**
+ * Rename all existing bundle names to proper machine names instead of menu keys with hyphens.
+ */
+function power_menu_update_7201() {
+
+  // Update bundle names
+  $menus = variable_get('power_menu_fields_menus', array());
+  foreach ($menus as $key => $bundle_name_old) {
+    $bundle_name_new = power_menu_create_machine_name($bundle_name_old);
+    field_attach_rename_bundle('power_menu_fields', $bundle_name_old, $bundle_name_new);
+  }
+
+  // Update saved entities with new bundle names
+  db_query("UPDATE power_menu_fields SET menu_name = REPLACE(menu_name,'-', '_')");
+}

@@ -326,14 +326,14 @@ function power_menu_fields_configuration_form() {
         'data' => array(
           '#type' => 'link',
           '#title' => t('Manage fields'),
-          '#href' => 'admin/config/search/power_menu/fields/' . $key . '/fields',
+          '#href' => 'admin/config/search/power_menu/fields/' . power_menu_create_machine_name($key) . '/fields',
         ),
       ),
       'operation_display' => array(
         'data' => array(
           '#type' => 'link',
           '#title' => t('Manage display'),
-          '#href' => 'admin/config/search/power_menu/fields/' . $key . '/display',
+          '#href' => 'admin/config/search/power_menu/fields/' . power_menu_create_machine_name($key) . '/display',
         ),
       ),
     );
@@ -346,14 +346,14 @@ function power_menu_fields_configuration_form() {
         'data' => array(
           '#type' => 'link',
           '#title' => t('Manage fields'),
-          '#href' => 'admin/config/search/power_menu/fields/' . $key . '/fields',
+          '#href' => 'admin/config/search/power_menu/fields/' . power_menu_create_machine_name($key) . '/fields',
         ),
       );
       $options[$key]['operation_display'] = array(
         'data' => array(
           '#type' => 'link',
           '#title' => t('Manage display'),
-          '#href' => 'admin/config/search/power_menu/fields/' . $key . '/display',
+          '#href' => 'admin/config/search/power_menu/fields/' . power_menu_create_machine_name($key) . '/display',
         ),
       );
 

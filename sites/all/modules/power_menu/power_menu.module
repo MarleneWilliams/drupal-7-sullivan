@@ -70,6 +70,8 @@ function power_menu_menu_alter(&$items) {
   $menus = variable_get('power_menu_fields_menus', array());
 
   foreach ($menus as $key => $value) {
+    $value = power_menu_create_machine_name($value);
+
     // Hide the field diplay
     $items['admin/config/search/power_menu/fields/' . $value . '/fields']['type'] = MENU_CALLBACK;
     $items['admin/config/search/power_menu/fields/' . $value . '/display']['type'] = MENU_CALLBACK;
@@ -504,10 +506,13 @@ function power_menu_menu_delete($menu) {
  * @param $form_state
  */
 function power_menu_add_fields_entity_fields($menu_name, $mlid, &$form, &$form_state) {
+  // Create bundle name for the given menu name
+  $bundle_name = power_menu_create_machine_name($menu_name);
+
   // Check is this field selected for menu fields
   $selected_menus = variable_get('power_menu_fields_menus', array());
 
-  // Check is this menu selected for fieldable (bundle exists)
+  // Check is this menu selected for fieldable
   if (in_array($menu_name, $selected_menus)) {
 
     $form['#submit'][] = 'power_menu_form_menu_edit_fields_submit';
@@ -527,7 +532,7 @@ function power_menu_add_fields_entity_fields($menu_name, $mlid, &$form, &$form_s
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'power_menu_fields')
       ->propertyCondition('mlid', $mlid)
-      ->propertyCondition('menu_name', $menu_name);
+      ->propertyCondition('menu_name', $bundle_name);
     $result = $query->execute();
 
     // Is no entity found, create a new
@@ -535,7 +540,7 @@ function power_menu_add_fields_entity_fields($menu_name, $mlid, &$form, &$form_s
 
       $entity = entity_create('power_menu_fields',
         array(
-             'menu_name' => $menu_name,
+             'menu_name' => $bundle_name,
              'mlid' => $mlid,
         )
       );
@@ -611,6 +616,17 @@ function power_menu_form_menu_edit_fields_submit($form, &$form_state) {
     $entity = $form_state['values']['power_menu']['fields']['entity'];
     entity_form_submit_build_entity('power_menu_fields', $entity, $form['power_menu']['fields'], $form_state);
     $entity->save();
+
+    // Clear cache for given path or the default entry
+    if (isset($form_state['values']['link_path'])) {
+      cache_clear_all('fields:' . $form_state['values']['link_path'], 'cache_power_menu');
+    }
+    elseif ($entity->mlid == 0) {
+      cache_clear_all('fields:/', 'cache_power_menu');
+    }
+
+    // Clear block cache
+    cache_clear_all('power_menu:power_menu_field_display', 'cache_block', TRUE);
   }
 }
 
@@ -674,6 +690,10 @@ function power_menu_entity_info() {
   $menus = variable_get('power_menu_fields_menus', array());
   $bundles = array();
   foreach ($menus as $key => $value) {
+
+    // Allways use underscores for menu key hyphens, because hyphens are not allowed for bundle names.
+    $value = power_menu_create_machine_name($value);
+
     $bundles[$value] = array(
       'admin' => array(
         'path' => 'admin/config/search/power_menu/fields/' . $value,
@@ -718,13 +738,22 @@ function power_menu_entity_info() {
  *   The entity or NULL is no entity found for the given path
  */
 function power_menu_get_fields_entity($path = NULL, $fallback = TRUE, $menu_name = 'main-menu') {
+  // Create used machine/bundle name for the given menu
+  $menu_name = power_menu_create_machine_name($menu_name);
 
   // Is no path set, use the current sytsem path
   if (!isset($path)) {
     $path = implode('/', arg());
   }
 
-  $cache_key = 'fields:' . $path;
+  // The cache is used to store the resolved menu item path from power menu for given system path.
+  // With this mechanism it is not necessary to store the field entity for every system path
+  $cache_path_key = 'path:' . $path;
+  $cached_path = cache_get($cache_path_key, 'cache_power_menu');
+  $lookup_path = $cached_path ? $cached_path->data : $path;
+
+  // Loaded menu field entities also stored in cache. Get it.
+  $cache_key = 'fields:' . $lookup_path;
   $entity = cache_get($cache_key, 'cache_power_menu');
   $entity = $entity ? $entity->data : NULL;
 
@@ -732,27 +761,28 @@ function power_menu_get_fields_entity($path = NULL, $fallback = TRUE, $menu_name
   if (!$entity) {
 
     // Lookup for the default menu field entity?
-    if ($path == '/' && $fallback) {
+    if ($lookup_path == '/' && $fallback) {
 
       $id = power_menu_get_fields_entity_id_by_menu($menu_name);
     }
     else {
       // Is the defined path the front page, get <front> as search condition
-      if (variable_get('site_frontpage', 'node') == $path) {
-        $path = '<front>';
+      if (variable_get('site_frontpage', 'node') == $lookup_path) {
+        $lookup_path = '<front>';
       }
 
       // Get the menu link from given path
       $query = db_select('power_menu_fields', 'pmf');
       $query->leftJoin('menu_links', 'ml', 'pmf.mlid = ml.mlid');
       $id = $query->fields('pmf', array('id'))
-        ->condition('ml.link_path', $path)
+        ->condition('ml.link_path', $lookup_path)
         ->execute()->fetchField();
     }
 
     // No element found, lookup for the default entry
-    if (!$id && $fallback && $path != '/') {
+    if (!$id && $fallback && $lookup_path != '/') {
       $entity = power_menu_get_fields_entity('/', TRUE, $menu_name);
+      $lookup_path = '/';
     }
     elseif ($id) {
       $entity = entity_load('power_menu_fields', array($id));
@@ -760,7 +790,8 @@ function power_menu_get_fields_entity($path = NULL, $fallback = TRUE, $menu_name
       $entity = $entity ? array_pop($entity) : NULL;
     }
 
-    cache_set($cache_key, $entity, 'cache_power_menu');
+    cache_set($cache_path_key, $lookup_path, 'cache_power_menu');
+    cache_set('fields:' . $lookup_path, $entity, 'cache_power_menu');
   }
 
   return $entity;
@@ -907,10 +938,39 @@ function power_menu_get_fields_entity_id_by_mlid($mlid) {
  *  The power_menu field entity id or FALSE is no entity found for this menu name
  */
 function power_menu_get_fields_entity_id_by_menu($menu_name) {
+  $bundle_name = power_menu_create_machine_name($menu_name);
+
   $id = db_select('power_menu_fields', 'pmf')
     ->fields('pmf', array('id'))
     ->condition('pmf.mlid', 0)
-    ->condition('pmf.menu_name', $menu_name)
+    ->condition('pmf.menu_name', $bundle_name)
     ->execute()->fetchField();
   return $id;
+}
+
+/**
+ * Implements hook_features_pipe_COMPONENT_alter().
+ */
+function power_menu_features_pipe_field_alter(&$pipe, $data, $export) {
+  // Add a dependency to power_menu when Power Menu fields exported to Features
+  foreach ($data as $identifier) {
+    if(strpos($identifier, 'power_menu_fields') === 0) {
+      $pipe['dependencies'][] = 'power_menu';
+      break;
+    }
+  }
+}
+
+/**
+ * Creates a machine name from given string.
+ *
+ * At the moment, it replaces all hyphens with underscores.
+ *
+ * @param $value
+ *   The string to use as machine names
+ * @return
+ *   The machine name
+ */
+function power_menu_create_machine_name($value) {
+  return $value = str_replace('-', '_', $value);
 }
