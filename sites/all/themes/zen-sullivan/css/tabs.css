@@ -15,7 +15,7 @@
   font-weight: normal;
   font-style: normal;
 }*/
-/* line 11, ../sass/fontello.scss */
+/* line 11, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/fontello.scss */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "Fontello";
@@ -155,7 +155,7 @@ ul.secondary a:visited {
   text-shadow: 1px 1px 0 white;
   background-color: #f2f2f2;
   color: #666;
-  padding: 0 0.5em;
+  padding: 0 .5em;
 }
 /* line 106, ../sass/tabs.scss */
 ul.secondary a:hover,

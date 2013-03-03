@@ -17,7 +17,7 @@
   font-weight: normal;
   font-style: normal;
 }*/
-/* line 11, ../sass/fontello.scss */
+/* line 11, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/fontello.scss */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "Fontello";
@@ -274,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 244, ../sass/normalize.scss */
 hr {
   height: 1px;
-  border: 1px solid #666666;
+  border: 1px solid #666;
   padding-bottom: -1px;
   margin: 1.5em 0;
 }
@@ -610,11 +610,11 @@ input[type="submit"] {
   border-radius: 3px;
   color: #333333;
   line-height: 1;
-  padding: 0.5em 2em;
+  padding: .5em 2em;
   text-align: center;
   text-shadow: 0 1px 0 #bacf97;
 }
-/* line 79, ../sass/_custom.scss */
+/* line 79, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/_custom.scss */
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -631,7 +631,7 @@ input[type="submit"]:hover {
   cursor: pointer;
   text-shadow: 0 1px 0 #c5d7a9;
 }
-/* line 89, ../sass/_custom.scss */
+/* line 89, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/_custom.scss */
 button:active,
 input[type="button"]:active,
 input[type="reset"]:active,

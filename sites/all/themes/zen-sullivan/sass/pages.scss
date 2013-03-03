@@ -31,7 +31,7 @@ body {
   background: $page-bgc url("../images/coins1-600.png") no-repeat scroll 170% 1em;
   margin: 0 auto;
   padding-top: 4.5em;
-  width: 90%;
+  width: $page-width;
 }
 
 /*
@@ -142,7 +142,7 @@ body {
   margin: 0 -10px;
   position: fixed;
   top: 0;
-  width: 90%;
+  width: $page-width;
   z-index: 500;
   .block {
     float: left;

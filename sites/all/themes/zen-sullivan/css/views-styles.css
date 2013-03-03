@@ -10,7 +10,7 @@
   font-weight: normal;
   font-style: normal;
 }*/
-/* line 11, ../sass/fontello.scss */
+/* line 11, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/fontello.scss */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "Fontello";
@@ -90,37 +90,75 @@
  * Product listings
  */
 /* line 52, ../sass/views-styles.scss */
-.products-latest:after {
-  content: "";
-  display: block;
-  clear: both;
+.view-taxonomy-term,
+.product-list {
+  overflow: hidden;
+  width: 100%;
 }
-/* line 57, ../sass/views-styles.scss */
-.products-latest .views-row {
-  float: left;
-  margin-bottom: 2em;
-  width: 49%;
-}
-/* line 62, ../sass/views-styles.scss */
-.products-latest .views-row-odd {
-  clear: both;
-}
-
-/* line 69, ../sass/views-styles.scss */
-.view-taxonomy-term .item-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/* line 74, ../sass/views-styles.scss */
-.view-taxonomy-term .item-list .views-row {
+/* line 55, ../sass/views-styles.scss */
+.view-taxonomy-term .views-row,
+.product-list .views-row {
+  border-bottom: 1px solid gray;
   float: left;
   margin: 0 3% 2em 0;
-  padding: 0;
+  padding: 0 0 1em 0;
   width: 30%;
 }
-/* line 79, ../sass/views-styles.scss */
-.view-taxonomy-term .item-list .views-row .field-name-title-field {
-  font-size: 1.125em;
-  margin: 0;
+/* line 61, ../sass/views-styles.scss */
+.view-taxonomy-term .views-row .views-field-nothing,
+.product-list .views-row .views-field-nothing {
+  height: 8.5em;
+  position: relative;
+}
+/* line 65, ../sass/views-styles.scss */
+.view-taxonomy-term .views-row h4.product-title,
+.product-list .views-row h4.product-title {
+  margin: .25em 0;
+}
+/* line 68, ../sass/views-styles.scss */
+.view-taxonomy-term .views-row .product-price,
+.product-list .views-row .product-price {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background-color: #a2be75;
+  bottom: 0;
+  font-weight: bold;
+  padding: 0.2em 0.75em;
+  position: absolute;
+}
+
+/* line 80, ../sass/views-styles.scss */
+.products-latest .views-row .views-field-nothing {
+  height: 9em;
+  font-size: .9em;
+}
+
+/*
+ * Exposed filters
+ */
+/* line 91, ../sass/views-styles.scss */
+.view-filters .views-exposed-form {
+  margin-bottom: 2em;
+}
+/* line 94, ../sass/views-styles.scss */
+.view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
+  border-right: 1px solid #333333;
+  float: left;
+  padding: 0 .5em;
+}
+/* line 98, ../sass/views-styles.scss */
+.view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
+  padding-left: 0;
+}
+/* line 101, ../sass/views-styles.scss */
+.view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
+  border-right: 0 none;
+  padding-right: 0;
+}
+/* line 107, ../sass/views-styles.scss */
+.view-filters .views-exposed-form .views-widget-per-page {
+  float: right;
 }

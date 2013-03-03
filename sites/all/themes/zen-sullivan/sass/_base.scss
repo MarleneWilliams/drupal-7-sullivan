@@ -177,6 +177,12 @@ $button-c: lighten($gray, 40%);
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
+// Page width
+$page-width: 95%;
+
+// Resetting some defaults
+$zen-gutter-width:  25px;
+
 
 //
 // Partials to be shared with all .scss files.
