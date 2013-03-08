@@ -99,3 +99,17 @@
   $button-c: lighten($green, 20%);
   @include button;
 }
+
+
+
+// Image styles (move to reusable styles)
+img {
+  &.float-left {
+    float: left;
+    margin: 0 2em 2em 0;
+  }
+  &.float-right {
+    float: right;
+    margin: 0 0 2em 2em;
+  }
+}

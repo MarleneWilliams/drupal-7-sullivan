@@ -7,7 +7,7 @@
   font-weight: normal;
   font-style: normal;
 }*/
-/* line 11, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/fontello.scss */
+/* line 11, ../sass/fontello.scss */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "Fontello";
@@ -29,6 +29,17 @@
   /* font-size: 120%; */
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* line 107, ../sass/_custom.scss */
+img.float-left {
+  float: left;
+  margin: 0 2em 2em 0;
+}
+/* line 111, ../sass/_custom.scss */
+img.float-right {
+  float: right;
+  margin: 0 0 2em 2em;
 }
 
 /* =============================================================================

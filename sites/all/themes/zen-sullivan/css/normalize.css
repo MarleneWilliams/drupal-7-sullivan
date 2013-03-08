@@ -17,7 +17,7 @@
   font-weight: normal;
   font-style: normal;
 }*/
-/* line 11, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/fontello.scss */
+/* line 11, ../sass/fontello.scss */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "Fontello";
@@ -39,6 +39,17 @@
   /* font-size: 120%; */
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* line 107, ../sass/_custom.scss */
+img.float-left {
+  float: left;
+  margin: 0 2em 2em 0;
+}
+/* line 111, ../sass/_custom.scss */
+img.float-right {
+  float: right;
+  margin: 0 0 2em 2em;
 }
 
 /* =============================================================================
@@ -614,7 +625,7 @@ input[type="submit"] {
   text-align: center;
   text-shadow: 0 1px 0 #bacf97;
 }
-/* line 79, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/_custom.scss */
+/* line 79, ../sass/_custom.scss */
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -631,7 +642,7 @@ input[type="submit"]:hover {
   cursor: pointer;
   text-shadow: 0 1px 0 #c5d7a9;
 }
-/* line 89, /Applications/MAMP/htdocs/drupal-7-sullivan/sites/all/themes/zen-sullivan/sass/_custom.scss */
+/* line 89, ../sass/_custom.scss */
 button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
