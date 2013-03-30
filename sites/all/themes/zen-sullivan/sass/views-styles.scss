@@ -55,12 +55,15 @@
   .views-row {
     border-bottom: 1px solid $gray;
     float: left;
+    height: 23em;
     margin: 0 3% 2em 0;
     padding: 0 0 1em 0;
+    position: relative;
     width: 30%;
     .views-field-nothing {
+      bottom: 1em;
       height: 8.5em;
-      position: relative;
+      position: absolute;
     }
     h4.product-title {
       margin: .25em 0;

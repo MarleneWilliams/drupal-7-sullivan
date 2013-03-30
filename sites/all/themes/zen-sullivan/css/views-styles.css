@@ -111,22 +111,25 @@ img.float-right {
 .product-list .views-row {
   border-bottom: 1px solid gray;
   float: left;
+  height: 23em;
   margin: 0 3% 2em 0;
   padding: 0 0 1em 0;
+  position: relative;
   width: 30%;
 }
-/* line 61, ../sass/views-styles.scss */
+/* line 63, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row .views-field-nothing,
 .product-list .views-row .views-field-nothing {
+  bottom: 1em;
   height: 8.5em;
-  position: relative;
+  position: absolute;
 }
-/* line 65, ../sass/views-styles.scss */
+/* line 68, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row h4.product-title,
 .product-list .views-row h4.product-title {
   margin: .25em 0;
 }
-/* line 68, ../sass/views-styles.scss */
+/* line 71, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row .product-price,
 .product-list .views-row .product-price {
   -webkit-border-radius: 0.5em;
@@ -141,7 +144,7 @@ img.float-right {
   position: absolute;
 }
 
-/* line 80, ../sass/views-styles.scss */
+/* line 83, ../sass/views-styles.scss */
 .products-latest .views-row .views-field-nothing {
   height: 9em;
   font-size: .9em;
@@ -150,26 +153,26 @@ img.float-right {
 /*
  * Exposed filters
  */
-/* line 91, ../sass/views-styles.scss */
+/* line 94, ../sass/views-styles.scss */
 .view-filters .views-exposed-form {
   margin-bottom: 2em;
 }
-/* line 94, ../sass/views-styles.scss */
+/* line 97, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
   border-right: 1px solid #333333;
   float: left;
   padding: 0 .5em;
 }
-/* line 98, ../sass/views-styles.scss */
+/* line 101, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
   padding-left: 0;
 }
-/* line 101, ../sass/views-styles.scss */
+/* line 104, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
   border-right: 0 none;
   padding-right: 0;
 }
-/* line 107, ../sass/views-styles.scss */
+/* line 110, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-widget-per-page {
   float: right;
 }
