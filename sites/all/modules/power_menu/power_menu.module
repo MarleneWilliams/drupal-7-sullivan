@@ -410,7 +410,9 @@ function power_menu_form_menu_edit_item_alter(&$form, &$form_state) {
   }
   else {
     // A new menu link is created
-    $menu_name = arg(4);
+    $menu_name = $form['original_item']['#value']['menu_name'];
+    // Set mlid to NULL in case 0 is used for the menu overview entity
+    $mlid = NULL;
   }
 
   // Add handler fields only when the  menu is defined as a power menu
@@ -614,6 +616,9 @@ function power_menu_form_menu_edit_fields_submit($form, &$form_state) {
   if (isset($form_state['values']['power_menu']['fields']['entity'])) {
     // Get and save the entity
     $entity = $form_state['values']['power_menu']['fields']['entity'];
+    // Unset the 'menu_name' because this is a value from the core menu field and overwrites in entity_form_submit_build_entity()
+    // the power_menu_fields bundle name also called 'menu_name'!
+    unset($form_state['values']['menu_name']);
     entity_form_submit_build_entity('power_menu_fields', $entity, $form['power_menu']['fields'], $form_state);
     $entity->save();
 
