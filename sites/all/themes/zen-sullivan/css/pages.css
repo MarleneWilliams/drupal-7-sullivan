@@ -320,16 +320,46 @@ span.field-label {
 /* line 247, ../sass/pages.scss */
 .more-link {
   /* Aggregator, blog, and forum more link */
+  font-size: .8em;
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+/* line 363, ../sass/fontello.scss */
+.more-link:before {
+  content: '\25c2';
+  /* '◂' */
+}
+/* line 252, ../sass/pages.scss */
+.more-link:before {
+  font-family: "Fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /*opacity: 0.8;*/
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - magrins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 /*
  * Sidebars
  */
-/* line 253, ../sass/pages.scss */
+/* line 260, ../sass/pages.scss */
 .sidebars {
   margin-top: .9em;
 }
-/* line 255, ../sass/pages.scss */
+/* line 262, ../sass/pages.scss */
 .sidebars .block-title {
   font-size: 1.75em;
   line-height: 1.25em;
@@ -354,7 +384,7 @@ span.field-label {
 /*
  * Page bottom
  */
-/* line 293, ../sass/pages.scss */
+/* line 300, ../sass/pages.scss */
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }
