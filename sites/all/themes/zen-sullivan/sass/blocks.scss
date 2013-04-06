@@ -25,7 +25,8 @@
   }
 }
 
-.block-menu {
+.block-menu,
+.block-menu-block {
   ul.menu {
     margin: 0;
     padding: 0;
@@ -137,14 +138,16 @@
         font-size: 1.75em;
       }
     }
-    .view-empty {
-      p {
-        float: left;
-        font-family: $heading-f;
-        font-size: 1.5em;
-        font-weight: bold;
-        line-height: 1.25;
-        margin: 0 .75em 0 .5em;
+    .view-empty p,
+    .line-item-quantity {
+      float: left;
+      font-family: $heading-f;
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.25;
+      margin: 0 .75em 0 .5em;
+      .line-item-quantity-label {
+        display: none;
       }
     }
     .line-item-summary,
@@ -219,5 +222,17 @@
     .views-submit-button {
       display: none;
     }
+  }
+}
+
+// Subscription blocks
+.block-mailchimp-lists {
+  float: left;
+  padding-bottom: 3em;
+  width: 43%;
+  &.first {
+    border-right: 1px solid lighten($gray, 30%);
+    margin-right: 10.5%;
+    padding-right: 3%
   }
 }

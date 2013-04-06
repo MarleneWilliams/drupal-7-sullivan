@@ -32,6 +32,7 @@ body {
   margin: 0 auto;*/
   background: transparent url(../images/page-bg-1.png) no-repeat -100px -300px;
   padding-top: 4.5em;
+  max-width: 100%;
   /*width: $page-width;*/
 }
 
@@ -81,6 +82,7 @@ body {
   font-size: 5em;
   font-weight: normal;
   line-height: .85;
+  max-width: 100%;
   text-align: center;
   width: 9em;
 
@@ -249,10 +251,11 @@ span.field-label { /* The inline field label used by the Fences module */
  * Sidebars
  */
 .sidebars {
+  margin-top: .9em;
   .block-title {
-    font-size: 1.25em;
+    font-size: 1.75em;
     line-height: 1.25em;
-    padding-top: .85em;
+    /*padding-top: .1em;*/
   }
 }
 

@@ -52,13 +52,15 @@ ul li.leaf {
  */
 /* line 39, ../sass/navigation.scss */
 li a.active {
-  color: #000;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /*
  * Navigation bar
  */
-/* line 47, ../sass/navigation.scss */
+/* line 49, ../sass/navigation.scss */
 #navigation {
   /* overflow: hidden; */
   /* Sometimes you want to prevent overlapping with main div. */
@@ -70,11 +72,11 @@ li a.active {
   margin-bottom: 2em;
   margin-left: -4%;
 }
-/* line 59, ../sass/navigation.scss */
+/* line 61, ../sass/navigation.scss */
 #navigation .block {
   margin-bottom: 0;
 }
-/* line 64, ../sass/navigation.scss */
+/* line 66, ../sass/navigation.scss */
 #navigation .block-menu .block-title,
 #navigation .block-menu-block .block-title {
   position: absolute !important;
@@ -83,7 +85,7 @@ li a.active {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* line 69, ../sass/navigation.scss */
+/* line 71, ../sass/navigation.scss */
 #navigation ul.links,
 #navigation ul.menu {
   /* Menu block links */
@@ -92,7 +94,7 @@ li a.active {
   text-align: left;
   /* LTR */
 }
-/* line 74, ../sass/navigation.scss */
+/* line 76, ../sass/navigation.scss */
 #navigation ul.links li,
 #navigation ul.menu li {
   /* A simple method to get navigation links to appear in one line. */
@@ -103,14 +105,14 @@ li a.active {
   list-style-type: none;
   list-style-image: none;
 }
-/* line 81, ../sass/navigation.scss */
+/* line 83, ../sass/navigation.scss */
 #navigation ul.sf-menu {
   /*background-color: $nav-bgc;*/
   margin: 0;
   text-align: center;
   width: 100%;
 }
-/* line 86, ../sass/navigation.scss */
+/* line 88, ../sass/navigation.scss */
 #navigation ul.sf-menu li {
   background-color: transparent;
   display: inline-block;
@@ -118,18 +120,18 @@ li a.active {
   font-family: "Open Sans Condensed", Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1.75em;
 }
-/* line 92, ../sass/navigation.scss */
+/* line 94, ../sass/navigation.scss */
 #navigation ul.sf-menu li a {
   border: 0 none;
   color: #997317;
   text-decoration: none;
 }
-/* line 96, ../sass/navigation.scss */
+/* line 98, ../sass/navigation.scss */
 #navigation ul.sf-menu li a:hover, #navigation ul.sf-menu li a:active, #navigation ul.sf-menu li a:focus, #navigation ul.sf-menu li a.sfHover {
   /*@include text-shadow(lighten($nav-c, 15%) 0 0 .1em, $page-bgc 0 0 .5em);*/
   background-color: transparent;
 }
-/* line 101, ../sass/navigation.scss */
+/* line 103, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul {
   background-color: rgba(255, 255, 255, 0.8);
   /*border-bottom: darken($nav-bgc, 20%);
@@ -138,22 +140,41 @@ li a.active {
   margin: 2em 0 0 1.15em;
   text-align: left;
 }
-/* line 109, ../sass/navigation.scss */
+/* line 111, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a {
   /*border-bottom: 1px solid $nav-bgc;
   border-top: 1px solid $nav-bgc;*/
 }
-/* line 112, ../sass/navigation.scss */
+/* line 114, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a:hover, #navigation ul.sf-menu li ul li a:active, #navigation ul.sf-menu li ul li a:focus {
   background-color: white;
   /*border-bottom: 1px solid darken($nav-bgc, 5%);
   border-top: 1px solid darken($nav-bgc, 5%);*/
 }
 
+@media all and (min-width: 480px) and (max-width: 959px) {
+  /* line 127, ../sass/navigation.scss */
+  #main {
+    padding-top: 10em;
+  }
+
+  /* line 130, ../sass/navigation.scss */
+  #navigation {
+    height: 8em;
+  }
+  /* line 133, ../sass/navigation.scss */
+  #navigation ul.sf-menu li {
+    width: 27%;
+  }
+  /* line 135, ../sass/navigation.scss */
+  #navigation ul.sf-menu li a {
+    padding: .75em 0em;
+  }
+}
 /*
  * Main menu and Secondary menu links
  */
-/* line 134, ../sass/navigation.scss */
+/* line 153, ../sass/navigation.scss */
 #secondary-menu {
   float: right;
   /* LTR */

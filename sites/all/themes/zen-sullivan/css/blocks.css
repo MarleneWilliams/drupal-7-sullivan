@@ -51,158 +51,161 @@ img.float-right {
   /* Block title */
 }
 
-/* line 29, ../sass/blocks.scss */
-.block-menu ul.menu {
+/* line 30, ../sass/blocks.scss */
+.block-menu ul.menu,
+.block-menu-block ul.menu {
   margin: 0;
   padding: 0;
 }
-/* line 32, ../sass/blocks.scss */
-.block-menu ul.menu li {
+/* line 33, ../sass/blocks.scss */
+.block-menu ul.menu li,
+.block-menu-block ul.menu li {
   list-style: none;
   list-style-image: none;
 }
-/* line 35, ../sass/blocks.scss */
-.block-menu ul.menu li a {
+/* line 36, ../sass/blocks.scss */
+.block-menu ul.menu li a,
+.block-menu-block ul.menu li a {
   display: block;
   padding: .25em 0;
 }
 
-/* line 44, ../sass/blocks.scss */
+/* line 45, ../sass/blocks.scss */
 #block-aggregator-category-1 {
   /* Block for the latest news items in the first category */
 }
 
-/* line 47, ../sass/blocks.scss */
+/* line 48, ../sass/blocks.scss */
 #block-aggregator-feed-1 {
   /* Block for the latest news items in the first feed */
 }
 
-/* line 50, ../sass/blocks.scss */
+/* line 51, ../sass/blocks.scss */
 #block-block-1 {
   /* First block created with "Add block" link */
 }
 
-/* line 53, ../sass/blocks.scss */
+/* line 54, ../sass/blocks.scss */
 #block-blog-recent {
   /* "Recent blog posts" block */
 }
 
-/* line 56, ../sass/blocks.scss */
+/* line 57, ../sass/blocks.scss */
 #block-book-navigation {
   /* "Book navigation" block for the current book's table of contents */
 }
 
-/* line 59, ../sass/blocks.scss */
+/* line 60, ../sass/blocks.scss */
 #block-comment-recent {
   /* "Recent comments" block */
 }
 
-/* line 62, ../sass/blocks.scss */
+/* line 63, ../sass/blocks.scss */
 #block-forum-active {
   /* "Active forum topics" block */
 }
 
-/* line 65, ../sass/blocks.scss */
+/* line 66, ../sass/blocks.scss */
 #block-forum-new {
   /* "New forum topics" block */
 }
 
-/* line 68, ../sass/blocks.scss */
+/* line 69, ../sass/blocks.scss */
 #block-locale-language {
   /* Language switcher block */
 }
 
-/* line 71, ../sass/blocks.scss */
+/* line 72, ../sass/blocks.scss */
 #block-menu-menu-NAME {
   /* Custom menu block */
 }
 
-/* line 74, ../sass/blocks.scss */
+/* line 75, ../sass/blocks.scss */
 #block-node-recent {
   /* "Recent content" block */
 }
 
-/* line 77, ../sass/blocks.scss */
+/* line 78, ../sass/blocks.scss */
 #block-node-syndicate {
   /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
 }
 
-/* line 80, ../sass/blocks.scss */
+/* line 81, ../sass/blocks.scss */
 #block-poll-recent {
   /* "Most recent poll" block */
 }
 
-/* line 83, ../sass/blocks.scss */
+/* line 84, ../sass/blocks.scss */
 #block-profile-author-information {
   /* "Author information" block for the profile of the page's author */
 }
 
-/* line 86, ../sass/blocks.scss */
+/* line 87, ../sass/blocks.scss */
 #block-search-form {
   /* "Search form" block */
 }
 
-/* line 89, ../sass/blocks.scss */
+/* line 90, ../sass/blocks.scss */
 #block-shortcut-shortcuts {
   /* "Shortcuts" block */
 }
 
-/* line 92, ../sass/blocks.scss */
+/* line 93, ../sass/blocks.scss */
 #block-statistics-popular {
   /* "Popular content" block */
 }
 
-/* line 95, ../sass/blocks.scss */
+/* line 96, ../sass/blocks.scss */
 #block-system-main-menu {
   /* "Main menu" block */
 }
 
-/* line 98, ../sass/blocks.scss */
+/* line 99, ../sass/blocks.scss */
 #block-system-management {
   /* "Management" block for Drupal management menu */
 }
 
-/* line 101, ../sass/blocks.scss */
+/* line 102, ../sass/blocks.scss */
 #block-system-navigation {
   /* "Navigation" block for Drupal navigation menu */
 }
 
-/* line 104, ../sass/blocks.scss */
+/* line 105, ../sass/blocks.scss */
 #block-system-user-menu {
   /* "User menu" block for Drupal user menu */
 }
 
-/* line 107, ../sass/blocks.scss */
+/* line 108, ../sass/blocks.scss */
 #block-system-help {
   /* "System help" block */
 }
 
-/* line 110, ../sass/blocks.scss */
+/* line 111, ../sass/blocks.scss */
 #block-system-main {
   /* "Main page content" block */
 }
 
-/* line 113, ../sass/blocks.scss */
+/* line 114, ../sass/blocks.scss */
 #block-system-powered-by {
   /* "Powered by Drupal" block */
 }
 
-/* line 116, ../sass/blocks.scss */
+/* line 117, ../sass/blocks.scss */
 #block-user-login {
   /* "User login form" block */
 }
 
-/* line 119, ../sass/blocks.scss */
+/* line 120, ../sass/blocks.scss */
 #block-user-new {
   /* "Who's new" block for a list of the newest users */
 }
 
-/* line 122, ../sass/blocks.scss */
+/* line 123, ../sass/blocks.scss */
 #block-user-online {
   /* "Who's online" block for a list of the online users */
 }
 
-/* line 127, ../sass/blocks.scss */
+/* line 128, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block {
   /*float: right;*/
   margin-left: 4%;
@@ -214,7 +217,7 @@ img.float-right {
   content: '\e805';
   /* '' */
 }
-/* line 134, ../sass/blocks.scss */
+/* line 135, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .view-shopping-cart:before {
   font-family: "Fontello";
   font-style: normal;
@@ -238,8 +241,9 @@ img.float-right {
   float: left;
   font-size: 1.75em;
 }
-/* line 141, ../sass/blocks.scss */
-.region-user #block-views-shopping-cart-block .view-empty p {
+/* line 142, ../sass/blocks.scss */
+.region-user #block-views-shopping-cart-block .view-empty p,
+.region-user #block-views-shopping-cart-block .line-item-quantity {
   float: left;
   font-family: "Cinzel Decorative", "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
   font-size: 1.5em;
@@ -247,7 +251,12 @@ img.float-right {
   line-height: 1.25;
   margin: 0 .75em 0 .5em;
 }
-/* line 152, ../sass/blocks.scss */
+/* line 149, ../sass/blocks.scss */
+.region-user #block-views-shopping-cart-block .view-empty p .line-item-quantity-label,
+.region-user #block-views-shopping-cart-block .line-item-quantity .line-item-quantity-label {
+  display: none;
+}
+/* line 155, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-summary,
 .region-user #block-views-shopping-cart-block .line-item-total,
 .region-user #block-views-shopping-cart-block .line-item-summary-checkout {
@@ -255,12 +264,12 @@ img.float-right {
   margin: 0;
   padding: 0;
 }
-/* line 157, ../sass/blocks.scss */
+/* line 160, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-total {
   display: none;
   padding: 0 .5em 0 0;
 }
-/* line 162, ../sass/blocks.scss */
+/* line 165, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-summary-checkout a {
   background-color: #fbf5e7;
   border-bottom: 1px solid #f5e4ba;
@@ -270,17 +279,17 @@ img.float-right {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 170, ../sass/blocks.scss */
+/* line 173, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-summary-checkout a:hover, .region-user #block-views-shopping-cart-block .line-item-summary-checkout a:active, .region-user #block-views-shopping-cart-block .line-item-summary-checkout a:focus {
   background-color: white;
 }
-/* line 177, ../sass/blocks.scss */
+/* line 180, ../sass/blocks.scss */
 .region-user #block-menu-menu-user-menu ul.menu {
   margin: 0;
   padding: .5em 0 0 10px;
   text-transform: uppercase;
 }
-/* line 181, ../sass/blocks.scss */
+/* line 184, ../sass/blocks.scss */
 .region-user #block-menu-menu-user-menu ul.menu li {
   float: left;
   list-style: none;
@@ -288,31 +297,31 @@ img.float-right {
   margin: 0;
   padding: 0 1em 0 0;
 }
-/* line 187, ../sass/blocks.scss */
+/* line 190, ../sass/blocks.scss */
 .region-user #block-menu-menu-user-menu ul.menu li a {
   padding: 0;
   text-decoration: none;
 }
-/* line 194, ../sass/blocks.scss */
+/* line 197, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page {
   float: right;
   margin-right: 4%;
   padding: .5em 0 0 0;
 }
-/* line 198, ../sass/blocks.scss */
+/* line 201, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-exposed-widget {
   padding: 0;
 }
-/* line 200, ../sass/blocks.scss */
+/* line 203, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-exposed-widget input {
   margin: 0 0 0 .5em;
 }
-/* line 204, ../sass/blocks.scss */
+/* line 207, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-widget-filter-search_api_views_fulltext {
   font-size: .85em;
   margin: 0;
 }
-/* line 207, ../sass/blocks.scss */
+/* line 210, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-widget-filter-search_api_views_fulltext input {
   -webkit-border-radius: 0.75em;
   -moz-border-radius: 0.75em;
@@ -326,12 +335,25 @@ img.float-right {
   border: 1px solid #cccccc;
   padding: .25em .75em;
 }
-/* line 213, ../sass/blocks.scss */
+/* line 216, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-widget-filter-search_api_views_fulltext input:focus {
   background-color: #fcfcfc;
   border: 1px solid #c7c7c7;
 }
-/* line 219, ../sass/blocks.scss */
+/* line 222, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-submit-button {
   display: none;
+}
+
+/* line 229, ../sass/blocks.scss */
+.block-mailchimp-lists {
+  float: left;
+  padding-bottom: 3em;
+  width: 43%;
+}
+/* line 233, ../sass/blocks.scss */
+.block-mailchimp-lists.first {
+  border-right: 1px solid #cccccc;
+  margin-right: 10.5%;
+  padding-right: 3%;
 }

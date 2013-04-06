@@ -78,18 +78,32 @@ img.float-right {
 }
 
 /*
- * Product listings
+ * General listings
  */
 /* line 52, ../sass/views-styles.scss */
+.view .views-row .node-title {
+  font-family: "Open Sans Condensed", Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+
+/* line 63, ../sass/views-styles.scss */
+.views-exposed-widget .bef-select-as-links .form-item .selected a {
+  color: #333333;
+  text-decoration: none;
+}
+
+/*
+ * Product listings
+ */
+/* line 77, ../sass/views-styles.scss */
 .view-taxonomy-term,
 .product-list {
   overflow: hidden;
   width: 100%;
 }
-/* line 55, ../sass/views-styles.scss */
+/* line 80, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row,
 .product-list .views-row {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #cccccc;
   float: left;
   height: 23em;
   margin: 0 3% 2em 0;
@@ -97,19 +111,27 @@ img.float-right {
   position: relative;
   width: 30%;
 }
-/* line 63, ../sass/views-styles.scss */
+/* line 88, ../sass/views-styles.scss */
+.view-taxonomy-term .views-row img,
+.product-list .views-row img {
+  max-height: 15em;
+  width: auto;
+}
+/* line 92, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row .views-field-nothing,
 .product-list .views-row .views-field-nothing {
   bottom: 1em;
   height: 8.5em;
   position: absolute;
 }
-/* line 68, ../sass/views-styles.scss */
+/* line 97, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row h4.product-title,
 .product-list .views-row h4.product-title {
+  font-family: "Open Sans Condensed", Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 1.5em;
   margin: .25em 0;
 }
-/* line 71, ../sass/views-styles.scss */
+/* line 102, ../sass/views-styles.scss */
 .view-taxonomy-term .views-row .product-price,
 .product-list .views-row .product-price {
   -webkit-border-radius: 0.5em;
@@ -124,7 +146,11 @@ img.float-right {
   position: absolute;
 }
 
-/* line 83, ../sass/views-styles.scss */
+/* line 113, ../sass/views-styles.scss */
+.products-latest .views-row {
+  width: 45%;
+}
+/* line 115, ../sass/views-styles.scss */
 .products-latest .views-row .views-field-nothing {
   height: 9em;
   font-size: .9em;
@@ -133,26 +159,26 @@ img.float-right {
 /*
  * Exposed filters
  */
-/* line 94, ../sass/views-styles.scss */
+/* line 126, ../sass/views-styles.scss */
 .view-filters .views-exposed-form {
   margin-bottom: 2em;
 }
-/* line 97, ../sass/views-styles.scss */
+/* line 129, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
   border-right: 1px solid #333333;
   float: left;
   padding: 0 .5em;
 }
-/* line 101, ../sass/views-styles.scss */
+/* line 133, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
   padding-left: 0;
 }
-/* line 104, ../sass/views-styles.scss */
+/* line 136, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
   border-right: 0 none;
   padding-right: 0;
 }
-/* line 110, ../sass/views-styles.scss */
+/* line 142, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-widget-per-page {
   float: right;
 }

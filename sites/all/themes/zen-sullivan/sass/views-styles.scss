@@ -45,6 +45,31 @@
 }
 
 /*
+ * General listings
+ */
+.view {
+  .views-row {
+    .node-title {
+      font-family: $opensans-cond;
+    }
+  }
+}
+
+// Exposed widgets
+.views-exposed-widget {
+  .bef-select-as-links {
+    .form-item {
+      .selected {
+        a {
+          color: $body-c;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*
  * Product listings
  */
 
@@ -53,19 +78,25 @@
   @include clearfix;
   width: 100%;
   .views-row {
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid lighten($gray, 30%);
     float: left;
     height: 23em;
     margin: 0 3% 2em 0;
     padding: 0 0 1em 0;
     position: relative;
     width: 30%;
+    img {
+      max-height: 15em;
+      width: auto;
+    }
     .views-field-nothing {
       bottom: 1em;
       height: 8.5em;
       position: absolute;
     }
     h4.product-title {
+      font-family: $opensans-cond;
+      font-size: 1.5em;
       margin: .25em 0;
     }
     .product-price {
@@ -80,6 +111,7 @@
 }
 .products-latest {
   .views-row {
+    width: 45%;
     .views-field-nothing {
       height: 9em;
       font-size: .9em;

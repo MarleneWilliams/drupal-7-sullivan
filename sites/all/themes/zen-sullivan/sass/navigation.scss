@@ -37,7 +37,9 @@ ul li.leaf {
  */
 
 li a.active {
-  color: #000;
+  color: $body-c;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /*
@@ -115,6 +117,23 @@ li a.active {
               border-top: 1px solid darken($nav-bgc, 5%);*/
             }
           }
+        }
+      }
+    }
+  }
+}
+// Fixing the main navigation on tablet sizes
+@media all and (min-width: 480px) and (max-width: 959px) {
+  #main {
+    padding-top: 10em;
+  }
+  #navigation {
+    height: 8em;
+    ul.sf-menu {
+      li {
+        width: 27%;
+        a {
+          padding: .75em 0em;
         }
       }
     }
