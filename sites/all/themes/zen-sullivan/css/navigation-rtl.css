@@ -3,37 +3,17 @@
  * @file
  * RTL companion for the navigation.css file.
  */
-/*@font-face {
-  font-family: 'sullivan';
-  src: url("../font/sullivan.eot");
-  src: url("../font/sullivan.eot?#iefix") format('embedded-opentype'), url("../font/sullivan.woff") format('woff'), url("../font/sullivan.ttf") format('truetype'), url("../font/sullivan.svg#sullivan") format('svg');
+@font-face {
+  font-family: 'Fontello';
+  src: url("../fonts/fontello-sullivan/font/sullivan.eot");
+  src: url("../fonts/fontello-sullivan/font/sullivan.eot?#iefix") format("embedded-opentype"), url("../fonts/fontello-sullivan/font/sullivan.woff") format("woff"), url("../fonts/fontello-sullivan/font/sullivan.ttf") format("truetype"), url("../fonts/fontello-sullivan/font/sullivan.svg#sullivan") format("svg");
   font-weight: normal;
   font-style: normal;
-}*/
-/* line 11, ../sass/fontello.scss */
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "Fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  opacity: 0.8;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - magrins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+/*[class^="icon-"]:before,
+[class*=" icon-"]:before {
+}*/
 /* line 107, ../sass/_custom.scss */
 img.float-left {
   float: left;

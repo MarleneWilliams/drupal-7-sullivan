@@ -37,8 +37,8 @@ $legacy-support-for-ie8: true;
 // use in the normalize.scss file.
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
-$base-font-size:   16px; // The font size set on the root html element.
-$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+$base-font-size:   14px; // The font size set on the root html element.
+$base-line-height: 22px; // This line-height determines the basic unit of vertical rhythm.
 
 // Originals
 // $h1-font-size: 2    * $base-font-size;
@@ -71,11 +71,13 @@ $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 $times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
 $georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
 $forum:           "Forum", $times-new-roman;
+$cinzel:          "Cinzel Decorative", $times-new-roman;
 
 $verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
 $helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$opensans-cond:   "Open Sans Condensed", $verdana;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
@@ -88,7 +90,7 @@ $fontello:        "Fontello";
 $base-font-family: $verdana; // The font family set on the html element.
 $font-body:        $verdana;
 $font-monospace:   $courier;
-$heading-f:        $forum;
+$heading-f:        $cinzel;
 
 
 //
@@ -153,7 +155,8 @@ $ms-beige:         #F5F4D6;
 $blue:             #2E5F80;
 $yellow:           #f5d800;
 $yellow-gold:      #d9ae1a;
-$gold:             #b1a321;
+// $gold:             #b1a321;
+$gold:             #997317;
 $green:            #8bae52;
 $beige:            #f2edc7;
 $brown:            #533212;
@@ -166,10 +169,14 @@ $gray:        lighten($black, 50%);
 $body-bgc: $blue;
 $page-bgc: $white;
 $body-c: lighten($black, 20%);
-$heading-c: $brown;
-$link-c: $blue;
-$user-bgc: lighten($beige, 10%);
-$nav-bgc: lighten($blue, 45%);
+$heading-c: $blue;
+$link-c: $gold;
+
+$user-bgc: $blue;
+$user-c: $white;
+$user-link-c: $white;
+
+$nav-bgc: $white;
 $nav-c: darken($blue, 50%);
 
 $button-c: lighten($gray, 40%);
@@ -178,7 +185,10 @@ $button-c: lighten($gray, 40%);
 $indent-amount: 30px;
 
 // Page width
-$page-width: 95%;
+$page-width: 100%;
+
+// Main section padding
+$main-padding: 4%;
 
 // Resetting some defaults
 $zen-gutter-width:  25px;

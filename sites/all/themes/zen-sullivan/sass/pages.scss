@@ -15,23 +15,24 @@
  */
 
 body {
-  background-color: $body-bgc;
-  @include filter-gradient(darken($body-bgc, 10%), $body-bgc, vertical); // IE6-8
+  /*background-color: $body-bgc;*/
+  /*@include filter-gradient(darken($body-bgc, 10%), $body-bgc, vertical); // IE6-8
   // IE9 SVG, needs conditional override of 'filter' to 'none'
   $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(top, darken($body-bgc, 10%) 0%,$body-bgc 300px));
-  background-attachment: fixed;
+  @include background-image(linear-gradient(top, darken($body-bgc, 10%) 0%,$body-bgc 300px));*/
+  /*background-attachment: fixed;*/
   color: $body-c;
   margin: 0;
   padding: 0;
 }
 
 #page {
-  @include single-box-shadow(darken($body-bgc, 20%), 0, 0, 15px, 0, false);
+  /*@include single-box-shadow(darken($body-bgc, 20%), 0, 0, 15px, 0, false);
   background: $page-bgc url("../images/coins1-600.png") no-repeat scroll 170% 1em;
-  margin: 0 auto;
+  margin: 0 auto;*/
+  background: transparent url(../images/page-bg-1.png) no-repeat -100px -300px;
   padding-top: 4.5em;
-  width: $page-width;
+  /*width: $page-width;*/
 }
 
 /*
@@ -72,14 +73,16 @@ body {
 }
 
 #name-and-slogan { /* Wrapper for website name and slogan */
-  float: left;
+  /*float: left;*/
 }
 
 #site-name { /* The name of the website */
-  margin: 0 0 .75em 0;
-  font-size: 3em;
-  line-height: 1;
+  margin: 0 auto .3em auto;
+  font-size: 5em;
+  font-weight: normal;
+  line-height: .85;
   text-align: center;
+  width: 9em;
 
   a:link,
   a:visited {
@@ -90,7 +93,7 @@ body {
 
   a:hover,
   a:focus {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -101,34 +104,6 @@ body {
 
 .region-header { /* Wrapper for any blocks placed in the header region */
   // clear: both; /* Clear the logo */
-  #block-views-exp-display-products-page {
-    float: right;
-    padding: .75em 0 0 0;
-    .views-exposed-widget {
-      padding: 0;
-      input {
-        margin: 0 0 0 .5em;
-      }
-    }
-    .views-widget-filter-search_api_views_fulltext {
-      font-size: .85em;
-      margin: 0;
-      input {
-        @include border-radius(.75em);
-        @include box-shadow(darken($page-bgc, 15%) 1px 1px 4px 0 inset);
-        background-color: darken($page-bgc, 3%);
-        border: 1px solid darken($page-bgc, 20%);
-        padding: .25em .75em;
-        &:focus {
-          background-color: darken($page-bgc, 1%);
-          border: 1px solid darken($page-bgc, 22%);
-        }
-      }
-    }
-    .views-submit-button {
-      display: none;
-    }
-  }
 }
 
 /*
@@ -137,6 +112,7 @@ body {
 .region-user {
   background-color: $user-bgc;
   border-bottom: 1px solid darken($user-bgc, 10%);
+  color: $user-c;
   font-size: .85em;
   height: 2.75em;
   margin: 0 -10px;
@@ -147,6 +123,9 @@ body {
   .block {
     float: left;
   }
+  a {
+    color: $user-link-c;
+  }
 }
 
 /*
@@ -154,7 +133,7 @@ body {
  */
 
 #main {
-  padding-top: 4em;
+  padding: 6em $main-padding 0 $main-padding;
 }
 
 /*
@@ -273,6 +252,7 @@ span.field-label { /* The inline field label used by the Fences module */
   .block-title {
     font-size: 1.25em;
     line-height: 1.25em;
+    padding-top: .85em;
   }
 }
 

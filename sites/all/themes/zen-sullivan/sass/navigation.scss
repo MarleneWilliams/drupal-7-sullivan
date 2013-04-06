@@ -48,10 +48,13 @@ li a.active {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
   $nav-bgc: transparentize($nav-bgc, 0.2);
 
-  background-color: $nav-bgc;
-  border-bottom: darken($nav-bgc, 10%);
-  border-top: darken($nav-bgc, 10%);
+  /*background-color: $nav-bgc;*/
+  /*border-bottom: darken($nav-bgc, 10%);
+  border-top: darken($nav-bgc, 10%);*/
+  margin-top: 0;
+  margin-right: -$main-padding;
   margin-bottom: 2em;
+  margin-left: -$main-padding;
 
   .block {
     margin-bottom: 0;
@@ -76,6 +79,7 @@ li a.active {
     }
   }
   ul.sf-menu {
+    /*background-color: $nav-bgc;*/
     margin: 0;
     text-align: center;
     width: 100%;
@@ -83,32 +87,32 @@ li a.active {
       background-color: transparent;
       display: inline-block;
       float: none;
-      font-family: $forum;
-      font-size: 1.25em;
+      font-family: $opensans-cond;
+      font-size: 1.75em;
       a {
         border: 0 none;
-        color: $nav-c;
+        color: $link-c;
         text-decoration: none;
         &:hover, &:active, &:focus, &.sfHover {
-          @include text-shadow(lighten($nav-c, 15%) 0 0 .1em, $page-bgc 0 0 .5em);
+          /*@include text-shadow(lighten($nav-c, 15%) 0 0 .1em, $page-bgc 0 0 .5em);*/
           background-color: transparent;
         }
       }
       ul {
         background-color: $nav-bgc;
-        border-bottom: darken($nav-bgc, 20%);
-        border-top: darken($nav-bgc, 20%);
-        font-size: .7em;
-        margin-top: .9em;
+        /*border-bottom: darken($nav-bgc, 20%);
+        border-top: darken($nav-bgc, 20%);*/
+        font-size: .45em;
+        margin: 2em 0 0 1.15em;
         text-align: left;
         li {
           a {
-            border-bottom: 1px solid $nav-bgc;
-            border-top: 1px solid $nav-bgc;
+            /*border-bottom: 1px solid $nav-bgc;
+            border-top: 1px solid $nav-bgc;*/
             &:hover, &:active, &:focus {
-              background-color: darken($nav-bgc, 3%);
-              border-bottom: 1px solid darken($nav-bgc, 5%);
-              border-top: 1px solid darken($nav-bgc, 5%);
+              background-color: $page-bgc;
+              /*border-bottom: 1px solid darken($nav-bgc, 5%);
+              border-top: 1px solid darken($nav-bgc, 5%);*/
             }
           }
         }
