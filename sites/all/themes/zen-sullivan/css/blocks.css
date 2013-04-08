@@ -28,7 +28,7 @@ img.float-right {
 /* line 9, ../sass/blocks.scss */
 .block {
   /* Block wrapper */
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
 }
 /* line 12, ../sass/blocks.scss */
 .block.first {
@@ -195,17 +195,24 @@ img.float-right {
   /* "User login form" block */
 }
 
-/* line 120, ../sass/blocks.scss */
+/* line 122, ../sass/blocks.scss */
+.page-user-login #user-login #user_login_form,
+.page-user-login #user-login .create-account {
+  float: left;
+  width: 49%;
+}
+
+/* line 129, ../sass/blocks.scss */
 #block-user-new {
   /* "Who's new" block for a list of the newest users */
 }
 
-/* line 123, ../sass/blocks.scss */
+/* line 132, ../sass/blocks.scss */
 #block-user-online {
   /* "Who's online" block for a list of the online users */
 }
 
-/* line 128, ../sass/blocks.scss */
+/* line 137, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block {
   /*float: right;*/
   margin-left: 4%;
@@ -217,7 +224,7 @@ img.float-right {
   content: '\e805';
   /* '' */
 }
-/* line 135, ../sass/blocks.scss */
+/* line 144, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .view-shopping-cart:before {
   font-family: "Fontello";
   font-style: normal;
@@ -241,7 +248,7 @@ img.float-right {
   float: left;
   font-size: 1.75em;
 }
-/* line 142, ../sass/blocks.scss */
+/* line 151, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .view-empty p,
 .region-user #block-views-shopping-cart-block .line-item-quantity {
   float: left;
@@ -251,12 +258,12 @@ img.float-right {
   line-height: 1.25;
   margin: 0 .75em 0 .5em;
 }
-/* line 149, ../sass/blocks.scss */
+/* line 158, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .view-empty p .line-item-quantity-label,
 .region-user #block-views-shopping-cart-block .line-item-quantity .line-item-quantity-label {
   display: none;
 }
-/* line 155, ../sass/blocks.scss */
+/* line 164, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-summary,
 .region-user #block-views-shopping-cart-block .line-item-total,
 .region-user #block-views-shopping-cart-block .line-item-summary-checkout {
@@ -264,12 +271,12 @@ img.float-right {
   margin: 0;
   padding: 0;
 }
-/* line 160, ../sass/blocks.scss */
+/* line 169, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-total {
   display: none;
   padding: 0 .5em 0 0;
 }
-/* line 165, ../sass/blocks.scss */
+/* line 174, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-summary-checkout a {
   background-color: #fbf5e7;
   border-bottom: 1px solid #f5e4ba;
@@ -279,17 +286,17 @@ img.float-right {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 173, ../sass/blocks.scss */
+/* line 182, ../sass/blocks.scss */
 .region-user #block-views-shopping-cart-block .line-item-summary-checkout a:hover, .region-user #block-views-shopping-cart-block .line-item-summary-checkout a:active, .region-user #block-views-shopping-cart-block .line-item-summary-checkout a:focus {
-  background-color: white;
+  background-color: #fdf9f0;
 }
-/* line 180, ../sass/blocks.scss */
+/* line 189, ../sass/blocks.scss */
 .region-user #block-menu-menu-user-menu ul.menu {
   margin: 0;
   padding: .5em 0 0 10px;
   text-transform: uppercase;
 }
-/* line 184, ../sass/blocks.scss */
+/* line 193, ../sass/blocks.scss */
 .region-user #block-menu-menu-user-menu ul.menu li {
   float: left;
   list-style: none;
@@ -297,31 +304,31 @@ img.float-right {
   margin: 0;
   padding: 0 1em 0 0;
 }
-/* line 190, ../sass/blocks.scss */
+/* line 199, ../sass/blocks.scss */
 .region-user #block-menu-menu-user-menu ul.menu li a {
   padding: 0;
   text-decoration: none;
 }
-/* line 197, ../sass/blocks.scss */
+/* line 206, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page {
   float: right;
   margin-right: 4%;
   padding: .5em 0 0 0;
 }
-/* line 201, ../sass/blocks.scss */
+/* line 210, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-exposed-widget {
   padding: 0;
 }
-/* line 203, ../sass/blocks.scss */
+/* line 212, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-exposed-widget input {
   margin: 0 0 0 .5em;
 }
-/* line 207, ../sass/blocks.scss */
+/* line 216, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-widget-filter-search_api_views_fulltext {
   font-size: .85em;
   margin: 0;
 }
-/* line 210, ../sass/blocks.scss */
+/* line 219, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-widget-filter-search_api_views_fulltext input {
   -webkit-border-radius: 0.75em;
   -moz-border-radius: 0.75em;
@@ -335,23 +342,23 @@ img.float-right {
   border: 1px solid #cccccc;
   padding: .25em .75em;
 }
-/* line 216, ../sass/blocks.scss */
+/* line 225, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-widget-filter-search_api_views_fulltext input:focus {
   background-color: #fcfcfc;
   border: 1px solid #c7c7c7;
 }
-/* line 222, ../sass/blocks.scss */
+/* line 231, ../sass/blocks.scss */
 .region-user #block-views-exp-display-products-page .views-submit-button {
   display: none;
 }
 
-/* line 229, ../sass/blocks.scss */
+/* line 238, ../sass/blocks.scss */
 .block-mailchimp-lists {
   float: left;
   padding-bottom: 3em;
   width: 43%;
 }
-/* line 233, ../sass/blocks.scss */
+/* line 242, ../sass/blocks.scss */
 .block-mailchimp-lists.first {
   border-right: 1px solid #cccccc;
   margin-right: 10.5%;

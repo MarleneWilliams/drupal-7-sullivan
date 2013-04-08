@@ -245,12 +245,17 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 .more-link { /* Aggregator, blog, and forum more link */
-  @include icon-left-dir;
+  @include icon-right-dir;
   font-size: .8em;
-  margin-top: 1em;
+  margin-top: 2em;
   text-transform: uppercase;
   &:before {
     @include icon-defaults;
+    color: $heading-c;
+    float: right;
+    font-size: 2em;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 

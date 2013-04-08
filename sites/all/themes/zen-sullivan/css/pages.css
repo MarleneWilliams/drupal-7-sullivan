@@ -321,13 +321,13 @@ span.field-label {
 .more-link {
   /* Aggregator, blog, and forum more link */
   font-size: .8em;
-  margin-top: 1em;
+  margin-top: 2em;
   text-transform: uppercase;
 }
-/* line 363, ../sass/fontello.scss */
+/* line 358, ../sass/fontello.scss */
 .more-link:before {
-  content: '\25c2';
-  /* '◂' */
+  content: '\25b8';
+  /* '▸' */
 }
 /* line 252, ../sass/pages.scss */
 .more-link:before {
@@ -350,16 +350,21 @@ span.field-label {
   /* font-size: 120%; */
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  color: #2e5f80;
+  float: right;
+  font-size: 2em;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 /*
  * Sidebars
  */
-/* line 260, ../sass/pages.scss */
+/* line 265, ../sass/pages.scss */
 .sidebars {
   margin-top: .9em;
 }
-/* line 262, ../sass/pages.scss */
+/* line 267, ../sass/pages.scss */
 .sidebars .block-title {
   font-size: 1.75em;
   line-height: 1.25em;
@@ -384,7 +389,7 @@ span.field-label {
 /*
  * Page bottom
  */
-/* line 300, ../sass/pages.scss */
+/* line 305, ../sass/pages.scss */
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }

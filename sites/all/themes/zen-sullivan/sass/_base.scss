@@ -171,6 +171,7 @@ $brown:            #533212;
 $white:       #fff;
 $black:       #000;
 $gray:        lighten($black, 50%);
+$lightgray:   lighten($gray, 25%);
 
 // Color variables
 $body-bgc: $blue;

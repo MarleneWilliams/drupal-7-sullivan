@@ -7,7 +7,7 @@
 
 
 .block { /* Block wrapper */
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
 
   &.first { /* The first block in the region */
   }
@@ -116,6 +116,15 @@
 
 #block-user-login { /* "User login form" block */
 }
+.page-user-login {
+  #user-login {
+    #user_login_form,
+    .create-account {
+      float: left;
+      width: 49%;
+    }
+  }
+}
 
 #block-user-new { /* "Who's new" block for a list of the newest users */
 }
@@ -171,7 +180,7 @@
         text-decoration: none;
         text-transform: uppercase;
         &:hover, &:active, &:focus {
-          background-color: lighten($link-c, 70%);
+          background-color: lighten($link-c, 62%);
         }
       }
     }
