@@ -14,7 +14,9 @@
     /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
   }
 
-  .node-title { /* Node title */
+  .node-title,
+  .field-name-title-field { /* Node title */
+    text-transform: lowercase;
   }
 
   .user-picture { /* The picture of the node author */
