@@ -143,7 +143,7 @@
 }
 
 /*
- *
+ * Product slideshows
  */
 .jcarousel-skin-tango {
   .jcarousel-container-horizontal {
@@ -153,6 +153,17 @@
   .jcarousel-container {
     background: transparent none;
     border: 0 none;
+  }
+}
+.field-name-field-images {
+  .field-slideshow-wrapper {
+    .field-slideshow {
+      margin-right: 2em;
+      width: auto !important:
+      .field-slideshow-slide {
+        widows: auto;
+      }
+    }
   }
 }
 
