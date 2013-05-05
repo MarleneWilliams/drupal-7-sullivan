@@ -58,10 +58,19 @@
 }
 
 .node-product-display { /* Product display */
-  .field {
+  .field-name-commerce-price {
+    @include border-radius(.5em);
+    background-color: lighten($green, 10%);
+    float: right;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0 0 0.75em 0.75em;
+    padding: 0.25em 0.75em;
   }
-  .field-name-field-images {
-    
+  .field-name-body {
+    p {
+      margin: 0 0 3.14286em 0;
+    }
   }
 }
 

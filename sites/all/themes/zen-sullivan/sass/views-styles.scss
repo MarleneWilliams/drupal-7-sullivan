@@ -168,6 +168,47 @@
 }
 
 /*
+ * Cart confirmation message
+ */
+div.messages {
+  .view-confirm-message-product-display {
+    .view-content {
+      h2 {
+        font-family: $base-font-family;
+        font-size: 1em;
+      }
+    }
+  }
+  &.commerce-add-to-cart-confirmation {
+    .added-product-title {
+      color: $blue;
+    }
+    .message-inner {
+      .button-wrapper {
+        .button {
+          &.checkout {
+            background-color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Cart
+ */
+.view-commerce-cart-form {
+  .commerce-line-item-views-form {
+    h2 {
+      font-family: $base-font-family;
+      font-size: 1em;
+      margin: .5em 2em .5em 0;
+    }
+  }
+}
+
+/*
  * Exposed filters
  */
 .view-filters {

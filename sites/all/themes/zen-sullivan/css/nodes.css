@@ -99,14 +99,32 @@ img.float-right {
 .node-product-display {
   /* Product display */
 }
+/* line 61, ../sass/nodes.scss */
+.node-product-display .field-name-commerce-price {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background-color: #a2be75;
+  float: right;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 0 0 0.75em 0.75em;
+  padding: 0.25em 0.75em;
+}
+/* line 71, ../sass/nodes.scss */
+.node-product-display .field-name-body p {
+  margin: 0 0 3.14286em 0;
+}
 
-/* line 68, ../sass/nodes.scss */
+/* line 77, ../sass/nodes.scss */
 .node-unpublished {
   /* Unpublished nodes */
   /* background-color: #fff4f4; */
   /* Drupal core uses a #fff4f4 background */
 }
-/* line 71, ../sass/nodes.scss */
+/* line 80, ../sass/nodes.scss */
 .node-unpublished p.unpublished {
   /* The word "Unpublished" displayed underneath the content. */
   height: 0;

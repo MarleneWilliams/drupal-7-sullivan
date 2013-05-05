@@ -207,28 +207,55 @@ img.float-right {
 }
 
 /*
+ * Cart confirmation message
+ */
+/* line 176, ../sass/views-styles.scss */
+div.messages .view-confirm-message-product-display .view-content h2 {
+  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 1em;
+}
+/* line 183, ../sass/views-styles.scss */
+div.messages.commerce-add-to-cart-confirmation .added-product-title {
+  color: #2e5f80;
+}
+/* line 189, ../sass/views-styles.scss */
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.checkout {
+  background-color: #8bae52;
+}
+
+/*
+ * Cart
+ */
+/* line 203, ../sass/views-styles.scss */
+.view-commerce-cart-form .commerce-line-item-views-form h2 {
+  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 1em;
+  margin: .5em 2em .5em 0;
+}
+
+/*
  * Exposed filters
  */
-/* line 174, ../sass/views-styles.scss */
+/* line 215, ../sass/views-styles.scss */
 .view-filters .views-exposed-form {
   margin-bottom: 2em;
 }
-/* line 177, ../sass/views-styles.scss */
+/* line 218, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
   border-right: 1px solid #333333;
   float: left;
   padding: 0 .5em;
 }
-/* line 181, ../sass/views-styles.scss */
+/* line 222, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
   padding-left: 0;
 }
-/* line 184, ../sass/views-styles.scss */
+/* line 225, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
   border-right: 0 none;
   padding-right: 0;
 }
-/* line 190, ../sass/views-styles.scss */
+/* line 231, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-widget-per-page {
   float: right;
 }
