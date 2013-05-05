@@ -120,32 +120,39 @@ li a.active {
   font-family: "Open Sans Condensed", Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1.75em;
 }
-/* line 94, ../sass/navigation.scss */
+/* line 95, ../sass/navigation.scss */
+#navigation ul.sf-menu li.sfHover a {
+  background-color: white;
+}
+/* line 99, ../sass/navigation.scss */
 #navigation ul.sf-menu li a {
   border: 0 none;
   color: #997317;
+  padding: .5em 1em;
   text-decoration: none;
 }
-/* line 98, ../sass/navigation.scss */
+/* line 104, ../sass/navigation.scss */
 #navigation ul.sf-menu li a:hover, #navigation ul.sf-menu li a:active, #navigation ul.sf-menu li a:focus, #navigation ul.sf-menu li a.sfHover {
   /*@include text-shadow(lighten($nav-c, 15%) 0 0 .1em, $page-bgc 0 0 .5em);*/
-  background-color: transparent;
+  background-color: white;
 }
-/* line 103, ../sass/navigation.scss */
+/* line 109, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   /*border-bottom: darken($nav-bgc, 20%);
   border-top: darken($nav-bgc, 20%);*/
   font-size: .45em;
-  margin: 2em 0 0 1.15em;
+  margin: 0.75em 0 0 0em;
+  padding: .5em 0;
   text-align: left;
 }
-/* line 111, ../sass/navigation.scss */
+/* line 118, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a {
   /*border-bottom: 1px solid $nav-bgc;
   border-top: 1px solid $nav-bgc;*/
+  padding: .5em 1.25em;
 }
-/* line 114, ../sass/navigation.scss */
+/* line 122, ../sass/navigation.scss */
 #navigation ul.sf-menu li ul li a:hover, #navigation ul.sf-menu li ul li a:active, #navigation ul.sf-menu li ul li a:focus {
   background-color: white;
   /*border-bottom: 1px solid darken($nav-bgc, 5%);
@@ -153,20 +160,20 @@ li a.active {
 }
 
 @media all and (min-width: 480px) and (max-width: 959px) {
-  /* line 127, ../sass/navigation.scss */
+  /* line 135, ../sass/navigation.scss */
   #main {
     padding-top: 10em;
   }
 
-  /* line 130, ../sass/navigation.scss */
+  /* line 138, ../sass/navigation.scss */
   #navigation {
     height: 8em;
   }
-  /* line 133, ../sass/navigation.scss */
+  /* line 141, ../sass/navigation.scss */
   #navigation ul.sf-menu li {
     width: 27%;
   }
-  /* line 135, ../sass/navigation.scss */
+  /* line 143, ../sass/navigation.scss */
   #navigation ul.sf-menu li a {
     padding: .75em 0em;
   }
@@ -174,7 +181,7 @@ li a.active {
 /*
  * Main menu and Secondary menu links
  */
-/* line 153, ../sass/navigation.scss */
+/* line 161, ../sass/navigation.scss */
 #secondary-menu {
   float: right;
   /* LTR */

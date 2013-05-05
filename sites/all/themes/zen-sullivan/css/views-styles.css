@@ -183,28 +183,42 @@ img.float-right {
   }
 }
 /*
- * Exposed filters
+ *
  */
 /* line 149, ../sass/views-styles.scss */
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+  padding: 0 40px;
+  width: auto;
+}
+/* line 153, ../sass/views-styles.scss */
+.jcarousel-skin-tango .jcarousel-container {
+  background: transparent none;
+  border: 0 none;
+}
+
+/*
+ * Exposed filters
+ */
+/* line 163, ../sass/views-styles.scss */
 .view-filters .views-exposed-form {
   margin-bottom: 2em;
 }
-/* line 152, ../sass/views-styles.scss */
+/* line 166, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
   border-right: 1px solid #333333;
   float: left;
   padding: 0 .5em;
 }
-/* line 156, ../sass/views-styles.scss */
+/* line 170, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
   padding-left: 0;
 }
-/* line 159, ../sass/views-styles.scss */
+/* line 173, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
   border-right: 0 none;
   padding-right: 0;
 }
-/* line 165, ../sass/views-styles.scss */
+/* line 179, ../sass/views-styles.scss */
 .view-filters .views-exposed-form .views-widget-per-page {
   float: right;
 }

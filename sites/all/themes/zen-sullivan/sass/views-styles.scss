@@ -143,6 +143,20 @@
 }
 
 /*
+ *
+ */
+.jcarousel-skin-tango {
+  .jcarousel-container-horizontal {
+    padding: 0 40px;
+    width: auto;
+  }
+  .jcarousel-container {
+    background: transparent none;
+    border: 0 none;
+  }
+}
+
+/*
  * Exposed filters
  */
 .view-filters {

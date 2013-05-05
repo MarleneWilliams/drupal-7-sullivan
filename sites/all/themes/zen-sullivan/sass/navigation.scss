@@ -91,26 +91,34 @@ li a.active {
       float: none;
       font-family: $opensans-cond;
       font-size: 1.75em;
+      &.sfHover {
+        a {
+          background-color: $white;
+        }
+      }
       a {
         border: 0 none;
         color: $link-c;
+        padding: .5em 1em;
         text-decoration: none;
         &:hover, &:active, &:focus, &.sfHover {
           /*@include text-shadow(lighten($nav-c, 15%) 0 0 .1em, $page-bgc 0 0 .5em);*/
-          background-color: transparent;
+          background-color: $white;
         }
       }
       ul {
-        background-color: $nav-bgc;
+        background-color: $white;
         /*border-bottom: darken($nav-bgc, 20%);
         border-top: darken($nav-bgc, 20%);*/
         font-size: .45em;
-        margin: 2em 0 0 1.15em;
+        margin: 0.75em 0 0 0em;
+        padding: .5em 0;
         text-align: left;
         li {
           a {
             /*border-bottom: 1px solid $nav-bgc;
             border-top: 1px solid $nav-bgc;*/
+            padding: .5em 1.25em;
             &:hover, &:active, &:focus {
               background-color: $page-bgc;
               /*border-bottom: 1px solid darken($nav-bgc, 5%);
