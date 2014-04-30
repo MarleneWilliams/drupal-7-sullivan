@@ -1307,67 +1307,97 @@ tbody {
   word-wrap: break-word;
 }
 
-/* line 9, ../sass/component-styles/_commerce.scss */
-.section-cart table.views-table {
+/* line 11, ../sass/component-styles/_commerce.scss */
+.section-cart table.views-table, .section-cart table.checkout-review, .section-checkout table.views-table, .section-checkout table.checkout-review {
   width: 100%;
 }
-/* line 15, ../sass/component-styles/_commerce.scss */
+/* line 14, ../sass/component-styles/_commerce.scss */
+.section-cart table .pane-data-full, .section-checkout table .pane-data-full {
+  padding: 0;
+}
+/* line 17, ../sass/component-styles/_commerce.scss */
+.section-cart table .pane-title, .section-checkout table .pane-title {
+  margin-top: 1em;
+}
+/* line 23, ../sass/component-styles/_commerce.scss */
 .view-commerce-cart-summary table td, .view-commerce-cart-summary table th {
   padding: 0 .5em;
 }
+/* line 30, ../sass/component-styles/_commerce.scss */
+table.checkout-review .pane-data td {
+  padding-bottom: 1em;
+}
 
-/* line 24, ../sass/component-styles/_commerce.scss */
+/* line 40, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 37%;
 }
-/* line 28, ../sass/component-styles/_commerce.scss */
+/* line 44, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button a {
   text-decoration: none;
 }
-/* line 34, ../sass/component-styles/_commerce.scss */
+/* line 50, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display {
   margin-right: 37%;
 }
-/* line 36, ../sass/component-styles/_commerce.scss */
+/* line 52, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
 }
-/* line 40, ../sass/component-styles/_commerce.scss */
+/* line 56, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .views-field-commerce-total .views-label-commerce-total {
   float: none;
 }
+/* line 62, ../sass/component-styles/_commerce.scss */
+div.messages.commerce-add-to-cart-confirmation .views-field-commerce-product {
+  min-height: 4em;
+}
 
-/* line 50, ../sass/component-styles/_commerce.scss */
+/* line 69, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li {
   color: #bfbfbf;
   display: block;
   margin-right: 2em;
   width: auto;
 }
-/* line 55, ../sass/component-styles/_commerce.scss */
+/* line 74, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li::after {
   content: ">>";
   padding-left: 1em;
 }
-/* line 59, ../sass/component-styles/_commerce.scss */
+/* line 78, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.active {
   color: black;
 }
-/* line 63, ../sass/component-styles/_commerce.scss */
+/* line 82, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.last::after {
   content: "";
   padding-left: 0;
 }
 
-/* line 71, ../sass/component-styles/_commerce.scss */
+/* line 90, ../sass/component-styles/_commerce.scss */
+fieldset.checkout-buttons {
+  border: 0 none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+/* line 96, ../sass/component-styles/_commerce.scss */
 .checkout-continue {
   margin-right: 1em;
+}
+
+/* line 100, ../sass/component-styles/_commerce.scss */
+.checkout-help {
+  font-weight: bold;
+  margin-bottom: 2em;
 }
 
 /**
@@ -2058,7 +2088,7 @@ body {
  */
 /* line 139, ../sass/component-styles/_pages.scss */
 #main {
-  padding: 6em 4% 0 4%;
+  padding: 6em 4% 4em 4%;
 }
 
 /*

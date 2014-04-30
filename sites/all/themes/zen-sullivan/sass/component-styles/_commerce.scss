@@ -5,15 +5,31 @@
 // Tables
 table {
   // On cart pages
-  .section-cart & {
-    &.views-table {
+  .section-cart &,
+  .section-checkout & {
+    &.views-table,
+    &.checkout-review {
       width: 100%;
+    }
+    .pane-data-full {
+      padding: 0;
+    }
+    .pane-title {
+      margin-top: 1em;
     }
   }
   // Checkout process
   .view-commerce-cart-summary & {
     td, th {
       padding: 0 .5em;
+    }
+  }
+  // Reviewint
+  &.checkout-review {
+    .pane-data {
+      td {
+        padding-bottom: 1em;
+      }
     }
   }
 }
@@ -43,6 +59,9 @@ div.messages.commerce-add-to-cart-confirmation {
       }
     }
   }
+  .views-field-commerce-product {
+    min-height: 4em;
+  }
 }
 
 // Checkout process
@@ -67,7 +86,18 @@ ol.inline.commerce-checkout-progress {
     }
   }
 }
-// Continue button
+// Checkout buttons
+fieldset.checkout-buttons {
+  border: 0 none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
 .checkout-continue {
   margin-right: 1em;
+}
+// Checkout help text
+.checkout-help {
+  font-weight: bold;
+  margin-bottom: 2em;
 }
