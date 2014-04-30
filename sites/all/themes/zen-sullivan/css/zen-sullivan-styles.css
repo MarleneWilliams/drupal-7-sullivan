@@ -1178,6 +1178,15 @@ tbody {
   padding-right: 3%;
 }
 
+/* line 1, ../sass/component-styles/_carousels.scss */
+.field-slideshow-carousel-wrapper {
+  margin-right: 2em;
+}
+/* line 3, ../sass/component-styles/_carousels.scss */
+.field-slideshow-carousel-wrapper .jcarousel-clip-horizontal {
+  width: 100%;
+}
+
 /**
  * @file
  * Comment Styling
@@ -1302,54 +1311,63 @@ tbody {
 .section-cart table.views-table {
   width: 100%;
 }
+/* line 15, ../sass/component-styles/_commerce.scss */
+.view-commerce-cart-summary table td, .view-commerce-cart-summary table th {
+  padding: 0 .5em;
+}
 
-/* line 18, ../sass/component-styles/_commerce.scss */
+/* line 24, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 37%;
 }
-/* line 22, ../sass/component-styles/_commerce.scss */
+/* line 28, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button a {
   text-decoration: none;
 }
-/* line 28, ../sass/component-styles/_commerce.scss */
+/* line 34, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display {
   margin-right: 37%;
 }
-/* line 30, ../sass/component-styles/_commerce.scss */
+/* line 36, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
 }
-/* line 34, ../sass/component-styles/_commerce.scss */
+/* line 40, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .views-field-commerce-total .views-label-commerce-total {
   float: none;
 }
 
-/* line 44, ../sass/component-styles/_commerce.scss */
+/* line 50, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li {
   color: #bfbfbf;
   display: block;
   margin-right: 2em;
   width: auto;
 }
-/* line 49, ../sass/component-styles/_commerce.scss */
+/* line 55, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li::after {
   content: ">>";
   padding-left: 1em;
 }
-/* line 53, ../sass/component-styles/_commerce.scss */
+/* line 59, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.active {
   color: black;
 }
-/* line 57, ../sass/component-styles/_commerce.scss */
+/* line 63, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.last::after {
   content: "";
   padding-left: 0;
+}
+
+/* line 71, ../sass/component-styles/_commerce.scss */
+.checkout-continue {
+  margin-right: 1em;
 }
 
 /**
@@ -1577,6 +1595,22 @@ form table .item-list ul {
 /* line 146, ../sass/component-styles/_forms.scss */
 td.menu-disabled {
   background: #ccc;
+}
+
+/* line 154, ../sass/component-styles/_forms.scss */
+fieldset {
+  margin-bottom: 2em;
+}
+
+/* line 158, ../sass/component-styles/_forms.scss */
+.fieldset-legend {
+  font-size: 2.45em;
+  line-height: 1.2828em;
+  margin-top: 0.6414em;
+  margin-bottom: 0.6414em;
+  color: #2e5f80;
+  font-family: "Cinzel Decorative", "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+  font-weight: normal;
 }
 
 /**

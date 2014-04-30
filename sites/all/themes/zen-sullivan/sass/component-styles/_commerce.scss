@@ -10,6 +10,12 @@ table {
       width: 100%;
     }
   }
+  // Checkout process
+  .view-commerce-cart-summary & {
+    td, th {
+      padding: 0 .5em;
+    }
+  }
 }
 
 // Add-to-cart message
@@ -60,4 +66,8 @@ ol.inline.commerce-checkout-progress {
       }
     }
   }
+}
+// Continue button
+.checkout-continue {
+  margin-right: 1em;
 }

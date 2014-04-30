@@ -146,3 +146,20 @@ form {
 td.menu-disabled {
   background: #ccc;
 }
+
+//
+// Fieldsets
+//
+
+fieldset {
+  margin-bottom: 2em;
+}
+
+.fieldset-legend {
+  @include adjust-font-size-to( $h2-font-size );
+  @include leader(1, $h2-font-size);
+  @include trailer(1, $h2-font-size);
+  color: $heading-c;
+  font-family: $heading-f;
+  font-weight: normal;
+}
