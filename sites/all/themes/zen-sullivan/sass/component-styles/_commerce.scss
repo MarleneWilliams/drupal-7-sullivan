@@ -1,0 +1,63 @@
+//
+// Commerce items
+//
+
+// Tables
+table {
+  // On cart pages
+  .section-cart & {
+    &.views-table {
+      width: 100%;
+    }
+  }
+}
+
+// Add-to-cart message
+div.messages.commerce-add-to-cart-confirmation {
+  .message-inner {
+    .button-wrapper {
+      @include box-sizing(border-box);
+      width: 37%;
+      .button {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .view-confirm-message-product-display {
+    margin-right: 37%;
+    .view-content {
+      @include box-sizing(border-box);
+      width: 100%;
+      .views-field-commerce-total {
+        .views-label-commerce-total {
+          float: none;
+        }
+      }
+    }
+  }
+}
+
+// Checkout process
+ol.inline.commerce-checkout-progress {
+  li {
+    color: $lightgray;
+    display: block;
+    margin-right: 2em;
+    width: auto;
+    &::after {
+      content: ">>";
+      padding-left: 1em;
+    }
+    &.active {
+      color: $black;
+    }
+    &.last {
+      &::after {
+        content: "";
+        padding-left: 0;
+      }
+    }
+  }
+}

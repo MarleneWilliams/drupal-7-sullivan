@@ -1,0 +1,6 @@
+.region-header-inner {
+  @include grid-row;
+}
+.region-header {
+  @include grid-column($full-width);
+}
