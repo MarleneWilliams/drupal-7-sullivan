@@ -1307,81 +1307,81 @@ tbody {
   word-wrap: break-word;
 }
 
-/* line 11, ../sass/component-styles/_commerce.scss */
-.section-cart table.views-table, .section-cart table.checkout-review, .section-checkout table.views-table, .section-checkout table.checkout-review {
+/* line 12, ../sass/component-styles/_commerce.scss */
+.section-cart table.views-table, .section-cart table.checkout-review, .section-checkout table.views-table, .section-checkout table.checkout-review, .section-user table.views-table, .section-user table.checkout-review {
   width: 100%;
 }
-/* line 14, ../sass/component-styles/_commerce.scss */
-.section-cart table .pane-data-full, .section-checkout table .pane-data-full {
+/* line 15, ../sass/component-styles/_commerce.scss */
+.section-cart table .pane-data-full, .section-checkout table .pane-data-full, .section-user table .pane-data-full {
   padding: 0;
 }
-/* line 17, ../sass/component-styles/_commerce.scss */
-.section-cart table .pane-title, .section-checkout table .pane-title {
+/* line 18, ../sass/component-styles/_commerce.scss */
+.section-cart table .pane-title, .section-checkout table .pane-title, .section-user table .pane-title {
   margin-top: 1em;
 }
-/* line 23, ../sass/component-styles/_commerce.scss */
+/* line 24, ../sass/component-styles/_commerce.scss */
 .view-commerce-cart-summary table td, .view-commerce-cart-summary table th {
   padding: 0 .5em;
 }
-/* line 30, ../sass/component-styles/_commerce.scss */
+/* line 31, ../sass/component-styles/_commerce.scss */
 table.checkout-review .pane-data td {
   padding-bottom: 1em;
 }
 
-/* line 40, ../sass/component-styles/_commerce.scss */
+/* line 41, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 37%;
 }
-/* line 44, ../sass/component-styles/_commerce.scss */
+/* line 45, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button a {
   text-decoration: none;
 }
-/* line 50, ../sass/component-styles/_commerce.scss */
+/* line 51, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display {
   margin-right: 37%;
 }
-/* line 52, ../sass/component-styles/_commerce.scss */
+/* line 53, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
 }
-/* line 56, ../sass/component-styles/_commerce.scss */
+/* line 57, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .views-field-commerce-total .views-label-commerce-total {
   float: none;
 }
-/* line 62, ../sass/component-styles/_commerce.scss */
+/* line 63, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .views-field-commerce-product {
   min-height: 4em;
 }
 
-/* line 69, ../sass/component-styles/_commerce.scss */
+/* line 70, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li {
   color: #bfbfbf;
   display: block;
   margin-right: 2em;
   width: auto;
 }
-/* line 74, ../sass/component-styles/_commerce.scss */
+/* line 75, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li::after {
   content: ">>";
   padding-left: 1em;
 }
-/* line 78, ../sass/component-styles/_commerce.scss */
+/* line 79, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.active {
   color: black;
 }
-/* line 82, ../sass/component-styles/_commerce.scss */
+/* line 83, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.last::after {
   content: "";
   padding-left: 0;
 }
 
-/* line 90, ../sass/component-styles/_commerce.scss */
+/* line 91, ../sass/component-styles/_commerce.scss */
 fieldset.checkout-buttons {
   border: 0 none;
   margin-left: 0;
@@ -1389,12 +1389,12 @@ fieldset.checkout-buttons {
   padding: 0;
 }
 
-/* line 96, ../sass/component-styles/_commerce.scss */
+/* line 97, ../sass/component-styles/_commerce.scss */
 .checkout-continue {
   margin-right: 1em;
 }
 
-/* line 100, ../sass/component-styles/_commerce.scss */
+/* line 101, ../sass/component-styles/_commerce.scss */
 .checkout-help {
   font-weight: bold;
   margin-bottom: 2em;
@@ -4042,7 +4042,7 @@ ul.secondary a:active {
   /*border-bottom: 1px solid lighten($gray, 30%);*/
   background-color: white;
   float: left;
-  height: 23em;
+  height: 26em;
   margin: .25em 3% 1.25em .5%;
   padding: 1em 2.5%;
   position: relative;
@@ -4062,12 +4062,8 @@ ul.secondary a:active {
 /* line 94, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row .views-field-nothing,
 .product-list .views-row .views-field-nothing {
-  bottom: 1em;
   font-size: .9em;
-  height: 9em;
   padding: 0 5% 0 0;
-  position: absolute;
-  width: 85%;
 }
 /* line 102, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row h4.product-title,
@@ -4086,31 +4082,29 @@ ul.secondary a:active {
   -o-border-radius: 0.5em;
   border-radius: 0.5em;
   background-color: #a2be75;
-  bottom: 0;
+  display: inline-block;
+  float: right;
   font-weight: bold;
   padding: 0.2em 0.75em;
-  position: absolute;
-  right: 5%;
 }
 
-/* line 120, ../sass/component-styles/_views-styles.scss */
-.products-latest .views-row {
-  width: 41%;
-}
 /* line 122, ../sass/component-styles/_views-styles.scss */
+.products-latest .views-row {
+  width: 46%;
+}
+/* line 124, ../sass/component-styles/_views-styles.scss */
 .products-latest .views-row .views-field-nothing {
-  height: 9em;
   font-size: .9em;
 }
 
 @media all and (min-width: 480px) and (max-width: 959px) {
-  /* line 131, ../sass/component-styles/_views-styles.scss */
+  /* line 133, ../sass/component-styles/_views-styles.scss */
   .view-taxonomy-term .views-row,
   .product-list .views-row {
     width: 41%;
   }
 
-  /* line 136, ../sass/component-styles/_views-styles.scss */
+  /* line 138, ../sass/component-styles/_views-styles.scss */
   .products-latest .views-row {
     width: 41%;
   }
@@ -4118,23 +4112,23 @@ ul.secondary a:active {
 /*
  * Product slideshows
  */
-/* line 146, ../sass/component-styles/_views-styles.scss */
+/* line 148, ../sass/component-styles/_views-styles.scss */
 .jcarousel-skin-tango .jcarousel-container-horizontal {
   padding: 0 40px;
   width: auto;
 }
-/* line 150, ../sass/component-styles/_views-styles.scss */
+/* line 152, ../sass/component-styles/_views-styles.scss */
 .jcarousel-skin-tango .jcarousel-container {
   background: transparent none;
   border: 0 none;
 }
 
-/* line 157, ../sass/component-styles/_views-styles.scss */
+/* line 159, ../sass/component-styles/_views-styles.scss */
 .field-name-field-images .field-slideshow-wrapper .field-slideshow {
   margin-right: 2em;
   width: auto !important;
 }
-/* line 160, ../sass/component-styles/_views-styles.scss */
+/* line 162, ../sass/component-styles/_views-styles.scss */
 .field-name-field-images .field-slideshow-wrapper .field-slideshow .field-slideshow-slide {
   width: auto !important;
 }
@@ -4142,16 +4136,16 @@ ul.secondary a:active {
 /*
  * Cart confirmation message
  */
-/* line 173, ../sass/component-styles/_views-styles.scss */
+/* line 175, ../sass/component-styles/_views-styles.scss */
 div.messages .view-confirm-message-product-display .view-content h2 {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1em;
 }
-/* line 180, ../sass/component-styles/_views-styles.scss */
+/* line 182, ../sass/component-styles/_views-styles.scss */
 div.messages.commerce-add-to-cart-confirmation .added-product-title {
   color: #2e5f80;
 }
-/* line 186, ../sass/component-styles/_views-styles.scss */
+/* line 188, ../sass/component-styles/_views-styles.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.checkout {
   background-color: #8bae52;
 }
@@ -4159,22 +4153,22 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
 /*
  * Cart
  */
-/* line 200, ../sass/component-styles/_views-styles.scss */
+/* line 202, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form h2 {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1em;
   margin: .5em 2em .5em 0;
 }
-/* line 205, ../sass/component-styles/_views-styles.scss */
+/* line 207, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form .field-name-field-images {
   float: left;
   margin: 0 1em 1em 0;
 }
-/* line 209, ../sass/component-styles/_views-styles.scss */
+/* line 211, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form .views-field-commerce-total {
   font-weight: bold;
 }
-/* line 213, ../sass/component-styles/_views-styles.scss */
+/* line 215, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form #edit-submit {
   background-color: #d9d9d9;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD9D9D9', endColorstr='#FFB3B3B3');
@@ -4226,26 +4220,26 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
 /*
  * Exposed filters
  */
-/* line 224, ../sass/component-styles/_views-styles.scss */
+/* line 226, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form {
   margin-bottom: 2em;
 }
-/* line 227, ../sass/component-styles/_views-styles.scss */
+/* line 229, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
   border-right: 1px solid #333333;
   float: left;
   padding: 0 .5em;
 }
-/* line 231, ../sass/component-styles/_views-styles.scss */
+/* line 233, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
   padding-left: 0;
 }
-/* line 234, ../sass/component-styles/_views-styles.scss */
+/* line 236, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
   border-right: 0 none;
   padding-right: 0;
 }
-/* line 240, ../sass/component-styles/_views-styles.scss */
+/* line 242, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-widget-per-page {
   float: right;
 }
@@ -4275,7 +4269,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 75rem;
+  max-width: 87.5rem;
   overflow: hidden;
 }
 
@@ -4369,7 +4363,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 75rem;
+  max-width: 87.5rem;
   overflow: hidden;
 }
 
@@ -4388,7 +4382,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 75rem;
+  max-width: 87.5rem;
   overflow: hidden;
 }
 

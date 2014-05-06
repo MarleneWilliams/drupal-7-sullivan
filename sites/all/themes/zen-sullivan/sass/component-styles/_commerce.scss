@@ -6,7 +6,8 @@
 table {
   // On cart pages
   .section-cart &,
-  .section-checkout & {
+  .section-checkout &,
+  .section-user & {
     &.views-table,
     &.checkout-review {
       width: 100%;
