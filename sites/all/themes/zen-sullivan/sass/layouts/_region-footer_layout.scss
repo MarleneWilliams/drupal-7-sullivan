@@ -1,0 +1,16 @@
+.region-footer-wrapper {
+  @include respond-to($medium) {
+    bottom: 0;
+    padding-top: 1em;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+.region-footer-inner {
+  @include grid-row;
+}
+.region-footer {
+  @include grid-column($full-width);
+}

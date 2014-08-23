@@ -1,0 +1,251 @@
+/**
+ * @file
+ * Block Styling
+ */
+
+.block { /* Block wrapper */
+  margin-bottom: 3em;
+
+  &.first { /* The first block in the region */
+  }
+
+  &.last { /* The last block in the region */
+  }
+
+  &.odd { /* Zebra striping for each block in the region */
+  }
+
+  &.even { /* Zebra striping for each block in the region */
+  }
+
+  h2.block-title { /* Block title */
+  }
+}
+
+.block-menu,
+.block-menu-block {
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      list-style-image: none;
+      a {
+        display: block;
+        padding: .25em 0;
+      }
+    }
+  }
+}
+
+
+#block-aggregator-category-1 { /* Block for the latest news items in the first category */
+}
+
+#block-aggregator-feed-1 { /* Block for the latest news items in the first feed */
+}
+
+#block-block-1 { /* First block created with "Add block" link */
+}
+
+#block-blog-recent { /* "Recent blog posts" block */
+}
+
+#block-book-navigation { /* "Book navigation" block for the current book's table of contents */
+}
+
+#block-comment-recent { /* "Recent comments" block */
+}
+
+#block-forum-active { /* "Active forum topics" block */
+}
+
+#block-forum-new { /* "New forum topics" block */
+}
+
+#block-locale-language { /* Language switcher block */
+}
+
+#block-menu-menu-NAME { /* Custom menu block */
+}
+
+#block-node-recent { /* "Recent content" block */
+}
+
+#block-node-syndicate { /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
+}
+
+#block-poll-recent { /* "Most recent poll" block */
+}
+
+#block-profile-author-information { /* "Author information" block for the profile of the page's author */
+}
+
+#block-search-form { /* "Search form" block */
+}
+
+#block-shortcut-shortcuts { /* "Shortcuts" block */
+}
+
+#block-statistics-popular { /* "Popular content" block */
+}
+
+#block-system-main-menu { /* "Main menu" block */
+}
+
+#block-system-management { /* "Management" block for Drupal management menu */
+}
+
+#block-system-navigation { /* "Navigation" block for Drupal navigation menu */
+}
+
+#block-system-user-menu { /* "User menu" block for Drupal user menu */
+}
+
+#block-system-help { /* "System help" block */
+}
+
+#block-system-main { /* "Main page content" block */
+}
+
+#block-system-powered-by { /* "Powered by Drupal" block */
+}
+
+#block-user-login { /* "User login form" block */
+}
+.page-user-login {
+  #user-login {
+    #user_login_form,
+    .create-account {
+      @include box-sizing(border-box);
+      float: left;
+      width: 49%;
+    }
+    #user_login_form {
+      padding: 0 3em 0 0;
+    }
+  }
+  .login-register {
+    @include button-green;
+  }
+}
+
+#block-user-new { /* "Who's new" block for a list of the newest users */
+}
+
+#block-user-online { /* "Who's online" block for a list of the online users */
+}
+
+// User menu blocks
+.region-user {
+  #block-views-shopping-cart-block {
+    /*float: right;*/
+    margin-left: $main-padding;
+    padding: .5em 10px 0 0;
+    width: 22em;
+    .view-shopping-cart {
+      @include icon-basket-1;
+      &:before {
+        @include icon-defaults;
+        float: left;
+        font-size: 1.75em;
+      }
+    }
+    .view-empty p,
+    .line-item-quantity {
+      float: left;
+      font-family: $heading-f;
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.25;
+      margin: 0 .75em 0 .5em;
+      .line-item-quantity-label {
+        display: none;
+      }
+    }
+    .line-item-summary,
+    .line-item-total,
+    .line-item-summary-checkout {
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+    .line-item-total {
+      display: none;
+      padding: 0 .5em 0 0;
+    }
+    .line-item-summary-checkout {
+      a {
+        background-color: lighten($link-c, 60%);
+        border-bottom: 1px solid lighten($link-c, 50%);
+        color: $user-bgc;
+        font-size: 1.25em;
+        padding: 0.45em 1.5em;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover, &:active, &:focus {
+          background-color: lighten($link-c, 62%);
+        }
+      }
+    }
+  }
+  #block-menu-menu-user-menu {
+    ul.menu {
+      margin: 0;
+      padding: .5em 0 0 10px;
+      text-transform: uppercase;
+      li {
+        float: left;
+        list-style: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0 1em 0 0;
+        a {
+          padding: 0;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  #block-views-exp-display-products-page {
+    float: right;
+    margin-right: $main-padding;
+    padding: .5em 0 0 0;
+    .views-exposed-widget {
+      padding: 0;
+      input {
+        margin: 0 0 0 .5em;
+      }
+    }
+    .views-widget-filter-search_api_views_fulltext {
+      font-size: .85em;
+      margin: 0;
+      input {
+        @include border-radius(.75em);
+        @include box-shadow(darken($page-bgc, 15%) 1px 1px 4px 0 inset);
+        background-color: darken($page-bgc, 3%);
+        border: 1px solid darken($page-bgc, 20%);
+        padding: .25em .75em;
+        &:focus {
+          background-color: darken($page-bgc, 1%);
+          border: 1px solid darken($page-bgc, 22%);
+        }
+      }
+    }
+    .views-submit-button {
+      display: none;
+    }
+  }
+}
+
+// Subscription blocks
+.block-mailchimp-lists {
+  float: left;
+  padding-bottom: 3em;
+  width: 43%;
+  &.first {
+    border-right: 1px solid lighten($gray, 30%);
+    margin-right: 10.5%;
+    padding-right: 3%
+  }
+}

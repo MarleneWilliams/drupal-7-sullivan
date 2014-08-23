@@ -1,0 +1,205 @@
+//
+// Custom sass mixins
+//
+
+//
+// Media queries
+//
+
+// Respond-to
+@mixin respond-to($target, $target-print: true) {
+  // Targeting IE
+  @if $target == $ie7 or $target == $ie8 or $target == $ie9 or $target == $ie10 {
+    #{$target} & {
+      @content;
+    }
+  }
+  // For print
+  @else if $target == $print {
+    // Allow us to generate a separate print stylesheet
+    $print-styles: false !default;
+    @if $print-styles {
+      @content;
+    }
+    // Also put styles in a print media query
+    // We need a separate instance of this to prevent print styles from getting applied to IE
+    @media #{$target} {
+      // Make it more specific than default print styles
+      html & {
+        @content;
+      }
+    }
+  }
+  // If it's a number, convert to ems and insert in a screen media query
+  @else if type-of($target) == "number" {
+    @media only screen and (min-width: #{$target}) {
+      @content
+    }
+    // For IE versions less-than-9, so they can get the media query styles
+    .lt-ie9 & {
+      @content;
+    }
+  }
+  // Turn off applicaion of styles to print by adding a second argument
+  @else if $target-print != true {
+    @media #{$target} {
+      @content;
+    }
+    // For IE versions less-than-9, so they can get the media query styles
+    .lt-ie9 &{
+      @content;
+    }
+  }
+  // For breakpoints or targets defined in _variables.scss
+  @else if $target {
+    @media #{$target} {
+      @content;
+    }
+    // For IE versions less-than-9, so they can get the media query styles
+    .lt-ie9 &{
+      @content;
+    }
+  }
+  // Uncomment the next two if you're having difficulty with IE specificity
+  // For desktop on up
+  // @if $target == $desktop {
+  //   // For IE versions less-than-9, so they can get the media query styles
+  //   // Giving it more specificity than tablets
+  //   html.lt-ie9 &{
+  //     @content;
+  //   }
+  // }
+  // // For widescreen
+  // @if $target == $widescreen {
+  //   // For IE versions less-than-9, so they can get the media query styles
+  //   // Giving it more specificity than tablets
+  //   html.lt-ie9 body &{
+  //     @content;
+  //   }
+  // }
+}
+
+// Making elements align in a grid, regardless of height
+// Apply to elements you want as grid items
+// $cols = how many columns you want
+// $margin-right = margin-right, should be in percent
+// $ie8-height = an explicit height for all the elements
+@mixin gridify($cols, $margin-right: 5%, $ie8-height: auto) {
+  $width: (100% / $cols) - $margin-right + ($margin-right / $cols);
+  $clearnum: $cols + 1;
+
+  clear: none;
+  display: block;
+  float: left;
+  margin-right: $margin-right;
+  width: $width;
+
+  // Resetting from any previous uses of this mixin
+  &:nth-child(odd),
+  &:nth-child(even) {
+    clear: none;
+    margin-right: $margin-right;
+  }
+
+  // Clear the rows
+  &:nth-child(#{$cols}n+#{$clearnum}) {
+    clear: left;
+  }
+  // Remove margin-right from last column
+  &:nth-child(#{$cols}n+#{$cols}) {
+    margin-right: 0;
+  }
+
+  // Fix for IE8
+  .ie-8 & {
+    height: $ie8-height;
+  }
+}
+
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// The word "Unpublished" displayed underneath unpublished nodes and comments.
+@mixin unpublished-div {
+  height: 0;
+  overflow: visible;
+  color: #d8d8d8;
+  font-size: 75px;
+  line-height: 1;
+  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word; // A very nice CSS3 property
+
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    .lt-ie8 &>* {
+      position: relative; // Otherwise these elements will appear below the "Unpublished" text.
+    }
+  }
+}
+
+@mixin button($button-c: $green) {
+  background-color: $button-c; // Old browsers
+  @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+  border: 1px solid darken($button-c, 15%);
+  border-bottom: 1px solid darken($button-c, 25%);
+  @include border-radius(3px);
+  color: $body-c;
+  line-height: 1;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 $button-c;
+  &:hover {
+    $button-c: lighten($button-c, 5%);
+    background-color: $button-c; // Old browsers
+    @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+    cursor: pointer;
+    text-shadow: 0 1px 0 $button-c;
+  }
+  &:active {
+    $button-c: darken($button-c, 5%);
+    border: 1px solid darken($button-c, 10%);
+    border-bottom: 1px solid darken($button-c, 20%);
+    -webkit-box-shadow: inset 0 0 5px 2px darken($button-c, 10%), 0 1px 0 0 $button-c;
+    -moz-box-shadow: inset 0 0 5px 2px darken($button-c, 10%), 0 1px 0 0 $button-c;
+    box-shadow: inset 0 0 5px 2px darken($button-c, 10%), 0 1px 0 0 $button-c;
+  }
+}
+@mixin button-green {
+  @include button(lighten($green, 20%));
+}

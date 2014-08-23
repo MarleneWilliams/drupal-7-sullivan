@@ -1,0 +1,15 @@
+// Foundation 4 grid mixin
+// @include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+
+.region-sidebar-first {
+  @include grid-column($full-width);
+  // Small-sized screens
+  @include respond-to($small) {
+    .sidebar-first & {
+      @include grid-column($sidebar-1-width-1-sidebar, false, false, false, false, $content-width-first-sidebar);
+    }
+    .two-sidebars & {
+      @include grid-column($sidebar-1-width-2-sidebars, false, false, false, false, $content-width-2-sidebars);
+    }
+  }
+}

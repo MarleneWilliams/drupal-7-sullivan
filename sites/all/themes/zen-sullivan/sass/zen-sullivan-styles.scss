@@ -1,0 +1,14 @@
+// Import vendor styles
+@import "global/vendor/foundation/app";
+
+// Import base styles
+@import "global/base";
+@import "global/custom";
+@import "global/normalize";
+@import "global/fontello";
+
+// Import all component styles
+@import "component-styles/**/*";
+
+// Import layout styles
+@import "layouts/*";

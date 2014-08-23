@@ -1,0 +1,104 @@
+//
+// Commerce items
+//
+
+// Tables
+table {
+  // On cart pages
+  .section-cart &,
+  .section-checkout &,
+  .section-user & {
+    &.views-table,
+    &.checkout-review {
+      width: 100%;
+    }
+    .pane-data-full {
+      padding: 0;
+    }
+    .pane-title {
+      margin-top: 1em;
+    }
+  }
+  // Checkout process
+  .view-commerce-cart-summary & {
+    td, th {
+      padding: 0 .5em;
+    }
+  }
+  // Reviewint
+  &.checkout-review {
+    .pane-data {
+      td {
+        padding-bottom: 1em;
+      }
+    }
+  }
+}
+
+// Add-to-cart message
+div.messages.commerce-add-to-cart-confirmation {
+  .message-inner {
+    .button-wrapper {
+      @include box-sizing(border-box);
+      width: 37%;
+      .button {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .view-confirm-message-product-display {
+    margin-right: 37%;
+    .view-content {
+      @include box-sizing(border-box);
+      width: 100%;
+      .views-field-commerce-total {
+        .views-label-commerce-total {
+          float: none;
+        }
+      }
+    }
+  }
+  .views-field-commerce-product {
+    min-height: 4em;
+  }
+}
+
+// Checkout process
+ol.inline.commerce-checkout-progress {
+  li {
+    color: $lightgray;
+    display: block;
+    margin-right: 2em;
+    width: auto;
+    &::after {
+      content: ">>";
+      padding-left: 1em;
+    }
+    &.active {
+      color: $black;
+    }
+    &.last {
+      &::after {
+        content: "";
+        padding-left: 0;
+      }
+    }
+  }
+}
+// Checkout buttons
+fieldset.checkout-buttons {
+  border: 0 none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+.checkout-continue {
+  margin-right: 1em;
+}
+// Checkout help text
+.checkout-help {
+  font-weight: bold;
+  margin-bottom: 2em;
+}

@@ -1,0 +1,6 @@
+name = Sullivan Commerce Overrides
+description = Commerce overrides for the Sullivan Numismatics site
+package = Commerce (custom)
+dependencies[] = commerce
+dependencies[] = commerce_payment
+core = 7.x
