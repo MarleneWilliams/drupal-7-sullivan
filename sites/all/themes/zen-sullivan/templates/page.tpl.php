@@ -138,7 +138,7 @@
 
       <?php print render($page['header']); ?>
 
-      <?php print render($page['user']); ?>
+      <?php print render($page['users']); ?>
 
     </div>
   </header>
