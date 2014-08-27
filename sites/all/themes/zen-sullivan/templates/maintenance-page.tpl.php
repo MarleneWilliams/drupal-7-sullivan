@@ -65,8 +65,6 @@
 
     <?php print $header; ?>
 
-    <?php print $user; ?>
-
   </header>
 
   <div id="main">
@@ -75,7 +73,7 @@
       <?php print $highlighted; ?>
       <a id="main-content"></a>
       <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
+        <!-- <h1 class="title" id="page-title"><?php print $title; ?></h1> -->
       <?php endif; ?>
       <?php print $messages; ?>
       <?php print $content; ?>

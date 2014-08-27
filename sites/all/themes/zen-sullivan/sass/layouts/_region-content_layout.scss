@@ -34,6 +34,9 @@
 #content {
   @include grid-column($full-width);
   @include respond-to($small) {
+    .no-sidebars & {
+      float: none;
+    }
     .sidebar-first & {
       @include grid-column(
         $columns: $content-width-first-sidebar,
