@@ -115,7 +115,7 @@ body {
   color: $user-c;
   font-size: .85em;
   height: 2.75em;
-  margin: 0 -10px;
+  // margin: 0 -10px;
   position: fixed;
   top: 0;
   width: $page-width;
@@ -250,7 +250,7 @@ span.field-label { /* The inline field label used by the Fences module */
 .more-link { /* Aggregator, blog, and forum more link */
   @include icon-right-dir;
   font-size: .8em;
-  margin-top: 2em;
+  margin-top: 1em;
   text-transform: uppercase;
   &:before {
     @include icon-defaults;

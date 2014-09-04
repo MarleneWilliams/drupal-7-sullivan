@@ -249,3 +249,25 @@
     padding-right: 3%
   }
 }
+
+// Homepage sidebar blocks
+.block {
+  .sidebar & {
+    .blog-title-list,
+    .videos-list,
+    .articles-list {
+      h3 {
+        @extend %sidebar-item-title;
+      }
+      span {
+        @extend %sidebar-date;
+      }
+      .views-row {
+        margin-bottom: 1em;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

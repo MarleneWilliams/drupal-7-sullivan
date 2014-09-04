@@ -45,15 +45,16 @@ li a.active {
 
 #navigation {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
-  $nav-bgc: transparentize($nav-bgc, 0.2);
+  // $nav-bgc: transparentize($nav-bgc, 0.2);
 
   /*background-color: $nav-bgc;*/
   /*border-bottom: darken($nav-bgc, 10%);
   border-top: darken($nav-bgc, 10%);*/
   margin-top: 0;
-  margin-right: -$main-padding;
-  margin-bottom: 2em;
-  margin-left: -$main-padding;
+  // margin-right: -$main-padding;
+  // margin-bottom: 2em;
+  // margin-left: -$main-padding;
+  position: relative;
 
   .block {
     margin-bottom: 0;

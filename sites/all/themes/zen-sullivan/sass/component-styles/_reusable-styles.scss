@@ -24,6 +24,18 @@ img {
   text-align: center;
 }
 
+// Buttons
+.subscribe-link {
+  &.button {
+    @include button($blue);
+    @include appearance(inherit);
+    @include text-shadow($black 0 0 4px);
+    color: lighten($yellow-gold, 20%);
+    display: block;
+    font-size: 1.5em;
+  }
+}
+
 
 // Font icons
 
