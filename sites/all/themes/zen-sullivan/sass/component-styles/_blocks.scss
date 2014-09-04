@@ -253,13 +253,11 @@
 // Homepage sidebar blocks
 .block {
   .sidebar & {
-    .blog-title-list,
-    .videos-list,
-    .articles-list {
-      h3 {
+    .item-list {
+      .item-title {
         @extend %sidebar-item-title;
       }
-      span {
+      .date {
         @extend %sidebar-date;
       }
       .views-row {
@@ -269,5 +267,12 @@
         }
       }
     }
+  }
+}
+
+// Subscribe block
+.subscribe-block {
+  p {
+    margin: 0;
   }
 }

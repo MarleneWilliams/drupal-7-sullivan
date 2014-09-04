@@ -40,9 +40,7 @@ meta.foundation-data-attribute-namespace {
 }
 
 /* line 210, ../sass/global/_custom.scss */
-.sidebar .block .blog-title-list h3,
-.sidebar .block .videos-list h3,
-.sidebar .block .articles-list h3 {
+.sidebar .block .item-list .item-title {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 15.68px;
   line-height: 1.5;
@@ -50,9 +48,7 @@ meta.foundation-data-attribute-namespace {
 }
 
 /* line 216, ../sass/global/_custom.scss */
-.sidebar .block .blog-title-list span,
-.sidebar .block .videos-list span,
-.sidebar .block .articles-list span {
+.sidebar .block .item-list .date {
   color: gray;
   font-size: .85em;
   font-style: italic;
@@ -70,9 +66,7 @@ meta.foundation-data-attribute-namespace {
          @see http://snook.ca/archives/html_and_css/no_css_reset/
    ========================================================================== */
 /* line 210, ../sass/global/_custom.scss */
-.sidebar .block .blog-title-list h3,
-.sidebar .block .videos-list h3,
-.sidebar .block .articles-list h3 {
+.sidebar .block .item-list .item-title {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 15.68px;
   line-height: 1.5;
@@ -80,9 +74,7 @@ meta.foundation-data-attribute-namespace {
 }
 
 /* line 216, ../sass/global/_custom.scss */
-.sidebar .block .blog-title-list span,
-.sidebar .block .videos-list span,
-.sidebar .block .articles-list span {
+.sidebar .block .item-list .date {
   color: gray;
   font-size: .85em;
   font-style: italic;
@@ -1216,17 +1208,18 @@ tbody {
   padding-right: 3%;
 }
 
-/* line 265, ../sass/component-styles/_blocks.scss */
-.sidebar .block .blog-title-list .views-row,
-.sidebar .block .videos-list .views-row,
-.sidebar .block .articles-list .views-row {
+/* line 263, ../sass/component-styles/_blocks.scss */
+.sidebar .block .item-list .views-row {
   margin-bottom: 1em;
 }
-/* line 267, ../sass/component-styles/_blocks.scss */
-.sidebar .block .blog-title-list .views-row:last-child,
-.sidebar .block .videos-list .views-row:last-child,
-.sidebar .block .articles-list .views-row:last-child {
+/* line 265, ../sass/component-styles/_blocks.scss */
+.sidebar .block .item-list .views-row:last-child {
   margin-bottom: 0;
+}
+
+/* line 275, ../sass/component-styles/_blocks.scss */
+.subscribe-block p {
+  margin: 0;
 }
 
 /* line 1, ../sass/component-styles/_carousels.scss */
