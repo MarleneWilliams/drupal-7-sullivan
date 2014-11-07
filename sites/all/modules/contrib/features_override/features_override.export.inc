@@ -65,7 +65,7 @@ function features_get_ignore_keys($component) {
 }
 
 /**
- * Calculautes what overrides exist for by component/element.
+ * Calculates what overrides exist for by component/element.
  *
  * @param $component_key
  *   A component key that's defined via hook_features_api.
@@ -83,7 +83,7 @@ function features_override_get_overrides($component_key = FALSE, $element_key = 
     module_load_include('inc', 'features', 'features.export');
     features_include();
     foreach (features_get_components() as $component => $info) {
-      if (empty($info['default_hook']) || $component == 'features_override_items' || $component == 'features_overrides' 
+      if (empty($info['default_hook']) || $component == 'features_override_items' || $component == 'features_overrides'
         || !features_get_default_alter_hook($component) || !features_hook($component, 'features_export_render')) {
         continue;
       }
@@ -107,6 +107,35 @@ function features_override_get_overrides($component_key = FALSE, $element_key = 
   return $cache;
 }
 
+/**
+ * Helper function in determining equality of arrays. Credit to http://stackoverflow.com/a/4263181
+ *
+ * @see _features_override_remove_recursion()
+ *
+ * @param $a
+ *  object a
+ * @param $b
+ *  object b
+ * @return bool
+ *  
+ */
+function _features_override_is_ref_to(&$a, &$b, $uniqid) {
+  if (is_object($a) && is_object($b)) {
+    return ($a === $b);
+  }
+
+  $temp_a = $a;
+  $temp_b = $b;
+
+  $b = $uniqid;
+
+  if ($a === $uniqid) $return = true;
+  else $return = false;
+
+  $a = $temp_a;
+  $b = $temp_b;
+  return $return;
+}
 
 /**
  * Get overrides for specific module/component.
@@ -151,7 +180,7 @@ function features_override_module_component_overrides($module, $component, $rese
     $export = features_invoke($component, 'features_export_render', $module, array_keys($default), NULL);
     $code = array_pop($export);
     if (!$code) {
-      return FALSE;
+      return array();
     }
     else {
       $normal = eval($code);
@@ -257,7 +286,8 @@ function _features_override_set_additions(&$default, &$normal, &$additions, $ign
         continue;
       }
       if (is_object($normal)) {
-        if (!is_object($default) || !property_exists($default, $key) || (is_scalar($value) && ($default->$key !== $value))) {
+        if (!is_object($default) || !property_exists($default, $key) ||
+           (is_scalar($value) && (features_var_export($default->$key) !== features_var_export($value)))) {
           $_keys = array_merge($keys, array(array('type' => 'object', 'key' => $key)));
           $additions[features_override_make_key($_keys)] = array(
             'keys' => $_keys,
@@ -270,7 +300,8 @@ function _features_override_set_additions(&$default, &$normal, &$additions, $ign
         }
       }
       elseif (is_array($normal)) {
-        if (!is_array($default) || !array_key_exists($key, $default) || (is_scalar($value) && ($default[$key] !== $value))) {
+        if (!is_array($default) || !array_key_exists($key, $default) ||
+           (is_scalar($value) && (features_var_export($default[$key]) !== features_var_export($value)))) {
           $_keys = array_merge($keys, array(array('type' => 'array', 'key' => $key)));
           $additions[features_override_make_key($_keys)] = array(
             'keys' => $_keys,
@@ -308,7 +339,7 @@ function _features_override_set_deletions(&$default, &$normal, &$deletions, $ign
       if (isset($ignore_keys[$key]) && ($level == $ignore_keys[$key])) {
         continue;
       }
-  
+
       if (is_object($default) && is_object($normal)) {
         if (!property_exists($normal, $key)) {
           $_keys = array_merge($keys, array(array('type' => 'object', 'key' => $key)));
@@ -348,8 +379,12 @@ function features_override_export_keys($keys) {
   $line = '';
   if (is_array($keys)) {
     foreach ($keys as $key) {
-      if ($key['type'] == 'object') {
-        $line .= "->{$key['key']}";
+      $key_value = $key['key'];
+      if (is_numeric($key_value)) {
+        $line .= '[' . $key_value . ']';
+      }
+      elseif ($key['type'] == 'object') {
+        $line .= '->' . $key_value;
       }
       else {
         $line .= "['{$key['key']}']";
@@ -366,41 +401,9 @@ function features_override_export_keys($keys) {
  *   An object or array passed by reference.
  */
 function features_override_remove_recursion(&$item) {
-  _features_override_remove_recursion($item);
-  _features_override_remove_recursion_markers($item);
-}
-
-
-/**
- * Helper to removes recursion from an object/array.
- *
- * @param $item
- *   An object or array passed by reference.
- */
-function _features_override_remove_recursion(&$item) {
-  $is_object = is_object($item);
-  if ($is_object) {
-    $item->{FEATURES_OVERRIDE_RECURSION_MARKER} = 1;
-  }
-  else {
-    $item[FEATURES_OVERRIDE_RECURSION_MARKER] = 1;
-  }
-  foreach ($item as $key => $value) {
-    if (is_array($value) || is_object($value)) {
-      $remove = is_array($value) ? !empty($value[FEATURES_OVERRIDE_RECURSION_MARKER]) : !empty($value->{FEATURES_OVERRIDE_RECURSION_MARKER});
-      if ($remove) {
-        if ($is_object) {
-          unset($item->$key);
-        }
-        else {
-          unset($item[$key]);
-        }
-      }
-      else {
-        features_override_remove_recursion($value);
-      }
-    }
-  }
+  $uniqid = __FUNCTION__ . mt_rand(); // use of uniqid() here impacts performance
+  $stack = array();
+  _features_override_remove_recursion($item, $stack, $uniqid);
 }
 
 /**
@@ -409,21 +412,32 @@ function _features_override_remove_recursion(&$item) {
  * @param $item
  *   An object or array passed by reference.
  */
-function _features_override_remove_recursion_markers(&$item) {
-  $is_object = is_object($item);
-  foreach ($item as $key => $value) {
-    if ($key === FEATURES_OVERRIDE_RECURSION_MARKER) {
-      if ($is_object) {
-        unset($item->$key);
-      }
-      else {
-        unset($item[$key]);
+function _features_override_remove_recursion(&$object, &$stack = array(), $uniqid) {
+  if ((is_object($object) || is_array($object)) && $object) {
+    $in_stack = FALSE;
+    foreach($stack as &$item) {
+      if(_features_override_is_ref_to($object, $item, $uniqid)) {
+        $in_stack = TRUE;
+        break;
       }
     }
-    elseif (is_array($value) || is_object($value)) {
-      _features_override_remove_recursion_markers($value);
+    if(!$in_stack) {
+      $stack[] = $object;
+      foreach ($object as $key => &$subobject) {
+        if (_features_override_remove_recursion($subobject, $stack, $uniqid)) {
+          if (is_object($object)) {
+            unset($object->$key);
+          }
+          else {
+            unset($object[$key]);
+          }
+        }
+      }
+    } else {
+      return TRUE;
     }
   }
+  return FALSE;
 }
 
 /**
@@ -439,6 +453,9 @@ function _features_override_remove_recursion_markers(&$item) {
  */
 function _features_override_remove_ignores(&$item, $ignore_keys, $level = -1) {
   $is_object = is_object($item);
+  if (!is_array($item) && !is_object($item)) {
+    return;
+  }
   foreach ($item as $key => $value) {
     if (isset($ignore_keys[$key]) && ($ignore_keys[$key] == $level)) {
       if ($is_object) {
@@ -524,11 +541,12 @@ function features_override_features_export_render_addition($alter, $element, $co
     $component_start = "\$data['$element']";
     $code_line = features_override_export_keys($alter['keys']);
     $value_export = features_override_var_export($alter['value'], '    ');
-    if ($is_change) {
-      $original_export = (isset($alter['original'])) ? ' /* WAS: ' . features_override_var_export($alter['original'], '    ') . ' */' : '';
-    }
-    else {
-      $original_export = '';
+    $original_export = '';
+    if ($is_change && isset($alter['original'])) {
+      $original_export = features_override_var_export($alter['original'], '    ');
+      $original_export = str_replace('/*', '\/*', $original_export);
+      $original_export = str_replace('*/', '*\/', $original_export);
+      $original_export = ' /* WAS: ' . $original_export . ' */';
     }
     $code[] = "    " . $component_start . $code_line . ' = ' . $value_export . ';' . $original_export;
     return $code;
