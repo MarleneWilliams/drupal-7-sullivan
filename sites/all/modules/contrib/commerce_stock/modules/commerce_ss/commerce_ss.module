@@ -19,7 +19,7 @@ function commerce_ss_menu() {
     'description' => 'Configure Simple stock.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('commerce_ss_admin_form'),
-    'access arguments' => array('administer commerce_product entities'),
+    'access arguments' => array('administer commerce_stock settings'),
     'file' => 'includes/commerce_ss.admin.inc',
     'type'  => MENU_LOCAL_TASK,
 
@@ -41,10 +41,10 @@ function commerce_ss_entity_property_info_alter(&$info) {
       $properties += $bundle_info['properties'];
     }
 
-    if ( isset($properties['commerce_stock'])) {
+    if (isset($properties['commerce_stock'])) {
       $info['commerce_product']['properties']['commerce_stock'] = $properties['commerce_stock'];
     }
-    if ( isset($properties['commerce_stock_override'])) {
+    if (isset($properties['commerce_stock_override'])) {
       $info['commerce_product']['properties']['commerce_stock_override'] = $properties['commerce_stock_override'];
     }
 
@@ -77,8 +77,9 @@ function commerce_ss_tokens($type, $tokens, array $data = array(), array $option
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'commerce-stock-int':
-          $replacements[$original] = (int)$product->commerce_stock->value();
+          $replacements[$original] = (int) $product->commerce_stock->value();
           break;
+
         case 'commerce-stock-user':
           $replacements[$original] = $product->commerce_stock->value() -
                 commerce_stock_check_cart_product_level($product->product_id->value());
@@ -87,6 +88,66 @@ function commerce_ss_tokens($type, $tokens, array $data = array(), array $option
     }
   }
   return $replacements;
+}
+
+
+
+/**
+ * Implements hook_form_ID_alter().
+ *
+ * Provides a checkbox on the Product type edit form to allow decimal
+ * quantities for stock managment.
+ */
+function commerce_ss_form_commerce_product_ui_product_type_form_alter(&$form, &$form_state) {
+  // Get the product bundle type.
+  $type = $form_state['product_type']['type'];
+  // Check if stock enabled for the type.
+  if (commerce_ss_product_type_enabled($type)) {
+    $form['product_type']['decimal_admin'] = array(
+      // Provide a configuration option for decimal stock
+      '#type' => 'checkbox',
+      '#title' => t('Allow decimal quantities for stock administration'),
+      '#default_value' => variable_get('commerce_stock_decimal_backend_'.$type, FALSE),
+      '#description' => t('Check this box if you want to allow the users to set decimal stock levels on product edit forms.'),
+      '#element_validate' => array('commerce_ss_checkbox_validate'),
+    );
+  }
+}
+
+/**
+ * Element validation callback for the decimal checkbox.
+ */
+function commerce_ss_checkbox_validate($element, &$form_state, $form) {
+  // Get the product bundle type.
+  $type = $form_state['product_type']['type'];
+  // Check if stock enabled for the type.
+  if (commerce_ss_product_type_enabled($type)) {
+    // Set the configuration option for decimal stock.
+    variable_set('commerce_stock_decimal_backend_' . $type, $form_state['values']['product_type']['decimal_admin'] );
+  }
+}
+
+
+/**
+ * Implements hook_form_ID_alter().
+ *
+ * Controll the decimal quantities option when editing products.
+ */
+function commerce_ss_form_commerce_product_ui_product_form_alter(&$form, &$form_state) {
+  // Get the product bundle type.
+  $type = $form_state['commerce_product']->type;
+  // Check if stock enabled for the type.
+  if (commerce_ss_product_type_enabled($type)) {
+    $decimal = variable_get('commerce_stock_decimal_backend_'.$type, FALSE);
+    if (!$decimal) {
+      // Get the fields language.
+      $language = $form['commerce_stock']['#language'];
+      // Set the number format to decimal.
+      $form['commerce_stock'][$language][0]['value']['#number_type'] = 'integer';
+      $form['commerce_stock'][$language][0]['value']['#default_value']
+        = intval($form['commerce_stock'][$language][0]['value']['#default_value']);
+    }
+  }
 }
 
 /**
@@ -131,8 +192,7 @@ function commerce_ss_product_enabled($product) {
 }
 
 /**
- * Given a line item, determine whether stock management is enabled for that
- * line item.
+ * For a given a line item, determine whether stock management is enabled.
  *
  * @param $line_item
  *   The line item to check.
@@ -146,7 +206,6 @@ function commerce_ss_line_item_product_enabled($line_item) {
 
 
 /**
- *
  * This function makes sure stock is enabled for product.
  * if true is return stock checking is enabled
  * if false stock checking is disabled
@@ -159,12 +218,35 @@ function commerce_ss_line_item_product_enabled($line_item) {
  */
 function commerce_ss_product_not_disabled_by_override($product) {
   $stock_check_enabled = TRUE;
-  // if product overide enabled for the product type
+  // If product overide enabled for the product type.
   if (commerce_ss_product_type_override_enabled($product->type)) {
-     // if the product has its override set and is turned on
-     if ((isset($product->commerce_stock_override['und']) && $product->commerce_stock_override['und'][0]['value'] == 1)) {
-       $stock_check_enabled = FALSE;
-     }
+    // If the product has its override set and is turned on.
+    if ((isset($product->commerce_stock_override['und']) && $product->commerce_stock_override['und'][0]['value'] == 1)) {
+      $stock_check_enabled = FALSE;
+    }
   }
   return $stock_check_enabled;
+}
+
+/**
+ * Implements hook_inline_entity_form_table_fields_alter().
+ */
+function commerce_ss_inline_entity_form_table_fields_alter(&$fields, $context) {
+  if ($context['entity_type'] == 'commerce_product') {
+    // Make sure there's a stock field on each of the allowed product types.
+    $has_stock_field = TRUE;
+    foreach ($context['allowed_bundles'] as $bundle) {
+      if (!commerce_ss_product_type_enabled($bundle)) {
+        $has_stock_field = FALSE;
+      }
+    }
+
+    if ($has_stock_field) {
+      $fields['commerce_stock'] = array(
+        'type' => 'field',
+        'label' => t('Stock'),
+        'weight' => 101,
+      );
+    }
+  }
 }
