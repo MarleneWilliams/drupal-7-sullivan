@@ -10,3 +10,7 @@ sites/*/private
 
 # Ignore SASS caches
 *sass-cache*
+
+# Subdomain directories on HostGator
+test/*
+dev/*
