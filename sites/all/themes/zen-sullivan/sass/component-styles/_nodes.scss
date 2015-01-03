@@ -58,7 +58,8 @@
   .field-name-commerce-price {
     .field-item {
       @include border-radius(.5em);
-      background-color: lighten($green, 20%);
+      background-color: $blue;
+      color: $white;
       display: inline-block;
       // float: right;
       font-size: 1.25em;

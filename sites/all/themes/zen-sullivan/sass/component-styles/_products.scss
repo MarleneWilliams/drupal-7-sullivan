@@ -1,0 +1,6 @@
+.cloud-zoom-gallery-thumbs {
+	img {
+		@include single-box-shadow($lightgray, 0, 0, .25em, 0, false);
+		padding: .5em;
+	}
+}

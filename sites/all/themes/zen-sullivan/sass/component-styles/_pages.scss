@@ -76,13 +76,17 @@ body {
 
 #site-name { /* The name of the website */
   margin: 0 auto .3em auto;
-  font-size: 5em;
+  font-size: 3em;
   font-weight: normal;
   line-height: .85;
   max-width: 100%;
   text-align: center;
   text-transform: none;
   width: 9em;
+
+  @include respond-to($small) {
+    font-size: 5em;
+  }
 
   a:link,
   a:visited {
