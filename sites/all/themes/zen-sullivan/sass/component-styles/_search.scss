@@ -1,0 +1,44 @@
+// Search form in views
+.views-exposed-widgets {
+	.form-text {
+		border: 1px solid #97b663;
+		padding: .25em;
+	}
+	.sidebar & {
+		.form-submit {
+			margin-top: 0;
+		}
+	}
+}
+
+// Search results sort
+.block-search-api-sorts {
+	margin-bottom: 1em;
+	h2.block-title {
+		float: left;
+		font-family: $font-body;
+		font-size: 1em;
+		font-weight: bold;
+		margin-right: 1em;
+		text-transform: inherit;
+		&::after {
+			content: ":";
+		}
+	}
+	.item-list {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			color: $link-c;
+      float: left;
+      line-height: 1.25;
+      margin: 0 .5em 2em 0;
+      a {
+      	color: $link-c;
+      }
+		}
+	}
+}

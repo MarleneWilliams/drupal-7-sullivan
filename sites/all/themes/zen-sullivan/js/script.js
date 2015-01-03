@@ -25,5 +25,11 @@
       }
     }
   };
+  // Reset 'read more' link on description (set by product_ui module)
+  Drupal.behaviors.bodyReadMore = {
+    attach: function ( context, settings ) {
+      return;
+    }
+  }
 
 })(jQuery, Drupal, this, this.document);

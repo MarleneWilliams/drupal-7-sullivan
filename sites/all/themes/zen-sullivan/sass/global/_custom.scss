@@ -168,10 +168,10 @@
 
 @mixin button($button-c: $green) {
   background-color: $button-c; // Old browsers
-  @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
-  // IE9 SVG, needs conditional override of 'filter' to 'none'
-  $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+  // @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
+  // // IE9 SVG, needs conditional override of 'filter' to 'none'
+  // $experimental-support-for-svg: true;
+  // @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
   border: 1px solid darken($button-c, 15%);
   border-bottom: 1px solid darken($button-c, 25%);
   @include border-radius(3px);
@@ -184,10 +184,10 @@
   &:hover {
     $button-c: lighten($button-c, 5%);
     background-color: $button-c; // Old browsers
-    @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
-    // IE9 SVG, needs conditional override of 'filter' to 'none'
-    $experimental-support-for-svg: true;
-    @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+    // @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
+    // // IE9 SVG, needs conditional override of 'filter' to 'none'
+    // $experimental-support-for-svg: true;
+    // @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
     cursor: pointer;
     text-shadow: 0 1px 0 $button-c;
   }

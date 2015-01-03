@@ -107,8 +107,9 @@
     }
     .product-price {
       @include border-radius(.5em);
-      background-color: lighten($green, 10%);
+      background-color: lighten($blue, 10%);
       // bottom: 0;
+      color: $white;
       display: inline-block;
       float: right;
       font-weight: bold;

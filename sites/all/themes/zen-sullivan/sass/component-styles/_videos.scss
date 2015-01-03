@@ -1,0 +1,12 @@
+.videos-list {
+	.sidebar & {
+		.field-name-field-video {
+			float: left;
+		}
+	}
+	.sidebar .block & {
+		h3.item-title {
+			margin-left: 115px;
+		}
+	}
+}
