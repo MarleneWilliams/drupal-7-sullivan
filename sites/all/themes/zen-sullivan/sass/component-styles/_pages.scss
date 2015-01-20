@@ -258,7 +258,7 @@ span.field-label { /* The inline field label used by the Fences module */
   text-transform: uppercase;
   &:before {
     @include icon-defaults;
-    color: $heading-c;
+    color: $green;
     float: right;
     font-size: 2em;
     margin-right: 0;
