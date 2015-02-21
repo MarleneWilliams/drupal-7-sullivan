@@ -15,7 +15,7 @@ Font license info
    (c) Stephen Hutchings 2012
 
    Author:    Stephen Hutchings
-   License:   CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+   License:   SIL (http://scripts.sil.org/OFL)
    Homepage:  http://typicons.com/
 
 
@@ -32,7 +32,7 @@ Font license info
 
    Copyright (C) 2012 by Daniel Bruce
 
-   Author:    Daniel Buce
+   Author:    Daniel Bruce
    License:   SIL (http://scripts.sil.org/OFL)
    Homepage:  http://www.entypo.com
 
@@ -42,7 +42,7 @@ Font license info
    Copyright (C) 2012 by Dave Gandy
 
    Author:    Dave Gandy
-   License:   CC BY 3.0 (http://creativecommons.org/licenses/by/3.0/)
+   License:   SIL ()
    Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
@@ -53,15 +53,6 @@ Font license info
    Author:    John Caserta
    License:   SIL (http://scripts.sil.org/OFL)
    Homepage:  http://thedesignoffice.org/project/modern-pictograms/
-
-
-## Fontelico
-
-   Copyright (C) 2012 by Fontello project
-
-   Author:    Crowdsourced, for Fontello project
-   License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://fontello.com
 
 
 ## Maki
@@ -79,6 +70,33 @@ Font license info
 
    Author:    Just Be Nice studio
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.justbenicestudio.com/studio/websymbols/
+   Homepage:  http://www.justbenicestudio.com/
+
+
+## Fontelico
+
+   Copyright (C) 2012 by Fontello project
+
+   Author:    Crowdsourced, for Fontello project
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://fontello.com
+
+
+## MFG Labs
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    MFG Labs
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.mfglabs.com/
+
+
+## Linecons
+
+   Copyright (C) 2013 by Designmodo
+
+   Author:    Designmodo for Smashing Magazine
+   License:   CC BY ()
+   Homepage:  http://designmodo.com/linecons-free/
 
 

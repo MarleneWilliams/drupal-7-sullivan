@@ -39,7 +39,7 @@ meta.foundation-data-attribute-namespace {
   font-family: false;
 }
 
-/* line 210, ../sass/global/_custom.scss */
+/* line 6, ../sass/global/_extends.scss */
 .sidebar .block .item-list .item-title {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 15.68px;
@@ -47,11 +47,139 @@ meta.foundation-data-attribute-namespace {
   margin: 0;
 }
 
-/* line 216, ../sass/global/_custom.scss */
+/* line 12, ../sass/global/_extends.scss */
 .sidebar .block .item-list .date {
   color: gray;
   font-size: .85em;
   font-style: italic;
+}
+
+/* line 19, ../sass/global/_extends.scss */
+.button-1, .button-2, .button-3, .button-4, .button-5, .button-6 {
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  -moz-transition: background-color 0.2s ease, color 0.2s ease;
+  -o-transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+/* line 26, ../sass/global/_extends.scss */
+.button-1, .button-2, .button-3, .button-4, .button-5, .button-6 {
+  color: #8bae52;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding-left: 2.75em;
+  position: relative;
+  text-decoration: none;
+}
+/* line 37, ../sass/global/_extends.scss */
+.button-1:link, .button-2:link, .button-3:link, .button-4:link, .button-5:link, .button-6:link, .button-1:visited, .button-2:visited, .button-3:visited, .button-4:visited, .button-5:visited, .button-6:visited {
+  color: #8bae52;
+}
+/* line 40, ../sass/global/_extends.scss */
+.button-1:hover, .button-2:hover, .button-3:hover, .button-4:hover, .button-5:hover, .button-6:hover {
+  color: #7d9d4a;
+}
+/* line 42, ../sass/global/_extends.scss */
+.button-1:hover::before, .button-2:hover::before, .button-3:hover::before, .button-4:hover::before, .button-5:hover::before, .button-6:hover::before {
+  color: #8bae52;
+}
+/* line 46, ../sass/global/_extends.scss */
+.button-1::before, .button-2::before, .button-3::before, .button-4::before, .button-5::before, .button-6::before {
+  position: absolute;
+  font-size: 2em;
+  color: #7d9d4a;
+  left: -0.2em;
+  margin: 0;
+  top: -40%;
+}
+
+/* line 55, ../sass/global/_extends.scss */
+.button-2, .button-3, .button-4, .button-5, .button-6 {
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  border-radius: 0.25em;
+  border: 1px solid #7d9d4a;
+  padding: .5em 1em .5em 3.25em;
+}
+/* line 61, ../sass/global/_extends.scss */
+.button-2::before, .button-3::before, .button-4::before, .button-5::before, .button-6::before {
+  left: 0em;
+  top: .05em;
+}
+/* line 65, ../sass/global/_extends.scss */
+.button-2:hover, .button-3:hover, .button-4:hover, .button-5:hover, .button-6:hover {
+  background-color: #f4f7ee;
+}
+/* line 67, ../sass/global/_extends.scss */
+.button-2:hover::before, .button-3:hover::before, .button-4:hover::before, .button-5:hover::before, .button-6:hover::before {
+  color: #759345;
+}
+
+/* line 72, ../sass/global/_extends.scss */
+.button-3 {
+  background-color: #edf2e4;
+}
+/* line 76, ../sass/global/_extends.scss */
+.button-3:link, .button-3:visited {
+  color: #759345;
+}
+/* line 79, ../sass/global/_extends.scss */
+.button-3:hover {
+  background-color: #eff4e7;
+  color: #6f8c41;
+}
+/* line 82, ../sass/global/_extends.scss */
+.button-3:hover::before {
+  color: #6a853e;
+}
+
+/* line 87, ../sass/global/_extends.scss */
+.button-4, .button-5, .button-6 {
+  border: 2px solid #dde7cc;
+}
+/* line 91, ../sass/global/_extends.scss */
+.button-4::before, .button-5::before, .button-6::before {
+  top: 0;
+}
+
+/* line 95, ../sass/global/_extends.scss */
+.button-5, .button-6 {
+  font-size: 1.25em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+/* line 101, ../sass/global/_extends.scss */
+.button-5::before, .button-6::before {
+  font-size: 2.25em;
+  top: -.1em;
+}
+
+/* line 108, ../sass/global/_extends.scss */
+.button-6::before {
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+/* line 113, ../sass/global/_extends.scss */
+.icon-options .icon {
+  color: #8bae52;
+  display: inline-block;
+  float: left;
+  font-size: 3em;
+}
+/* line 118, ../sass/global/_extends.scss */
+.icon-options .icon:first-child {
+  margin-left: 0;
+}
+/* line 122, ../sass/global/_extends.scss */
+.icon-options br {
+  display: none;
 }
 
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
@@ -65,21 +193,6 @@ meta.foundation-data-attribute-namespace {
    Also: @see http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/
          @see http://snook.ca/archives/html_and_css/no_css_reset/
    ========================================================================== */
-/* line 210, ../sass/global/_custom.scss */
-.sidebar .block .item-list .item-title {
-  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
-  font-size: 15.68px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* line 216, ../sass/global/_custom.scss */
-.sidebar .block .item-list .date {
-  color: gray;
-  font-size: .85em;
-  font-style: italic;
-}
-
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -641,14 +754,14 @@ input[type="submit"] {
   /* 1 */
   -webkit-appearance: button;
   /* 2 */
-  background-color: #bacf97;
-  border: 1px solid #97b663;
-  border-bottom: 1px solid #7d9d4a;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  background-color: #bacf97;
+  border: 1px solid #97b663;
+  border-bottom: 1px solid #7d9d4a;
   color: #333333;
   line-height: 1;
   padding: .5em 2em;
@@ -656,7 +769,7 @@ input[type="submit"] {
   text-decoration: none;
   text-shadow: 0 1px 0 #bacf97;
 }
-/* line 184, ../sass/global/_custom.scss */
+/* line 180, ../sass/global/_custom.scss */
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -665,7 +778,7 @@ input[type="submit"]:hover {
   cursor: pointer;
   text-shadow: 0 1px 0 #c5d7a9;
 }
-/* line 194, ../sass/global/_custom.scss */
+/* line 186, ../sass/global/_custom.scss */
 button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
@@ -789,6 +902,29 @@ tbody {
   src: url("../fonts/fontello-sullivan/font/sullivan.eot?#iefix") format("embedded-opentype"), url("../fonts/fontello-sullivan/font/sullivan.woff") format("woff"), url("../fonts/fontello-sullivan/font/sullivan.ttf") format("truetype"), url("../fonts/fontello-sullivan/font/sullivan.svg#sullivan") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+/* line 32, ../sass/global/_fontello.scss */
+.button-1:before, .button-2:before, .button-3:before, .button-4:before, .button-5:before, .button-6:before, .icon:before {
+  font-family: "Fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /*opacity: 0.8;*/
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - magrins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 /*[class^="icon-"]:before,
@@ -983,14 +1119,14 @@ tbody {
 }
 /* line 128, ../sass/component-styles/_blocks.scss */
 .page-user-login .login-register {
-  background-color: #bacf97;
-  border: 1px solid #97b663;
-  border-bottom: 1px solid #7d9d4a;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  background-color: #bacf97;
+  border: 1px solid #97b663;
+  border-bottom: 1px solid #7d9d4a;
   color: #333333;
   line-height: 1;
   padding: .5em 2em;
@@ -998,13 +1134,13 @@ tbody {
   text-decoration: none;
   text-shadow: 0 1px 0 #bacf97;
 }
-/* line 184, ../sass/global/_custom.scss */
+/* line 180, ../sass/global/_custom.scss */
 .page-user-login .login-register:hover {
   background-color: #c5d7a9;
   cursor: pointer;
   text-shadow: 0 1px 0 #c5d7a9;
 }
-/* line 194, ../sass/global/_custom.scss */
+/* line 186, ../sass/global/_custom.scss */
 .page-user-login .login-register:active {
   border: 1px solid #a2be75;
   border-bottom: 1px solid #8bae52;
@@ -1030,7 +1166,7 @@ tbody {
   padding: .5em 10px 0 0;
   width: 22em;
 }
-/* line 598, ../sass/global/_fontello.scss */
+/* line 622, ../sass/global/_fontello.scss */
 .region-users #block-views-shopping-cart-block .view-shopping-cart:before {
   content: '\e805';
   /* '' */
@@ -2265,7 +2401,7 @@ span.field-label {
   margin-top: 1em;
   text-transform: uppercase;
 }
-/* line 358, ../sass/global/_fontello.scss */
+/* line 382, ../sass/global/_fontello.scss */
 .more-link:before {
   content: '\25b8';
   /* '▸' */
@@ -2446,14 +2582,14 @@ img.float-right {
 
 /* line 29, ../sass/component-styles/_reusable-styles.scss */
 .subscribe-link.button {
-  background-color: #bacf97;
-  border: 1px solid #97b663;
-  border-bottom: 1px solid #7d9d4a;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  background-color: #bacf97;
+  border: 1px solid #97b663;
+  border-bottom: 1px solid #7d9d4a;
   color: #333333;
   line-height: 1;
   padding: .5em 2em;
@@ -2466,13 +2602,13 @@ img.float-right {
   display: block;
   font-size: 1.5em;
 }
-/* line 184, ../sass/global/_custom.scss */
+/* line 180, ../sass/global/_custom.scss */
 .subscribe-link.button:hover {
   background-color: #c5d7a9;
   cursor: pointer;
   text-shadow: 0 1px 0 #c5d7a9;
 }
-/* line 194, ../sass/global/_custom.scss */
+/* line 186, ../sass/global/_custom.scss */
 .subscribe-link.button:active {
   border: 1px solid #a2be75;
   border-bottom: 1px solid #8bae52;
@@ -2481,1399 +2617,1441 @@ img.float-right {
   box-shadow: inset 0 0 5px 2px #a2be75, 0 1px 0 0 #bacf97;
 }
 
-/* line 45, ../sass/component-styles/_reusable-styles.scss */
+/* line 42, ../sass/component-styles/_reusable-styles.scss */
+.icon-aim:before {
+  content: '\22';
+}
+
+/* '&quot;' */
+/* line 43, ../sass/component-styles/_reusable-styles.scss */
 .icon-delicious:before {
   content: '\23';
 }
 
 /* '#' */
-/* line 46, ../sass/component-styles/_reusable-styles.scss */
+/* line 44, ../sass/component-styles/_reusable-styles.scss */
 .icon-paypal:before {
   content: '\24';
 }
 
 /* '$' */
-/* line 47, ../sass/component-styles/_reusable-styles.scss */
+/* line 45, ../sass/component-styles/_reusable-styles.scss */
 .icon-android:before {
   content: '\26';
 }
 
 /* '&amp;' */
-/* line 48, ../sass/component-styles/_reusable-styles.scss */
+/* line 46, ../sass/component-styles/_reusable-styles.scss */
 .icon-smashmag:before {
   content: '\2a';
 }
 
 /* '*' */
-/* line 49, ../sass/component-styles/_reusable-styles.scss */
+/* line 47, ../sass/component-styles/_reusable-styles.scss */
 .icon-gplus:before {
   content: '\2b';
 }
 
 /* '+' */
-/* line 50, ../sass/component-styles/_reusable-styles.scss */
+/* line 48, ../sass/component-styles/_reusable-styles.scss */
 .icon-wikipedia:before {
   content: '\2c';
 }
 
 /* ',' */
-/* line 51, ../sass/component-styles/_reusable-styles.scss */
+/* line 49, ../sass/component-styles/_reusable-styles.scss */
 .icon-calendar-2:before {
   content: '\2e';
 }
 
 /* '.' */
-/* line 52, ../sass/component-styles/_reusable-styles.scss */
+/* line 50, ../sass/component-styles/_reusable-styles.scss */
 .icon-stumbleupon:before {
   content: '\2f';
 }
 
 /* '/' */
-/* line 53, ../sass/component-styles/_reusable-styles.scss */
+/* line 51, ../sass/component-styles/_reusable-styles.scss */
 .icon-pinterest:before {
   content: '\31';
 }
 
 /* '1' */
-/* line 54, ../sass/component-styles/_reusable-styles.scss */
+/* line 52, ../sass/component-styles/_reusable-styles.scss */
 .icon-bitcoin:before {
   content: '\32';
 }
 
 /* '2' */
-/* line 55, ../sass/component-styles/_reusable-styles.scss */
+/* line 53, ../sass/component-styles/_reusable-styles.scss */
 .icon-w3c:before {
   content: '\33';
 }
 
 /* '3' */
-/* line 56, ../sass/component-styles/_reusable-styles.scss */
+/* line 54, ../sass/component-styles/_reusable-styles.scss */
 .icon-foursquare:before {
   content: '\34';
 }
 
 /* '4' */
-/* line 57, ../sass/component-styles/_reusable-styles.scss */
+/* line 55, ../sass/component-styles/_reusable-styles.scss */
 .icon-html5:before {
   content: '\35';
 }
 
 /* '5' */
-/* line 58, ../sass/component-styles/_reusable-styles.scss */
+/* line 56, ../sass/component-styles/_reusable-styles.scss */
 .icon-ie:before {
   content: '\36';
 }
 
 /* '6' */
-/* line 59, ../sass/component-styles/_reusable-styles.scss */
+/* line 57, ../sass/component-styles/_reusable-styles.scss */
 .icon-digg:before {
   content: '\3b';
 }
 
 /* ';' */
-/* line 60, ../sass/component-styles/_reusable-styles.scss */
+/* line 58, ../sass/component-styles/_reusable-styles.scss */
 .icon-spotify:before {
   content: '\3d';
 }
 
 /* '=' */
-/* line 61, ../sass/component-styles/_reusable-styles.scss */
+/* line 59, ../sass/component-styles/_reusable-styles.scss */
 .icon-reddit:before {
   content: '\3e';
 }
 
 /* '&gt;' */
-/* line 62, ../sass/component-styles/_reusable-styles.scss */
+/* line 60, ../sass/component-styles/_reusable-styles.scss */
 .icon-guest:before {
   content: '\3f';
 }
 
 /* '?' */
-/* line 63, ../sass/component-styles/_reusable-styles.scss */
+/* line 61, ../sass/component-styles/_reusable-styles.scss */
 .icon-appstore:before {
   content: '\41';
 }
 
 /* 'A' */
-/* line 64, ../sass/component-styles/_reusable-styles.scss */
+/* line 62, ../sass/component-styles/_reusable-styles.scss */
 .icon-blogger:before {
   content: '\42';
 }
 
 /* 'B' */
-/* line 65, ../sass/component-styles/_reusable-styles.scss */
+/* line 63, ../sass/component-styles/_reusable-styles.scss */
 .icon-cc:before {
   content: '\43';
 }
 
 /* 'C' */
-/* line 66, ../sass/component-styles/_reusable-styles.scss */
+/* line 64, ../sass/component-styles/_reusable-styles.scss */
 .icon-dribbble:before {
   content: '\44';
 }
 
 /* 'D' */
-/* line 67, ../sass/component-styles/_reusable-styles.scss */
+/* line 65, ../sass/component-styles/_reusable-styles.scss */
 .icon-evernote:before {
   content: '\45';
 }
 
 /* 'E' */
-/* line 68, ../sass/component-styles/_reusable-styles.scss */
+/* line 66, ../sass/component-styles/_reusable-styles.scss */
 .icon-flickr:before {
   content: '\46';
 }
 
 /* 'F' */
-/* line 69, ../sass/component-styles/_reusable-styles.scss */
+/* line 67, ../sass/component-styles/_reusable-styles.scss */
 .icon-google:before {
   content: '\47';
 }
 
 /* 'G' */
-/* line 70, ../sass/component-styles/_reusable-styles.scss */
+/* line 68, ../sass/component-styles/_reusable-styles.scss */
 .icon-instapaper:before {
   content: '\49';
 }
 
 /* 'I' */
-/* line 71, ../sass/component-styles/_reusable-styles.scss */
+/* line 69, ../sass/component-styles/_reusable-styles.scss */
 .icon-linkedin:before {
   content: '\4c';
 }
 
 /* 'L' */
-/* line 72, ../sass/component-styles/_reusable-styles.scss */
+/* line 70, ../sass/component-styles/_reusable-styles.scss */
 .icon-rss-2:before {
   content: '\52';
 }
 
 /* 'R' */
-/* line 73, ../sass/component-styles/_reusable-styles.scss */
+/* line 71, ../sass/component-styles/_reusable-styles.scss */
 .icon-skype:before {
   content: '\53';
 }
 
 /* 'S' */
-/* line 74, ../sass/component-styles/_reusable-styles.scss */
+/* line 72, ../sass/component-styles/_reusable-styles.scss */
 .icon-twitter:before {
   content: '\54';
 }
 
 /* 'T' */
-/* line 75, ../sass/component-styles/_reusable-styles.scss */
+/* line 73, ../sass/component-styles/_reusable-styles.scss */
 .icon-youtube:before {
   content: '\55';
 }
 
 /* 'U' */
-/* line 76, ../sass/component-styles/_reusable-styles.scss */
+/* line 74, ../sass/component-styles/_reusable-styles.scss */
 .icon-vimeo:before {
   content: '\56';
 }
 
 /* 'V' */
-/* line 77, ../sass/component-styles/_reusable-styles.scss */
+/* line 75, ../sass/component-styles/_reusable-styles.scss */
 .icon-windows:before {
   content: '\57';
 }
 
 /* 'W' */
-/* line 78, ../sass/component-styles/_reusable-styles.scss */
+/* line 76, ../sass/component-styles/_reusable-styles.scss */
 .icon-yahoo:before {
   content: '\59';
 }
 
 /* 'Y' */
-/* line 79, ../sass/component-styles/_reusable-styles.scss */
+/* line 77, ../sass/component-styles/_reusable-styles.scss */
 .icon-chrome:before {
   content: '\5b';
 }
 
 /* '[' */
-/* line 80, ../sass/component-styles/_reusable-styles.scss */
-.icon-email:before {
+/* line 78, ../sass/component-styles/_reusable-styles.scss */
+.icon-email:before, .button-1:before, .button-2:before, .button-3:before, .button-4:before, .button-5:before, .button-6:before {
   content: '\5d';
 }
 
 /* ']' */
-/* line 81, ../sass/component-styles/_reusable-styles.scss */
+/* line 79, ../sass/component-styles/_reusable-styles.scss */
 .icon-macstore:before {
   content: '\5e';
 }
 
 /* '^' */
-/* line 82, ../sass/component-styles/_reusable-styles.scss */
+/* line 80, ../sass/component-styles/_reusable-styles.scss */
 .icon-myspace:before {
   content: '\5f';
 }
 
 /* '_' */
-/* line 83, ../sass/component-styles/_reusable-styles.scss */
+/* line 81, ../sass/component-styles/_reusable-styles.scss */
 .icon-podcast:before {
   content: '\60';
 }
 
 /* '`' */
-/* line 84, ../sass/component-styles/_reusable-styles.scss */
+/* line 82, ../sass/component-styles/_reusable-styles.scss */
 .icon-amazon:before {
   content: '\61';
 }
 
 /* 'a' */
-/* line 85, ../sass/component-styles/_reusable-styles.scss */
+/* line 83, ../sass/component-styles/_reusable-styles.scss */
 .icon-steam:before {
   content: '\62';
 }
 
 /* 'b' */
-/* line 86, ../sass/component-styles/_reusable-styles.scss */
+/* line 84, ../sass/component-styles/_reusable-styles.scss */
 .icon-dropbox:before {
   content: '\64';
 }
 
 /* 'd' */
-/* line 87, ../sass/component-styles/_reusable-styles.scss */
+/* line 85, ../sass/component-styles/_reusable-styles.scss */
 .icon-ebay:before {
   content: '\65';
 }
 
 /* 'e' */
-/* line 88, ../sass/component-styles/_reusable-styles.scss */
+/* line 86, ../sass/component-styles/_reusable-styles.scss */
 .icon-facebook:before {
   content: '\66';
 }
 
 /* 'f' */
-/* line 89, ../sass/component-styles/_reusable-styles.scss */
+/* line 87, ../sass/component-styles/_reusable-styles.scss */
 .icon-github:before {
   content: '\67';
 }
 
 /* 'g' */
-/* line 90, ../sass/component-styles/_reusable-styles.scss */
+/* line 88, ../sass/component-styles/_reusable-styles.scss */
 .icon-flask:before {
   content: '\68';
 }
 
 /* 'h' */
-/* line 91, ../sass/component-styles/_reusable-styles.scss */
+/* line 89, ../sass/component-styles/_reusable-styles.scss */
 .icon-itunes:before {
   content: '\69';
 }
 
 /* 'i' */
-/* line 92, ../sass/component-styles/_reusable-styles.scss */
+/* line 90, ../sass/component-styles/_reusable-styles.scss */
 .icon-lastfm:before {
   content: '\6c';
 }
 
 /* 'l' */
-/* line 93, ../sass/component-styles/_reusable-styles.scss */
+/* line 91, ../sass/component-styles/_reusable-styles.scss */
 .icon-gmail:before {
   content: '\6d';
 }
 
 /* 'm' */
-/* line 94, ../sass/component-styles/_reusable-styles.scss */
+/* line 92, ../sass/component-styles/_reusable-styles.scss */
 .icon-tumblr:before {
   content: '\74';
 }
 
 /* 't' */
-/* line 95, ../sass/component-styles/_reusable-styles.scss */
+/* line 93, ../sass/component-styles/_reusable-styles.scss */
 .icon-wordpress:before {
   content: '\77';
 }
 
 /* 'w' */
-/* line 96, ../sass/component-styles/_reusable-styles.scss */
+/* line 94, ../sass/component-styles/_reusable-styles.scss */
 .icon-yelp:before {
   content: '\79';
 }
 
 /* 'y' */
-/* line 97, ../sass/component-styles/_reusable-styles.scss */
+/* line 95, ../sass/component-styles/_reusable-styles.scss */
 .icon-eventbrite:before {
   content: '\7c';
 }
 
 /* '|' */
-/* line 98, ../sass/component-styles/_reusable-styles.scss */
+/* line 96, ../sass/component-styles/_reusable-styles.scss */
 .icon-scribd:before {
   content: '\7d';
 }
 
 /* '}' */
-/* line 99, ../sass/component-styles/_reusable-styles.scss */
+/* line 97, ../sass/component-styles/_reusable-styles.scss */
 .icon-instagram:before {
   content: '\dc';
 }
 
 /* 'Ü' */
-/* line 100, ../sass/component-styles/_reusable-styles.scss */
+/* line 98, ../sass/component-styles/_reusable-styles.scss */
 .icon-acrobat:before {
   content: '\e3';
 }
 
 /* 'ã' */
-/* line 101, ../sass/component-styles/_reusable-styles.scss */
+/* line 99, ../sass/component-styles/_reusable-styles.scss */
 .icon-drupal:before {
   content: '\e4';
 }
 
 /* 'ä' */
-/* line 102, ../sass/component-styles/_reusable-styles.scss */
+/* line 100, ../sass/component-styles/_reusable-styles.scss */
 .icon-pocket:before {
   content: '\e7';
 }
 
 /* 'ç' */
-/* line 103, ../sass/component-styles/_reusable-styles.scss */
+/* line 101, ../sass/component-styles/_reusable-styles.scss */
 .icon-info:before {
   content: '\2139';
 }
 
 /* 'ℹ' */
-/* line 104, ../sass/component-styles/_reusable-styles.scss */
+/* line 102, ../sass/component-styles/_reusable-styles.scss */
 .icon-infinity:before {
   content: '\221e';
 }
 
 /* '∞' */
-/* line 105, ../sass/component-styles/_reusable-styles.scss */
+/* line 103, ../sass/component-styles/_reusable-styles.scss */
 .icon-home:before {
   content: '\2302';
 }
 
 /* '⌂' */
-/* line 106, ../sass/component-styles/_reusable-styles.scss */
-.icon-home-1:before {
-  content: '\e802';
-}
-
-/* '' */
-/* line 107, ../sass/component-styles/_reusable-styles.scss */
+/* line 104, ../sass/component-styles/_reusable-styles.scss */
 .icon-hourglass:before {
   content: '\23f3';
 }
 
 /* '⏳' */
-/* line 108, ../sass/component-styles/_reusable-styles.scss */
+/* line 105, ../sass/component-styles/_reusable-styles.scss */
 .icon-right-dir:before {
   content: '\25b8';
 }
 
 /* '▸' */
-/* line 109, ../sass/component-styles/_reusable-styles.scss */
+/* line 106, ../sass/component-styles/_reusable-styles.scss */
 .icon-left-dir:before {
   content: '\25c2';
 }
 
 /* '◂' */
-/* line 110, ../sass/component-styles/_reusable-styles.scss */
+/* line 107, ../sass/component-styles/_reusable-styles.scss */
 .icon-cloud:before {
   content: '\2601';
 }
 
 /* '☁' */
-/* line 111, ../sass/component-styles/_reusable-styles.scss */
+/* line 108, ../sass/component-styles/_reusable-styles.scss */
 .icon-umbrella:before {
   content: '\2602';
 }
 
 /* '☂' */
-/* line 112, ../sass/component-styles/_reusable-styles.scss */
+/* line 109, ../sass/component-styles/_reusable-styles.scss */
 .icon-star:before {
   content: '\2605';
 }
 
 /* '★' */
-/* line 113, ../sass/component-styles/_reusable-styles.scss */
+/* line 110, ../sass/component-styles/_reusable-styles.scss */
 .icon-star-empty:before {
   content: '\2606';
 }
 
 /* '☆' */
-/* line 114, ../sass/component-styles/_reusable-styles.scss */
+/* line 111, ../sass/component-styles/_reusable-styles.scss */
 .icon-menu:before {
   content: '\2630';
 }
 
 /* '☰' */
-/* line 115, ../sass/component-styles/_reusable-styles.scss */
-.icon-th-list:before {
-  content: '\e801';
-}
-
-/* '' */
-/* line 116, ../sass/component-styles/_reusable-styles.scss */
-.icon-th-list-1:before {
-  content: '\e80a';
-}
-
-/* '' */
-/* line 117, ../sass/component-styles/_reusable-styles.scss */
+/* line 112, ../sass/component-styles/_reusable-styles.scss */
 .icon-moon:before {
   content: '\263d';
 }
 
 /* '☽' */
-/* line 118, ../sass/component-styles/_reusable-styles.scss */
+/* line 113, ../sass/component-styles/_reusable-styles.scss */
 .icon-heart-empty:before {
   content: '\2661';
 }
 
 /* '♡' */
-/* line 119, ../sass/component-styles/_reusable-styles.scss */
+/* line 114, ../sass/component-styles/_reusable-styles.scss */
 .icon-heart:before {
   content: '\2665';
 }
 
 /* '♥' */
-/* line 120, ../sass/component-styles/_reusable-styles.scss */
+/* line 115, ../sass/component-styles/_reusable-styles.scss */
 .icon-note:before {
   content: '\266a';
 }
 
 /* '♪' */
-/* line 121, ../sass/component-styles/_reusable-styles.scss */
+/* line 116, ../sass/component-styles/_reusable-styles.scss */
 .icon-music:before {
   content: '\266b';
 }
 
 /* '♫' */
-/* line 122, ../sass/component-styles/_reusable-styles.scss */
+/* line 117, ../sass/component-styles/_reusable-styles.scss */
 .icon-layout:before {
   content: '\268f';
 }
 
 /* '⚏' */
-/* line 123, ../sass/component-styles/_reusable-styles.scss */
-.icon-th:before {
-  content: '\e809';
-}
-
-/* '' */
-/* line 124, ../sass/component-styles/_reusable-styles.scss */
+/* line 118, ../sass/component-styles/_reusable-styles.scss */
 .icon-attention:before {
   content: '\26a0';
 }
 
 /* '⚠' */
-/* line 125, ../sass/component-styles/_reusable-styles.scss */
+/* line 119, ../sass/component-styles/_reusable-styles.scss */
 .icon-cog-alt:before {
   content: '\26ef';
 }
 
 /* '⛯' */
-/* line 126, ../sass/component-styles/_reusable-styles.scss */
+/* line 120, ../sass/component-styles/_reusable-styles.scss */
 .icon-scissors:before {
   content: '\2702';
 }
 
 /* '✂' */
-/* line 127, ../sass/component-styles/_reusable-styles.scss */
+/* line 121, ../sass/component-styles/_reusable-styles.scss */
 .icon-flight:before {
   content: '\2708';
 }
 
 /* '✈' */
-/* line 128, ../sass/component-styles/_reusable-styles.scss */
+/* line 122, ../sass/component-styles/_reusable-styles.scss */
 .icon-mail:before {
   content: '\2709';
 }
 
 /* '✉' */
-/* line 129, ../sass/component-styles/_reusable-styles.scss */
-.icon-mail-1:before {
-  content: '\e800';
-}
-
-/* '' */
-/* line 130, ../sass/component-styles/_reusable-styles.scss */
+/* line 123, ../sass/component-styles/_reusable-styles.scss */
 .icon-edit:before {
   content: '\270d';
 }
 
 /* '✍' */
-/* line 131, ../sass/component-styles/_reusable-styles.scss */
+/* line 124, ../sass/component-styles/_reusable-styles.scss */
 .icon-pencil:before {
   content: '\270e';
 }
 
 /* '✎' */
-/* line 132, ../sass/component-styles/_reusable-styles.scss */
+/* line 125, ../sass/component-styles/_reusable-styles.scss */
 .icon-feather:before {
   content: '\2712';
 }
 
 /* '✒' */
-/* line 133, ../sass/component-styles/_reusable-styles.scss */
+/* line 126, ../sass/component-styles/_reusable-styles.scss */
 .icon-check:before {
   content: '\2713';
 }
 
 /* '✓' */
-/* line 134, ../sass/component-styles/_reusable-styles.scss */
+/* line 127, ../sass/component-styles/_reusable-styles.scss */
 .icon-cancel:before {
   content: '\2715';
 }
 
 /* '✕' */
-/* line 135, ../sass/component-styles/_reusable-styles.scss */
+/* line 128, ../sass/component-styles/_reusable-styles.scss */
 .icon-right:before {
   content: '\27a1';
 }
 
 /* '➡' */
-/* line 136, ../sass/component-styles/_reusable-styles.scss */
+/* line 129, ../sass/component-styles/_reusable-styles.scss */
 .icon-left:before {
   content: '\2b05';
 }
 
 /* '⬅' */
-/* line 137, ../sass/component-styles/_reusable-styles.scss */
+/* line 130, ../sass/component-styles/_reusable-styles.scss */
 .icon-help-circle:before {
   content: '\e704';
 }
 
 /* '' */
-/* line 138, ../sass/component-styles/_reusable-styles.scss */
+/* line 131, ../sass/component-styles/_reusable-styles.scss */
 .icon-info-circle:before {
   content: '\e705';
 }
 
 /* '' */
-/* line 139, ../sass/component-styles/_reusable-styles.scss */
+/* line 132, ../sass/component-styles/_reusable-styles.scss */
 .icon-eye:before {
   content: '\e70a';
 }
 
 /* '' */
-/* line 140, ../sass/component-styles/_reusable-styles.scss */
+/* line 133, ../sass/component-styles/_reusable-styles.scss */
 .icon-tag:before {
   content: '\e70c';
 }
 
 /* '' */
-/* line 141, ../sass/component-styles/_reusable-styles.scss */
-.icon-tag-1:before {
-  content: '\e80d';
-}
-
-/* '' */
-/* line 142, ../sass/component-styles/_reusable-styles.scss */
+/* line 134, ../sass/component-styles/_reusable-styles.scss */
 .icon-tags:before {
   content: '\e70d';
 }
 
 /* '' */
-/* line 143, ../sass/component-styles/_reusable-styles.scss */
+/* line 135, ../sass/component-styles/_reusable-styles.scss */
 .icon-camera-alt:before {
   content: '\e70f';
 }
 
 /* '' */
-/* line 144, ../sass/component-styles/_reusable-styles.scss */
+/* line 136, ../sass/component-styles/_reusable-styles.scss */
 .icon-export:before {
   content: '\e715';
 }
 
 /* '' */
-/* line 145, ../sass/component-styles/_reusable-styles.scss */
+/* line 137, ../sass/component-styles/_reusable-styles.scss */
 .icon-print:before {
   content: '\e716';
 }
 
 /* '' */
-/* line 146, ../sass/component-styles/_reusable-styles.scss */
-.icon-print-1:before {
-  content: '\e80f';
-}
-
-/* '' */
-/* line 147, ../sass/component-styles/_reusable-styles.scss */
+/* line 138, ../sass/component-styles/_reusable-styles.scss */
 .icon-comment:before {
   content: '\e718';
 }
 
 /* '' */
-/* line 148, ../sass/component-styles/_reusable-styles.scss */
+/* line 139, ../sass/component-styles/_reusable-styles.scss */
 .icon-chat:before {
   content: '\e720';
 }
 
 /* '' */
-/* line 149, ../sass/component-styles/_reusable-styles.scss */
-.icon-chat-1:before {
-  content: '\e803';
-}
-
-/* '' */
-/* line 150, ../sass/component-styles/_reusable-styles.scss */
+/* line 140, ../sass/component-styles/_reusable-styles.scss */
 .icon-vcard:before {
   content: '\e722';
 }
 
 /* '' */
-/* line 151, ../sass/component-styles/_reusable-styles.scss */
+/* line 141, ../sass/component-styles/_reusable-styles.scss */
 .icon-location:before {
   content: '\e724';
 }
 
 /* '' */
-/* line 152, ../sass/component-styles/_reusable-styles.scss */
+/* line 142, ../sass/component-styles/_reusable-styles.scss */
 .icon-map:before {
   content: '\e727';
 }
 
 /* '' */
-/* line 153, ../sass/component-styles/_reusable-styles.scss */
+/* line 143, ../sass/component-styles/_reusable-styles.scss */
 .icon-trash:before {
   content: '\e729';
 }
 
 /* '' */
-/* line 154, ../sass/component-styles/_reusable-styles.scss */
-.icon-trash-1:before {
-  content: '\e804';
-}
-
-/* '' */
-/* line 155, ../sass/component-styles/_reusable-styles.scss */
+/* line 144, ../sass/component-styles/_reusable-styles.scss */
 .icon-rss:before {
   content: '\e73a';
 }
 
 /* '' */
-/* line 156, ../sass/component-styles/_reusable-styles.scss */
-.icon-rss-1:before {
-  content: '\e810';
-}
-
-/* '' */
-/* line 157, ../sass/component-styles/_reusable-styles.scss */
+/* line 145, ../sass/component-styles/_reusable-styles.scss */
 .icon-basket:before {
   content: '\e73d';
 }
 
 /* '' */
-/* line 158, ../sass/component-styles/_reusable-styles.scss */
-.icon-basket-1:before {
-  content: '\e805';
-}
-
-/* '' */
-/* line 159, ../sass/component-styles/_reusable-styles.scss */
-.icon-basket-2:before {
-  content: '\e811';
-}
-
-/* '' */
-/* line 160, ../sass/component-styles/_reusable-styles.scss */
+/* line 146, ../sass/component-styles/_reusable-styles.scss */
 .icon-login:before {
   content: '\e740';
 }
 
 /* '' */
-/* line 161, ../sass/component-styles/_reusable-styles.scss */
+/* line 147, ../sass/component-styles/_reusable-styles.scss */
 .icon-logout:before {
   content: '\e741';
 }
 
 /* '' */
-/* line 162, ../sass/component-styles/_reusable-styles.scss */
+/* line 148, ../sass/component-styles/_reusable-styles.scss */
 .icon-left-circled:before {
   content: '\e759';
 }
 
 /* '' */
-/* line 163, ../sass/component-styles/_reusable-styles.scss */
+/* line 149, ../sass/component-styles/_reusable-styles.scss */
 .icon-right-circled:before {
   content: '\e75a';
 }
 
 /* '' */
-/* line 164, ../sass/component-styles/_reusable-styles.scss */
+/* line 150, ../sass/component-styles/_reusable-styles.scss */
 .icon-left-open-mini:before {
   content: '\e761';
 }
 
 /* '' */
-/* line 165, ../sass/component-styles/_reusable-styles.scss */
+/* line 151, ../sass/component-styles/_reusable-styles.scss */
 .icon-right-open-mini:before {
   content: '\e762';
 }
 
 /* '' */
-/* line 166, ../sass/component-styles/_reusable-styles.scss */
+/* line 152, ../sass/component-styles/_reusable-styles.scss */
 .icon-left-open-big:before {
   content: '\e765';
 }
 
 /* '' */
-/* line 167, ../sass/component-styles/_reusable-styles.scss */
+/* line 153, ../sass/component-styles/_reusable-styles.scss */
 .icon-right-open-big:before {
   content: '\e766';
 }
 
 /* '' */
-/* line 168, ../sass/component-styles/_reusable-styles.scss */
+/* line 154, ../sass/component-styles/_reusable-styles.scss */
 .icon-signal:before {
   content: '\e770';
 }
 
 /* '' */
-/* line 169, ../sass/component-styles/_reusable-styles.scss */
+/* line 155, ../sass/component-styles/_reusable-styles.scss */
 .icon-font:before {
   content: '\e779';
 }
 
 /* '' */
-/* line 170, ../sass/component-styles/_reusable-styles.scss */
+/* line 156, ../sass/component-styles/_reusable-styles.scss */
 .icon-lifebuoy:before {
   content: '\e788';
 }
 
 /* '' */
-/* line 171, ../sass/component-styles/_reusable-styles.scss */
+/* line 157, ../sass/component-styles/_reusable-styles.scss */
 .icon-road:before {
   content: '\e78f';
 }
 
 /* '' */
-/* line 172, ../sass/component-styles/_reusable-styles.scss */
+/* line 158, ../sass/component-styles/_reusable-styles.scss */
 .icon-brush:before {
   content: '\e79a';
 }
 
 /* '' */
-/* line 173, ../sass/component-styles/_reusable-styles.scss */
+/* line 159, ../sass/component-styles/_reusable-styles.scss */
 .icon-paper-plane:before {
   content: '\e79b';
 }
 
 /* '' */
-/* line 174, ../sass/component-styles/_reusable-styles.scss */
+/* line 160, ../sass/component-styles/_reusable-styles.scss */
 .icon-chart-pie:before {
   content: '\e7a2';
 }
 
 /* '' */
-/* line 175, ../sass/component-styles/_reusable-styles.scss */
+/* line 161, ../sass/component-styles/_reusable-styles.scss */
 .icon-easel:before {
   content: '\e7b5';
 }
 
 /* '' */
-/* line 176, ../sass/component-styles/_reusable-styles.scss */
-.icon-emo-happy:before {
-  content: '\e82c';
+/* line 162, ../sass/component-styles/_reusable-styles.scss */
+.icon-mail-1:before {
+  content: '\e800';
 }
 
-/* '' */
-/* line 177, ../sass/component-styles/_reusable-styles.scss */
-.icon-aboveground-rail:before {
-  content: '\e819';
+/* '' */
+/* line 163, ../sass/component-styles/_reusable-styles.scss */
+.icon-th-list:before {
+  content: '\e801';
 }
 
-/* '' */
-/* line 178, ../sass/component-styles/_reusable-styles.scss */
-.icon-airport:before {
-  content: '\e81a';
+/* '' */
+/* line 164, ../sass/component-styles/_reusable-styles.scss */
+.icon-home-1:before {
+  content: '\e802';
 }
 
-/* '' */
-/* line 179, ../sass/component-styles/_reusable-styles.scss */
-.icon-art-gallery:before {
-  content: '\e818';
+/* '' */
+/* line 165, ../sass/component-styles/_reusable-styles.scss */
+.icon-chat-1:before {
+  content: '\e803';
 }
 
-/* '' */
-/* line 180, ../sass/component-styles/_reusable-styles.scss */
-.icon-belowground-rail:before {
-  content: '\e817';
+/* '' */
+/* line 166, ../sass/component-styles/_reusable-styles.scss */
+.icon-trash-1:before {
+  content: '\e804';
 }
 
-/* '' */
-/* line 181, ../sass/component-styles/_reusable-styles.scss */
-.icon-bicycle:before {
-  content: '\e815';
+/* '' */
+/* line 167, ../sass/component-styles/_reusable-styles.scss */
+.icon-basket-1:before {
+  content: '\e805';
 }
 
-/* '' */
-/* line 182, ../sass/component-styles/_reusable-styles.scss */
-.icon-bus:before {
-  content: '\e816';
-}
-
-/* '' */
-/* line 183, ../sass/component-styles/_reusable-styles.scss */
-.icon-cafe:before {
-  content: '\e81b';
-}
-
-/* '' */
-/* line 184, ../sass/component-styles/_reusable-styles.scss */
-.icon-cinema:before {
-  content: '\e81c';
-}
-
-/* '' */
-/* line 185, ../sass/component-styles/_reusable-styles.scss */
-.icon-college:before {
-  content: '\e81d';
-}
-
-/* '' */
-/* line 186, ../sass/component-styles/_reusable-styles.scss */
-.icon-credit-card-1:before {
-  content: '\e81e';
-}
-
-/* '' */
-/* line 187, ../sass/component-styles/_reusable-styles.scss */
-.icon-ferry:before {
-  content: '\e81f';
-}
-
-/* '' */
-/* line 188, ../sass/component-styles/_reusable-styles.scss */
-.icon-fuel:before {
-  content: '\e822';
-}
-
-/* '' */
-/* line 189, ../sass/component-styles/_reusable-styles.scss */
-.icon-garden:before {
-  content: '\e820';
-}
-
-/* '' */
-/* line 190, ../sass/component-styles/_reusable-styles.scss */
-.icon-giraffe:before {
-  content: '\e821';
-}
-
-/* '' */
-/* line 191, ../sass/component-styles/_reusable-styles.scss */
-.icon-harbor:before {
-  content: '\e823';
-}
-
-/* '' */
-/* line 192, ../sass/component-styles/_reusable-styles.scss */
-.icon-pitch:before {
-  content: '\e82a';
-}
-
-/* '' */
-/* line 193, ../sass/component-styles/_reusable-styles.scss */
-.icon-police:before {
-  content: '\e82b';
-}
-
-/* '' */
-/* line 194, ../sass/component-styles/_reusable-styles.scss */
-.icon-prison:before {
-  content: '\e82d';
-}
-
-/* '' */
-/* line 195, ../sass/component-styles/_reusable-styles.scss */
-.icon-religious-christian:before {
-  content: '\e82f';
-}
-
-/* '' */
-/* line 196, ../sass/component-styles/_reusable-styles.scss */
-.icon-school:before {
-  content: '\e834';
-}
-
-/* '' */
-/* line 197, ../sass/component-styles/_reusable-styles.scss */
-.icon-skiing:before {
-  content: '\e836';
-}
-
-/* '' */
-/* line 198, ../sass/component-styles/_reusable-styles.scss */
-.icon-swimming:before {
-  content: '\e838';
-}
-
-/* '' */
-/* line 199, ../sass/component-styles/_reusable-styles.scss */
-.icon-theatre:before {
-  content: '\e83a';
-}
-
-/* '' */
-/* line 200, ../sass/component-styles/_reusable-styles.scss */
-.icon-town-hall:before {
-  content: '\e83c';
-}
-
-/* '' */
-/* line 201, ../sass/component-styles/_reusable-styles.scss */
-.icon-tree-1:before {
-  content: '\e83e';
-}
-
-/* '' */
-/* line 202, ../sass/component-styles/_reusable-styles.scss */
-.icon-tree-2:before {
-  content: '\e83f';
-}
-
-/* '' */
-/* line 203, ../sass/component-styles/_reusable-styles.scss */
-.icon-warehouse:before {
-  content: '\e840';
-}
-
-/* '' */
-/* line 204, ../sass/component-styles/_reusable-styles.scss */
-.icon-bookmark-empty:before {
-  content: '\f097';
-}
-
-/* '' */
-/* line 205, ../sass/component-styles/_reusable-styles.scss */
-.icon-magic:before {
-  content: '\f0d0';
-}
-
-/* '' */
-/* line 206, ../sass/component-styles/_reusable-styles.scss */
-.icon-money:before {
-  content: '\f0d6';
-}
-
-/* '' */
-/* line 207, ../sass/component-styles/_reusable-styles.scss */
-.icon-mail-alt:before {
-  content: '\f0e0';
-}
-
-/* '' */
-/* line 208, ../sass/component-styles/_reusable-styles.scss */
-.icon-gauge:before {
-  content: '\f0e4';
-}
-
-/* '' */
-/* line 209, ../sass/component-styles/_reusable-styles.scss */
-.icon-chat-empty:before {
-  content: '\f0e6';
-}
-
-/* '' */
-/* line 210, ../sass/component-styles/_reusable-styles.scss */
-.icon-suitcase:before {
-  content: '\f0f2';
-}
-
-/* '' */
-/* line 211, ../sass/component-styles/_reusable-styles.scss */
-.icon-coffee:before {
-  content: '\f0f4';
-}
-
-/* '' */
-/* line 212, ../sass/component-styles/_reusable-styles.scss */
-.icon-food:before {
-  content: '\f0f5';
-}
-
-/* '' */
-/* line 213, ../sass/component-styles/_reusable-styles.scss */
-.icon-ambulance:before {
-  content: '\f0f9';
-}
-
-/* '' */
-/* line 214, ../sass/component-styles/_reusable-styles.scss */
-.icon-desktop:before {
-  content: '\f108';
-}
-
-/* '' */
-/* line 215, ../sass/component-styles/_reusable-styles.scss */
-.icon-laptop:before {
-  content: '\f109';
-}
-
-/* '' */
-/* line 216, ../sass/component-styles/_reusable-styles.scss */
-.icon-tablet:before {
-  content: '\f10a';
-}
-
-/* '' */
-/* line 217, ../sass/component-styles/_reusable-styles.scss */
-.icon-mobile:before {
-  content: '\f10b';
-}
-
-/* '' */
-/* line 218, ../sass/component-styles/_reusable-styles.scss */
-.icon-quote-left:before {
-  content: '\f10d';
-}
-
-/* '' */
-/* line 219, ../sass/component-styles/_reusable-styles.scss */
-.icon-quote-right:before {
-  content: '\f10e';
-}
-
-/* '' */
-/* line 220, ../sass/component-styles/_reusable-styles.scss */
-.icon-picture:before {
-  content: '🌄';
-}
-
-/* '\1f304' */
-/* line 221, ../sass/component-styles/_reusable-styles.scss */
-.icon-picture-1:before {
-  content: '\e824';
-}
-
-/* '' */
-/* line 222, ../sass/component-styles/_reusable-styles.scss */
-.icon-globe:before {
-  content: '🌎';
-}
-
-/* '\1f30e' */
-/* line 223, ../sass/component-styles/_reusable-styles.scss */
-.icon-globe-1:before {
-  content: '🌐';
-}
-
-/* '\1f310' */
-/* line 224, ../sass/component-styles/_reusable-styles.scss */
-.icon-gift:before {
-  content: '🎁';
-}
-
-/* '\1f381' */
-/* line 225, ../sass/component-styles/_reusable-styles.scss */
-.icon-graduation-cap:before {
-  content: '🎓';
-}
-
-/* '\1f393' */
-/* line 226, ../sass/component-styles/_reusable-styles.scss */
-.icon-mic:before {
-  content: '🎤';
-}
-
-/* '\1f3a4' */
-/* line 227, ../sass/component-styles/_reusable-styles.scss */
-.icon-videocam:before {
-  content: '🎥';
-}
-
-/* '\1f3a5' */
-/* line 228, ../sass/component-styles/_reusable-styles.scss */
-.icon-videocam-1:before {
-  content: '\e807';
-}
-
-/* '' */
-/* line 229, ../sass/component-styles/_reusable-styles.scss */
-.icon-headphones:before {
-  content: '🎧';
-}
-
-/* '\1f3a7' */
-/* line 230, ../sass/component-styles/_reusable-styles.scss */
-.icon-ticket:before {
-  content: '🎫';
-}
-
-/* '\1f3ab' */
-/* line 231, ../sass/component-styles/_reusable-styles.scss */
-.icon-video:before {
-  content: '🎬';
-}
-
-/* '\1f3ac' */
-/* line 232, ../sass/component-styles/_reusable-styles.scss */
-.icon-trophy:before {
-  content: '🏆';
-}
-
-/* '\1f3c6' */
-/* line 233, ../sass/component-styles/_reusable-styles.scss */
-.icon-award:before {
-  content: '🏉';
-}
-
-/* '\1f3c9' */
-/* line 234, ../sass/component-styles/_reusable-styles.scss */
-.icon-award-1:before {
-  content: '\e813';
-}
-
-/* '' */
-/* line 235, ../sass/component-styles/_reusable-styles.scss */
-.icon-thumbs-up-1:before {
-  content: '\e828';
-}
-
-/* '' */
-/* line 236, ../sass/component-styles/_reusable-styles.scss */
-.icon-thumbs-up:before {
-  content: '👍';
-}
-
-/* '\1f44d' */
-/* line 237, ../sass/component-styles/_reusable-styles.scss */
-.icon-thumbs-down-1:before {
-  content: '\e829';
-}
-
-/* '' */
-/* line 238, ../sass/component-styles/_reusable-styles.scss */
-.icon-thumbs-down:before {
-  content: '👎';
-}
-
-/* '\1f44e' */
-/* line 239, ../sass/component-styles/_reusable-styles.scss */
-.icon-user:before {
-  content: '👤';
-}
-
-/* '\1f464' */
-/* line 240, ../sass/component-styles/_reusable-styles.scss */
-.icon-users:before {
-  content: '👥';
-}
-
-/* '\1f465' */
-/* line 241, ../sass/component-styles/_reusable-styles.scss */
-.icon-water:before {
-  content: '💦';
-}
-
-/* '\1f4a6' */
-/* line 242, ../sass/component-styles/_reusable-styles.scss */
-.icon-droplet:before {
-  content: '💧';
-}
-
-/* '\1f4a7' */
-/* line 243, ../sass/component-styles/_reusable-styles.scss */
-.icon-credit-card:before {
-  content: '💳';
-}
-
-/* '\1f4b3' */
-/* line 244, ../sass/component-styles/_reusable-styles.scss */
-.icon-dollar:before {
-  content: '💵';
-}
-
-/* '\1f4b5' */
-/* line 245, ../sass/component-styles/_reusable-styles.scss */
-.icon-briefcase:before {
-  content: '💼';
-}
-
-/* '\1f4bc' */
-/* line 246, ../sass/component-styles/_reusable-styles.scss */
-.icon-floppy:before {
-  content: '💾';
-}
-
-/* '\1f4be' */
-/* line 247, ../sass/component-styles/_reusable-styles.scss */
-.icon-cd:before {
-  content: '💿';
-}
-
-/* '\1f4bf' */
-/* line 248, ../sass/component-styles/_reusable-styles.scss */
-.icon-calendar:before {
-  content: '📅';
-}
-
-/* '\1f4c5' */
-/* line 249, ../sass/component-styles/_reusable-styles.scss */
+/* '' */
+/* line 168, ../sass/component-styles/_reusable-styles.scss */
 .icon-calendar-1:before {
   content: '\e806';
 }
 
 /* '' */
-/* line 250, ../sass/component-styles/_reusable-styles.scss */
-.icon-chart-bar:before {
-  content: '📊';
+/* line 169, ../sass/component-styles/_reusable-styles.scss */
+.icon-videocam-1:before {
+  content: '\e807';
 }
 
-/* '\1f4ca' */
-/* line 251, ../sass/component-styles/_reusable-styles.scss */
-.icon-pin:before {
-  content: '📌';
-}
-
-/* '\1f4cc' */
-/* line 252, ../sass/component-styles/_reusable-styles.scss */
-.icon-book:before {
-  content: '📕';
-}
-
-/* '\1f4d5' */
-/* line 253, ../sass/component-styles/_reusable-styles.scss */
-.icon-book-1:before {
-  content: '\e814';
-}
-
-/* '' */
-/* line 254, ../sass/component-styles/_reusable-styles.scss */
-.icon-phone:before {
-  content: '📞';
-}
-
-/* '\1f4de' */
-/* line 255, ../sass/component-styles/_reusable-styles.scss */
-.icon-bullhorn:before {
-  content: '📣';
-}
-
-/* '\1f4e3' */
-/* line 256, ../sass/component-styles/_reusable-styles.scss */
-.icon-mobile-1:before {
-  content: '📱';
-}
-
-/* '\1f4f1' */
-/* line 257, ../sass/component-styles/_reusable-styles.scss */
-.icon-camera:before {
-  content: '📷';
-}
-
-/* '\1f4f7' */
-/* line 258, ../sass/component-styles/_reusable-styles.scss */
+/* '' */
+/* line 170, ../sass/component-styles/_reusable-styles.scss */
 .icon-camera-1:before {
   content: '\e808';
 }
 
 /* '' */
-/* line 259, ../sass/component-styles/_reusable-styles.scss */
-.icon-volume-up:before {
-  content: '🔊';
+/* line 171, ../sass/component-styles/_reusable-styles.scss */
+.icon-th:before {
+  content: '\e809';
 }
 
-/* '\1f50a' */
-/* line 260, ../sass/component-styles/_reusable-styles.scss */
-.icon-search:before {
-  content: '🔍';
+/* '' */
+/* line 172, ../sass/component-styles/_reusable-styles.scss */
+.icon-th-list-1:before {
+  content: '\e80a';
 }
 
-/* '\1f50d' */
-/* line 261, ../sass/component-styles/_reusable-styles.scss */
-.icon-key-1:before {
-  content: '\e827';
-}
-
-/* '' */
-/* line 262, ../sass/component-styles/_reusable-styles.scss */
-.icon-key:before {
-  content: '🔑';
-}
-
-/* '\1f511' */
-/* line 263, ../sass/component-styles/_reusable-styles.scss */
-.icon-lock:before {
-  content: '🔒';
-}
-
-/* '\1f512' */
-/* line 264, ../sass/component-styles/_reusable-styles.scss */
+/* '' */
+/* line 173, ../sass/component-styles/_reusable-styles.scss */
 .icon-lock-1:before {
   content: '\e80b';
 }
 
 /* '' */
-/* line 265, ../sass/component-styles/_reusable-styles.scss */
-.icon-lock-open:before {
-  content: '🔓';
-}
-
-/* '\1f513' */
-/* line 266, ../sass/component-styles/_reusable-styles.scss */
+/* line 174, ../sass/component-styles/_reusable-styles.scss */
 .icon-lock-open-1:before {
   content: '\e80c';
 }
 
 /* '' */
-/* line 267, ../sass/component-styles/_reusable-styles.scss */
-.icon-bell:before {
-  content: '🔔';
+/* line 175, ../sass/component-styles/_reusable-styles.scss */
+.icon-tag-1:before {
+  content: '\e80d';
 }
 
-/* '\1f514' */
-/* line 268, ../sass/component-styles/_reusable-styles.scss */
-.icon-bell-2:before {
-  content: '\e826';
-}
-
-/* '' */
-/* line 269, ../sass/component-styles/_reusable-styles.scss */
+/* '' */
+/* line 176, ../sass/component-styles/_reusable-styles.scss */
 .icon-bell-1:before {
   content: '\e80e';
 }
 
 /* '' */
-/* line 270, ../sass/component-styles/_reusable-styles.scss */
-.icon-bookmark:before {
-  content: '🔖';
+/* line 177, ../sass/component-styles/_reusable-styles.scss */
+.icon-print-1:before {
+  content: '\e80f';
 }
 
-/* '\1f516' */
-/* line 271, ../sass/component-styles/_reusable-styles.scss */
-.icon-fire:before {
-  content: '🔥';
+/* '' */
+/* line 178, ../sass/component-styles/_reusable-styles.scss */
+.icon-rss-1:before {
+  content: '\e810';
 }
 
-/* '\1f525' */
-/* line 272, ../sass/component-styles/_reusable-styles.scss */
-.icon-clock:before {
-  content: '🕔';
+/* '' */
+/* line 179, ../sass/component-styles/_reusable-styles.scss */
+.icon-basket-2:before {
+  content: '\e811';
 }
 
-/* '\1f554' */
-/* line 273, ../sass/component-styles/_reusable-styles.scss */
-.icon-clock-2:before {
-  content: '\e825';
-}
-
-/* '' */
-/* line 274, ../sass/component-styles/_reusable-styles.scss */
+/* '' */
+/* line 180, ../sass/component-styles/_reusable-styles.scss */
 .icon-clock-1:before {
   content: '\e812';
 }
 
 /* '' */
+/* line 181, ../sass/component-styles/_reusable-styles.scss */
+.icon-award-1:before {
+  content: '\e813';
+}
+
+/* '' */
+/* line 182, ../sass/component-styles/_reusable-styles.scss */
+.icon-book-1:before {
+  content: '\e814';
+}
+
+/* '' */
+/* line 183, ../sass/component-styles/_reusable-styles.scss */
+.icon-bicycle:before {
+  content: '\e815';
+}
+
+/* '' */
+/* line 184, ../sass/component-styles/_reusable-styles.scss */
+.icon-bus:before {
+  content: '\e816';
+}
+
+/* '' */
+/* line 185, ../sass/component-styles/_reusable-styles.scss */
+.icon-belowground-rail:before {
+  content: '\e817';
+}
+
+/* '' */
+/* line 186, ../sass/component-styles/_reusable-styles.scss */
+.icon-art-gallery:before {
+  content: '\e818';
+}
+
+/* '' */
+/* line 187, ../sass/component-styles/_reusable-styles.scss */
+.icon-aboveground-rail:before {
+  content: '\e819';
+}
+
+/* '' */
+/* line 188, ../sass/component-styles/_reusable-styles.scss */
+.icon-airport:before {
+  content: '\e81a';
+}
+
+/* '' */
+/* line 189, ../sass/component-styles/_reusable-styles.scss */
+.icon-cafe:before {
+  content: '\e81b';
+}
+
+/* '' */
+/* line 190, ../sass/component-styles/_reusable-styles.scss */
+.icon-cinema:before {
+  content: '\e81c';
+}
+
+/* '' */
+/* line 191, ../sass/component-styles/_reusable-styles.scss */
+.icon-college:before {
+  content: '\e81d';
+}
+
+/* '' */
+/* line 192, ../sass/component-styles/_reusable-styles.scss */
+.icon-credit-card-1:before {
+  content: '\e81e';
+}
+
+/* '' */
+/* line 193, ../sass/component-styles/_reusable-styles.scss */
+.icon-ferry:before {
+  content: '\e81f';
+}
+
+/* '' */
+/* line 194, ../sass/component-styles/_reusable-styles.scss */
+.icon-garden:before {
+  content: '\e820';
+}
+
+/* '' */
+/* line 195, ../sass/component-styles/_reusable-styles.scss */
+.icon-giraffe:before {
+  content: '\e821';
+}
+
+/* '' */
+/* line 196, ../sass/component-styles/_reusable-styles.scss */
+.icon-fuel:before {
+  content: '\e822';
+}
+
+/* '' */
+/* line 197, ../sass/component-styles/_reusable-styles.scss */
+.icon-harbor:before {
+  content: '\e823';
+}
+
+/* '' */
+/* line 198, ../sass/component-styles/_reusable-styles.scss */
+.icon-picture-1:before {
+  content: '\e824';
+}
+
+/* '' */
+/* line 199, ../sass/component-styles/_reusable-styles.scss */
+.icon-clock-2:before {
+  content: '\e825';
+}
+
+/* '' */
+/* line 200, ../sass/component-styles/_reusable-styles.scss */
+.icon-bell-2:before {
+  content: '\e826';
+}
+
+/* '' */
+/* line 201, ../sass/component-styles/_reusable-styles.scss */
+.icon-key-1:before {
+  content: '\e827';
+}
+
+/* '' */
+/* line 202, ../sass/component-styles/_reusable-styles.scss */
+.icon-thumbs-up-1:before {
+  content: '\e828';
+}
+
+/* '' */
+/* line 203, ../sass/component-styles/_reusable-styles.scss */
+.icon-thumbs-down-1:before {
+  content: '\e829';
+}
+
+/* '' */
+/* line 204, ../sass/component-styles/_reusable-styles.scss */
+.icon-pitch:before {
+  content: '\e82a';
+}
+
+/* '' */
+/* line 205, ../sass/component-styles/_reusable-styles.scss */
+.icon-police:before {
+  content: '\e82b';
+}
+
+/* '' */
+/* line 206, ../sass/component-styles/_reusable-styles.scss */
+.icon-emo-happy:before {
+  content: '\e82c';
+}
+
+/* '' */
+/* line 207, ../sass/component-styles/_reusable-styles.scss */
+.icon-prison:before {
+  content: '\e82d';
+}
+
+/* '' */
+/* line 208, ../sass/component-styles/_reusable-styles.scss */
+.icon-newspaper-1:before, .button-2:before, .button-3:before, .button-4:before, .button-5:before, .button-6:before {
+  content: '\e82e';
+}
+
+/* '' */
+/* line 209, ../sass/component-styles/_reusable-styles.scss */
+.icon-religious-christian:before {
+  content: '\e82f';
+}
+
+/* '' */
+/* line 210, ../sass/component-styles/_reusable-styles.scss */
+.icon-newspaper:before {
+  content: '\e830';
+}
+
+/* '' */
+/* line 211, ../sass/component-styles/_reusable-styles.scss */
+.icon-newspaper-2:before, .button-4:before, .button-5:before, .button-6:before {
+  content: '\e831';
+}
+
+/* '' */
+/* line 212, ../sass/component-styles/_reusable-styles.scss */
+.icon-paper-plane-1:before {
+  content: '\e832';
+}
+
+/* '' */
+/* line 213, ../sass/component-styles/_reusable-styles.scss */
+.icon-news:before {
+  content: '\e833';
+}
+
+/* '' */
+/* line 214, ../sass/component-styles/_reusable-styles.scss */
+.icon-school:before {
+  content: '\e834';
+}
+
+/* '' */
+/* line 215, ../sass/component-styles/_reusable-styles.scss */
+.icon-doc:before, .button-5:before, .button-6:before {
+  content: '\e835';
+}
+
+/* '' */
+/* line 216, ../sass/component-styles/_reusable-styles.scss */
+.icon-skiing:before {
+  content: '\e836';
+}
+
+/* '' */
+/* line 217, ../sass/component-styles/_reusable-styles.scss */
+.icon-swimming:before {
+  content: '\e838';
+}
+
+/* '' */
+/* line 218, ../sass/component-styles/_reusable-styles.scss */
+.icon-theatre:before {
+  content: '\e83a';
+}
+
+/* '' */
+/* line 219, ../sass/component-styles/_reusable-styles.scss */
+.icon-town-hall:before {
+  content: '\e83c';
+}
+
+/* '' */
+/* line 220, ../sass/component-styles/_reusable-styles.scss */
+.icon-tree-1:before {
+  content: '\e83e';
+}
+
+/* '' */
+/* line 221, ../sass/component-styles/_reusable-styles.scss */
+.icon-tree-2:before {
+  content: '\e83f';
+}
+
+/* '' */
+/* line 222, ../sass/component-styles/_reusable-styles.scss */
+.icon-warehouse:before {
+  content: '\e840';
+}
+
+/* '' */
+/* line 223, ../sass/component-styles/_reusable-styles.scss */
+.icon-bookmark-empty:before {
+  content: '\f097';
+}
+
+/* '' */
+/* line 224, ../sass/component-styles/_reusable-styles.scss */
+.icon-magic:before {
+  content: '\f0d0';
+}
+
+/* '' */
+/* line 225, ../sass/component-styles/_reusable-styles.scss */
+.icon-money:before {
+  content: '\f0d6';
+}
+
+/* '' */
+/* line 226, ../sass/component-styles/_reusable-styles.scss */
+.icon-mail-alt:before {
+  content: '\f0e0';
+}
+
+/* '' */
+/* line 227, ../sass/component-styles/_reusable-styles.scss */
+.icon-gauge:before {
+  content: '\f0e4';
+}
+
+/* '' */
+/* line 228, ../sass/component-styles/_reusable-styles.scss */
+.icon-chat-empty:before {
+  content: '\f0e6';
+}
+
+/* '' */
+/* line 229, ../sass/component-styles/_reusable-styles.scss */
+.icon-suitcase:before {
+  content: '\f0f2';
+}
+
+/* '' */
+/* line 230, ../sass/component-styles/_reusable-styles.scss */
+.icon-coffee:before {
+  content: '\f0f4';
+}
+
+/* '' */
+/* line 231, ../sass/component-styles/_reusable-styles.scss */
+.icon-food:before {
+  content: '\f0f5';
+}
+
+/* '' */
+/* line 232, ../sass/component-styles/_reusable-styles.scss */
+.icon-ambulance:before {
+  content: '\f0f9';
+}
+
+/* '' */
+/* line 233, ../sass/component-styles/_reusable-styles.scss */
+.icon-desktop:before {
+  content: '\f108';
+}
+
+/* '' */
+/* line 234, ../sass/component-styles/_reusable-styles.scss */
+.icon-laptop:before {
+  content: '\f109';
+}
+
+/* '' */
+/* line 235, ../sass/component-styles/_reusable-styles.scss */
+.icon-tablet:before {
+  content: '\f10a';
+}
+
+/* '' */
+/* line 236, ../sass/component-styles/_reusable-styles.scss */
+.icon-mobile:before {
+  content: '\f10b';
+}
+
+/* '' */
+/* line 237, ../sass/component-styles/_reusable-styles.scss */
+.icon-quote-left:before {
+  content: '\f10d';
+}
+
+/* '' */
+/* line 238, ../sass/component-styles/_reusable-styles.scss */
+.icon-quote-right:before {
+  content: '\f10e';
+}
+
+/* '' */
+/* line 239, ../sass/component-styles/_reusable-styles.scss */
+.icon-picture:before {
+  content: '🌄';
+}
+
+/* '\1f304' */
+/* line 240, ../sass/component-styles/_reusable-styles.scss */
+.icon-globe:before {
+  content: '🌎';
+}
+
+/* '\1f30e' */
+/* line 241, ../sass/component-styles/_reusable-styles.scss */
+.icon-globe-1:before {
+  content: '🌐';
+}
+
+/* '\1f310' */
+/* line 242, ../sass/component-styles/_reusable-styles.scss */
+.icon-gift:before {
+  content: '🎁';
+}
+
+/* '\1f381' */
+/* line 243, ../sass/component-styles/_reusable-styles.scss */
+.icon-graduation-cap:before {
+  content: '🎓';
+}
+
+/* '\1f393' */
+/* line 244, ../sass/component-styles/_reusable-styles.scss */
+.icon-mic:before {
+  content: '🎤';
+}
+
+/* '\1f3a4' */
+/* line 245, ../sass/component-styles/_reusable-styles.scss */
+.icon-videocam:before {
+  content: '🎥';
+}
+
+/* '\1f3a5' */
+/* line 246, ../sass/component-styles/_reusable-styles.scss */
+.icon-headphones:before {
+  content: '🎧';
+}
+
+/* '\1f3a7' */
+/* line 247, ../sass/component-styles/_reusable-styles.scss */
+.icon-ticket:before {
+  content: '🎫';
+}
+
+/* '\1f3ab' */
+/* line 248, ../sass/component-styles/_reusable-styles.scss */
+.icon-video:before {
+  content: '🎬';
+}
+
+/* '\1f3ac' */
+/* line 249, ../sass/component-styles/_reusable-styles.scss */
+.icon-trophy:before {
+  content: '🏆';
+}
+
+/* '\1f3c6' */
+/* line 250, ../sass/component-styles/_reusable-styles.scss */
+.icon-award:before {
+  content: '🏉';
+}
+
+/* '\1f3c9' */
+/* line 251, ../sass/component-styles/_reusable-styles.scss */
+.icon-thumbs-up:before {
+  content: '👍';
+}
+
+/* '\1f44d' */
+/* line 252, ../sass/component-styles/_reusable-styles.scss */
+.icon-thumbs-down:before {
+  content: '👎';
+}
+
+/* '\1f44e' */
+/* line 253, ../sass/component-styles/_reusable-styles.scss */
+.icon-user:before {
+  content: '👤';
+}
+
+/* '\1f464' */
+/* line 254, ../sass/component-styles/_reusable-styles.scss */
+.icon-users:before {
+  content: '👥';
+}
+
+/* '\1f465' */
+/* line 255, ../sass/component-styles/_reusable-styles.scss */
+.icon-water:before {
+  content: '💦';
+}
+
+/* '\1f4a6' */
+/* line 256, ../sass/component-styles/_reusable-styles.scss */
+.icon-droplet:before {
+  content: '💧';
+}
+
+/* '\1f4a7' */
+/* line 257, ../sass/component-styles/_reusable-styles.scss */
+.icon-credit-card:before {
+  content: '💳';
+}
+
+/* '\1f4b3' */
+/* line 258, ../sass/component-styles/_reusable-styles.scss */
+.icon-dollar:before {
+  content: '💵';
+}
+
+/* '\1f4b5' */
+/* line 259, ../sass/component-styles/_reusable-styles.scss */
+.icon-briefcase:before {
+  content: '💼';
+}
+
+/* '\1f4bc' */
+/* line 260, ../sass/component-styles/_reusable-styles.scss */
+.icon-floppy:before {
+  content: '💾';
+}
+
+/* '\1f4be' */
+/* line 261, ../sass/component-styles/_reusable-styles.scss */
+.icon-cd:before {
+  content: '💿';
+}
+
+/* '\1f4bf' */
+/* line 262, ../sass/component-styles/_reusable-styles.scss */
+.icon-calendar:before {
+  content: '📅';
+}
+
+/* '\1f4c5' */
+/* line 263, ../sass/component-styles/_reusable-styles.scss */
+.icon-chart-bar:before {
+  content: '📊';
+}
+
+/* '\1f4ca' */
+/* line 264, ../sass/component-styles/_reusable-styles.scss */
+.icon-pin:before {
+  content: '📌';
+}
+
+/* '\1f4cc' */
+/* line 265, ../sass/component-styles/_reusable-styles.scss */
+.icon-book:before {
+  content: '📕';
+}
+
+/* '\1f4d5' */
+/* line 266, ../sass/component-styles/_reusable-styles.scss */
+.icon-phone:before {
+  content: '📞';
+}
+
+/* '\1f4de' */
+/* line 267, ../sass/component-styles/_reusable-styles.scss */
+.icon-bullhorn:before {
+  content: '📣';
+}
+
+/* '\1f4e3' */
+/* line 268, ../sass/component-styles/_reusable-styles.scss */
+.icon-mobile-1:before {
+  content: '📱';
+}
+
+/* '\1f4f1' */
+/* line 269, ../sass/component-styles/_reusable-styles.scss */
+.icon-camera:before {
+  content: '📷';
+}
+
+/* '\1f4f7' */
+/* line 270, ../sass/component-styles/_reusable-styles.scss */
+.icon-volume-up:before {
+  content: '🔊';
+}
+
+/* '\1f50a' */
+/* line 271, ../sass/component-styles/_reusable-styles.scss */
+.icon-search:before {
+  content: '🔍';
+}
+
+/* '\1f50d' */
+/* line 272, ../sass/component-styles/_reusable-styles.scss */
+.icon-key:before {
+  content: '🔑';
+}
+
+/* '\1f511' */
+/* line 273, ../sass/component-styles/_reusable-styles.scss */
+.icon-lock:before {
+  content: '🔒';
+}
+
+/* '\1f512' */
+/* line 274, ../sass/component-styles/_reusable-styles.scss */
+.icon-lock-open:before {
+  content: '🔓';
+}
+
+/* '\1f513' */
 /* line 275, ../sass/component-styles/_reusable-styles.scss */
+.icon-bell:before {
+  content: '🔔';
+}
+
+/* '\1f514' */
+/* line 276, ../sass/component-styles/_reusable-styles.scss */
+.icon-bookmark:before {
+  content: '🔖';
+}
+
+/* '\1f516' */
+/* line 277, ../sass/component-styles/_reusable-styles.scss */
+.icon-fire:before {
+  content: '🔥';
+}
+
+/* '\1f525' */
+/* line 278, ../sass/component-styles/_reusable-styles.scss */
+.icon-clock:before {
+  content: '🕔';
+}
+
+/* '\1f554' */
+/* line 279, ../sass/component-styles/_reusable-styles.scss */
 .icon-rocket:before {
   content: '🚀';
 }
 
 /* '\1f680' */
-/* line 276, ../sass/component-styles/_reusable-styles.scss */
+/* line 280, ../sass/component-styles/_reusable-styles.scss */
 .icon-truck:before {
   content: '🚚';
 }
 
 /* '\1f69a' */
-/* line 277, ../sass/component-styles/_reusable-styles.scss */
+/* line 281, ../sass/component-styles/_reusable-styles.scss */
 .icon-block:before {
   content: '🚫';
 }
@@ -4288,14 +4466,14 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
 }
 /* line 216, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form #edit-submit {
-  background-color: #d9d9d9;
-  border: 1px solid #b3b3b3;
-  border-bottom: 1px solid #999999;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  background-color: #d9d9d9;
+  border: 1px solid #b3b3b3;
+  border-bottom: 1px solid #999999;
   color: #333333;
   line-height: 1;
   padding: .5em 2em;
@@ -4304,13 +4482,13 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
   text-shadow: 0 1px 0 #d9d9d9;
   margin-right: 1em;
 }
-/* line 184, ../sass/global/_custom.scss */
+/* line 180, ../sass/global/_custom.scss */
 .view-commerce-cart-form .commerce-line-item-views-form #edit-submit:hover {
   background-color: #e6e6e6;
   cursor: pointer;
   text-shadow: 0 1px 0 #e6e6e6;
 }
-/* line 194, ../sass/global/_custom.scss */
+/* line 186, ../sass/global/_custom.scss */
 .view-commerce-cart-form .commerce-line-item-views-form #edit-submit:active {
   border: 1px solid #bfbfbf;
   border-bottom: 1px solid #a6a6a6;

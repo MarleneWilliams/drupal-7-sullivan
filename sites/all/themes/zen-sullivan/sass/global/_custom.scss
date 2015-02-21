@@ -167,14 +167,10 @@
 }
 
 @mixin button($button-c: $green) {
-  background-color: $button-c; // Old browsers
-  // @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
-  // // IE9 SVG, needs conditional override of 'filter' to 'none'
-  // $experimental-support-for-svg: true;
-  // @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+  @include border-radius(3px);
+  background-color: $button-c;
   border: 1px solid darken($button-c, 15%);
   border-bottom: 1px solid darken($button-c, 25%);
-  @include border-radius(3px);
   color: $body-c;
   line-height: 1;
   padding: .5em 2em;
@@ -183,11 +179,7 @@
   text-shadow: 0 1px 0 $button-c;
   &:hover {
     $button-c: lighten($button-c, 5%);
-    background-color: $button-c; // Old browsers
-    // @include filter-gradient($button-c, darken($button-c, 15%), vertical); // IE6-8
-    // // IE9 SVG, needs conditional override of 'filter' to 'none'
-    // $experimental-support-for-svg: true;
-    // @include background-image(linear-gradient(top, $button-c 0%,darken($button-c, 15%) 100%));
+    background-color: $button-c;
     cursor: pointer;
     text-shadow: 0 1px 0 $button-c;
   }
@@ -202,19 +194,4 @@
 }
 @mixin button-green {
   @include button(lighten($green, 20%));
-}
-
-// Extends
-
-// Sidebar block styles
-%sidebar-item-title {
-  font-family: $font-body;
-  font-size: $h5-font-size;
-  line-height: 1.5;
-  margin: 0;
-}
-%sidebar-date {
-  color: $gray;
-  font-size: .85em;
-  font-style: italic;
 }
