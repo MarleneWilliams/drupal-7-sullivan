@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Implements hook_commerce_checkout_page_info_alter().
+ */
 function sullivan_commerce_overrides_commerce_checkout_page_info_alter(&$pages) {
   if(!empty($pages['review'])) {
     $pages['review']['submit_value'] = t('Place order');
