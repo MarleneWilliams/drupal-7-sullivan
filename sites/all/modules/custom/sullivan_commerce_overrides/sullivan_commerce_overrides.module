@@ -4,3 +4,24 @@ function sullivan_commerce_overrides_commerce_checkout_page_info_alter(&$pages) 
     $pages['review']['submit_value'] = t('Place order');
   }
 }
+
+/**
+ * Implements hook_commerce_shipping_service_info_alter().
+ */
+function sullivan_commerce_overrides_commerce_shipping_service_info_alter(&$shipping_services) {
+	if (isset($shipping_services['free_shipping'])) {
+		$shipping_services['free_shipping']['weight'] = -10;
+	}
+	if (isset($shipping_services['3_dollars_below_100'])) {
+		$shipping_services['3_dollars_below_100']['weight'] = -9;
+	}
+	if (isset($shipping_services['priority_shipping'])) {
+		$shipping_services['priority_shipping']['weight'] = -8;
+	}
+	if (isset($shipping_services['express_shipping'])) {
+		$shipping_services['express_shipping']['weight'] = -7;
+	}
+	if (isset($shipping_services['international_canada'])) {
+		$shipping_services['international_canada']['weight'] = -6;
+	}
+}
