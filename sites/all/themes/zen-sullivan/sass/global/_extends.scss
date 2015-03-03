@@ -26,88 +26,70 @@
 .button-1 {
   @extend %button-defaults;
   @extend %icon-defaults;
-  @extend .icon-email;
+  @include border-radius(.25em);
+  @extend .icon-doc;
   color: $green;
-  font-size: 1.5em;
+  border: 2px solid lighten($green, 35%);
+  font-size: 1.25em;
   margin: 1em 0;
-  padding-left: 2.75em;
+  padding: .25em 1em .25em 3.25em;
   position: relative;
-	text-decoration: none;
+  text-decoration: none;
   &:link,
   &:visited {
-  	color: $green;
-  }
-  &:hover {
-  	color: darken($green, 5%);
-  	&::before {
-  		color: $green;
-  	}
+    color: $green;
   }
   &::before {
-		position: absolute;
-		font-size: 2em;
-		color: darken($green, 5%);
-		left: -0.2em;
-		margin: 0;
-		top: -40%;
+    color: darken($green, 5%);
+    font-size: 2.25em;
+    left: 0em;
+    margin: 0;
+    position: absolute;
+    top: -.1em;
+  }
+  &:hover {
+    background-color: lighten($green, 45%);
+    &:before {
+      color: darken($green, 8%);
+    }
   }
 }
 .button-2 {
   @extend .button-1;
-  @extend .icon-newspaper-1;
-  @include border-radius(.25em);
-  border: 1px solid darken($green, 5%);
-  padding: .5em 1em .5em 3.25em;
-  &::before {
-		left: 0em;
-  	top: .05em;
-  }
-  &:hover {
-  	background-color: lighten($green, 45%);
-  	&::before {
-  		color: darken($green, 8%);
-  	}
-  }
+  border-color: lighten($green, 40%);
 }
 .button-3 {
-  @extend .button-2;
-  background-color: lighten($green, 42%);
-  &:link,
-  &:visited {
-  	color: darken($green, 8%);
+  @extend .button-1;
+  &:before {
+    color: lighten($gold, 10%);
   }
   &:hover {
-  	background-color: lighten($green, 43%);
-  	color: darken($green, 10%);
-  	&::before {
-  		color: darken($green, 12%);
-  	}
+    &:before {
+      color: $gold;
+    }
   }
 }
 .button-4 {
-  @extend .button-2;
-  @extend .icon-newspaper-2;
-  border: 2px solid lighten($green, 35%);
-  &::before {
-  	top: 0;
+  @extend .button-1;
+  color: lighten($gold, 10%);
+  &:link,
+  &:visited {
+    color: lighten($gold, 10%);
+  }
+  &:hover {
+    color: $gold;
   }
 }
 .button-5 {
-  @extend .button-4;
-  @extend .icon-doc;
-  font-size: 1.25em;
-  padding-top: .25em;
-  padding-bottom: .25em;
-  &::before {
-  	font-size: 2.25em;
-  	top: -.1em;
-  }
+  @extend .button-1;
+  border: 0 none;
 }
 .button-6 {
-	@extend .button-5;
-	&::before {
-		@include transform(rotate(-8deg));
-	}
+  @extend .button-4;
+  border: 0 none;
+  &:hover {
+    background-color: lighten($gold, 60%);
+  }
 }
 .icon-options {
 	.icon {

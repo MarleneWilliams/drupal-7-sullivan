@@ -55,7 +55,7 @@ meta.foundation-data-attribute-namespace {
 }
 
 /* line 19, ../sass/global/_extends.scss */
-.button-1, .button-2, .button-3, .button-4, .button-5, .button-6 {
+.button-1, .button-2, .button-3, .button-4, .button-6, .button-5 {
   -webkit-transition: background-color 0.2s ease, color 0.2s ease;
   -moz-transition: background-color 0.2s ease, color 0.2s ease;
   -o-transition: background-color 0.2s ease, color 0.2s ease;
@@ -64,120 +64,95 @@ meta.foundation-data-attribute-namespace {
 }
 
 /* line 26, ../sass/global/_extends.scss */
-.button-1, .button-2, .button-3, .button-4, .button-5, .button-6 {
-  color: #8bae52;
-  font-size: 1.5em;
-  margin: 1em 0;
-  padding-left: 2.75em;
-  position: relative;
-  text-decoration: none;
-}
-/* line 37, ../sass/global/_extends.scss */
-.button-1:link, .button-2:link, .button-3:link, .button-4:link, .button-5:link, .button-6:link, .button-1:visited, .button-2:visited, .button-3:visited, .button-4:visited, .button-5:visited, .button-6:visited {
-  color: #8bae52;
-}
-/* line 40, ../sass/global/_extends.scss */
-.button-1:hover, .button-2:hover, .button-3:hover, .button-4:hover, .button-5:hover, .button-6:hover {
-  color: #7d9d4a;
-}
-/* line 42, ../sass/global/_extends.scss */
-.button-1:hover::before, .button-2:hover::before, .button-3:hover::before, .button-4:hover::before, .button-5:hover::before, .button-6:hover::before {
-  color: #8bae52;
-}
-/* line 46, ../sass/global/_extends.scss */
-.button-1::before, .button-2::before, .button-3::before, .button-4::before, .button-5::before, .button-6::before {
-  position: absolute;
-  font-size: 2em;
-  color: #7d9d4a;
-  left: -0.2em;
-  margin: 0;
-  top: -40%;
-}
-
-/* line 55, ../sass/global/_extends.scss */
-.button-2, .button-3, .button-4, .button-5, .button-6 {
+.button-1, .button-2, .button-3, .button-4, .button-6, .button-5 {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   -ms-border-radius: 0.25em;
   -o-border-radius: 0.25em;
   border-radius: 0.25em;
-  border: 1px solid #7d9d4a;
-  padding: .5em 1em .5em 3.25em;
+  color: #8bae52;
+  border: 2px solid #dde7cc;
+  font-size: 1.25em;
+  margin: 1em 0;
+  padding: .25em 1em .25em 3.25em;
+  position: relative;
+  text-decoration: none;
 }
-/* line 61, ../sass/global/_extends.scss */
-.button-2::before, .button-3::before, .button-4::before, .button-5::before, .button-6::before {
+/* line 39, ../sass/global/_extends.scss */
+.button-1:link, .button-2:link, .button-3:link, .button-4:link, .button-6:link, .button-5:link, .button-1:visited, .button-2:visited, .button-3:visited, .button-4:visited, .button-6:visited, .button-5:visited {
+  color: #8bae52;
+}
+/* line 42, ../sass/global/_extends.scss */
+.button-1::before, .button-2::before, .button-3::before, .button-4::before, .button-6::before, .button-5::before {
+  color: #7d9d4a;
+  font-size: 2.25em;
   left: 0em;
-  top: .05em;
+  margin: 0;
+  position: absolute;
+  top: -.1em;
 }
-/* line 65, ../sass/global/_extends.scss */
-.button-2:hover, .button-3:hover, .button-4:hover, .button-5:hover, .button-6:hover {
+/* line 50, ../sass/global/_extends.scss */
+.button-1:hover, .button-2:hover, .button-3:hover, .button-4:hover, .button-6:hover, .button-5:hover {
   background-color: #f4f7ee;
 }
-/* line 67, ../sass/global/_extends.scss */
-.button-2:hover::before, .button-3:hover::before, .button-4:hover::before, .button-5:hover::before, .button-6:hover::before {
+/* line 52, ../sass/global/_extends.scss */
+.button-1:hover:before, .button-2:hover:before, .button-3:hover:before, .button-4:hover:before, .button-6:hover:before, .button-5:hover:before {
   color: #759345;
+}
+
+/* line 57, ../sass/global/_extends.scss */
+.button-2 {
+  border-color: #e8efdd;
+}
+
+/* line 63, ../sass/global/_extends.scss */
+.button-3:before {
+  color: #c5941e;
+}
+/* line 67, ../sass/global/_extends.scss */
+.button-3:hover:before {
+  color: #997317;
 }
 
 /* line 72, ../sass/global/_extends.scss */
-.button-3 {
-  background-color: #edf2e4;
+.button-4, .button-6 {
+  color: #c5941e;
 }
 /* line 76, ../sass/global/_extends.scss */
-.button-3:link, .button-3:visited {
-  color: #759345;
+.button-4:link, .button-6:link, .button-4:visited, .button-6:visited {
+  color: #c5941e;
 }
 /* line 79, ../sass/global/_extends.scss */
-.button-3:hover {
-  background-color: #eff4e7;
-  color: #6f8c41;
+.button-4:hover, .button-6:hover {
+  color: #997317;
 }
-/* line 82, ../sass/global/_extends.scss */
-.button-3:hover::before {
-  color: #6a853e;
+
+/* line 83, ../sass/global/_extends.scss */
+.button-5 {
+  border: 0 none;
 }
 
 /* line 87, ../sass/global/_extends.scss */
-.button-4, .button-5, .button-6 {
-  border: 2px solid #dde7cc;
+.button-6 {
+  border: 0 none;
 }
-/* line 91, ../sass/global/_extends.scss */
-.button-4::before, .button-5::before, .button-6::before {
-  top: 0;
+/* line 90, ../sass/global/_extends.scss */
+.button-6:hover {
+  background-color: #fbf5e7;
 }
 
 /* line 95, ../sass/global/_extends.scss */
-.button-5, .button-6 {
-  font-size: 1.25em;
-  padding-top: .25em;
-  padding-bottom: .25em;
-}
-/* line 101, ../sass/global/_extends.scss */
-.button-5::before, .button-6::before {
-  font-size: 2.25em;
-  top: -.1em;
-}
-
-/* line 108, ../sass/global/_extends.scss */
-.button-6::before {
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  -ms-transform: rotate(-8deg);
-  -o-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-}
-
-/* line 113, ../sass/global/_extends.scss */
 .icon-options .icon {
   color: #8bae52;
   display: inline-block;
   float: left;
   font-size: 3em;
 }
-/* line 118, ../sass/global/_extends.scss */
+/* line 100, ../sass/global/_extends.scss */
 .icon-options .icon:first-child {
   margin-left: 0;
 }
-/* line 122, ../sass/global/_extends.scss */
+/* line 104, ../sass/global/_extends.scss */
 .icon-options br {
   display: none;
 }
@@ -905,7 +880,7 @@ tbody {
 }
 
 /* line 32, ../sass/global/_fontello.scss */
-.button-1:before, .button-2:before, .button-3:before, .button-4:before, .button-5:before, .button-6:before, .icon:before {
+.button-1:before, .button-2:before, .button-3:before, .button-4:before, .button-6:before, .button-5:before, .icon:before {
   font-family: "Fontello";
   font-style: normal;
   font-weight: normal;
@@ -2834,7 +2809,7 @@ img.float-right {
 
 /* '[' */
 /* line 78, ../sass/component-styles/_reusable-styles.scss */
-.icon-email:before, .button-1:before, .button-2:before, .button-3:before, .button-4:before, .button-5:before, .button-6:before {
+.icon-email:before {
   content: '\5d';
 }
 
@@ -3614,7 +3589,7 @@ img.float-right {
 
 /* '' */
 /* line 208, ../sass/component-styles/_reusable-styles.scss */
-.icon-newspaper-1:before, .button-2:before, .button-3:before, .button-4:before, .button-5:before, .button-6:before {
+.icon-newspaper-1:before {
   content: '\e82e';
 }
 
@@ -3632,7 +3607,7 @@ img.float-right {
 
 /* '' */
 /* line 211, ../sass/component-styles/_reusable-styles.scss */
-.icon-newspaper-2:before, .button-4:before, .button-5:before, .button-6:before {
+.icon-newspaper-2:before {
   content: '\e831';
 }
 
@@ -3656,7 +3631,7 @@ img.float-right {
 
 /* '' */
 /* line 215, ../sass/component-styles/_reusable-styles.scss */
-.icon-doc:before, .button-5:before, .button-6:before {
+.icon-doc:before, .button-1:before, .button-2:before, .button-3:before, .button-4:before, .button-6:before, .button-5:before {
   content: '\e835';
 }
 
