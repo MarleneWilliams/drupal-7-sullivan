@@ -2546,7 +2546,7 @@ h2.out-of-stock-label {
 .node.out-of-stock:before {
   background-color: #2e5f80;
   color: white;
-  content: 'Currently unavailable';
+  content: 'Sold';
   display: block;
   font-family: "Cinzel Decorative", "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
   font-size: 2.25em;
