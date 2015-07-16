@@ -4,3 +4,18 @@
 		padding: .5em;
 	}
 }
+
+// Out of stock notice
+h2.out-of-stock-label {
+	background-color: $blue;
+	color: $white;
+	padding: .5em 1.5em;
+	text-align: center;
+}
+
+// Out of stock styling - hide elements
+.node.out-of-stock {
+	.commerce-add-to-cart {
+		display: none;
+	}
+}

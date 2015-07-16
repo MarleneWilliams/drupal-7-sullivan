@@ -2534,6 +2534,19 @@ span.field-label {
   padding: .5em;
 }
 
+/* line 9, ../sass/component-styles/_products.scss */
+h2.out-of-stock-label {
+  background-color: #2e5f80;
+  color: white;
+  padding: .5em 1.5em;
+  text-align: center;
+}
+
+/* line 18, ../sass/component-styles/_products.scss */
+.node.out-of-stock .commerce-add-to-cart {
+  display: none;
+}
+
 /* line 6, ../sass/component-styles/_reusable-styles.scss */
 .inline {
   display: inline;
