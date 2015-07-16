@@ -35,7 +35,7 @@
   // Add "Out of stock" notice to product pages
   Drupal.behaviors.stockNotice = {
     attach: function ( context, settings ) {
-      $('.out-of-stock.node').before('<h2 class="out-of-stock-label">Currently unavailable</h2>');
+      // $('.out-of-stock.node').before('<h2 class="out-of-stock-label">Currently unavailable</h2>');
     }
   }
 
