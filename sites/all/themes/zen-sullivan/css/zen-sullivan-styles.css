@@ -4341,26 +4341,31 @@ ul.secondary a:active {
   margin: .25em 3% 1.25em .5%;
   padding: 1em 2.5%;
   position: relative;
-  width: 24%;
+  width: 30%;
 }
 /* line 87, ../sass/component-styles/_views-styles.scss */
+.view-taxonomy-term .views-row:nth-child(3n),
+.product-list .views-row:nth-child(3n) {
+  margin-right: 0;
+}
+/* line 90, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row .field-type-image,
 .product-list .views-row .field-type-image {
   text-align: center;
 }
-/* line 90, ../sass/component-styles/_views-styles.scss */
+/* line 93, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row img,
 .product-list .views-row img {
   max-height: 15em;
   width: auto;
 }
-/* line 94, ../sass/component-styles/_views-styles.scss */
+/* line 97, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row .views-field-nothing,
 .product-list .views-row .views-field-nothing {
   font-size: .9em;
   padding: 0 5% 0 0;
 }
-/* line 102, ../sass/component-styles/_views-styles.scss */
+/* line 105, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row h4.product-title,
 .product-list .views-row h4.product-title {
   font-family: "Open Sans Condensed", Verdana, Tahoma, "DejaVu Sans", sans-serif;
@@ -4368,7 +4373,7 @@ ul.secondary a:active {
   margin: .25em 0;
   text-align: center;
 }
-/* line 108, ../sass/component-styles/_views-styles.scss */
+/* line 111, ../sass/component-styles/_views-styles.scss */
 .view-taxonomy-term .views-row .product-price,
 .product-list .views-row .product-price {
   -webkit-border-radius: 0.5em;
@@ -4384,23 +4389,23 @@ ul.secondary a:active {
   padding: 0.2em 0.75em;
 }
 
-/* line 123, ../sass/component-styles/_views-styles.scss */
+/* line 126, ../sass/component-styles/_views-styles.scss */
 .products-latest .views-row {
   width: 46%;
 }
-/* line 125, ../sass/component-styles/_views-styles.scss */
+/* line 128, ../sass/component-styles/_views-styles.scss */
 .products-latest .views-row .views-field-nothing {
   font-size: .9em;
 }
 
 @media all and (min-width: 480px) and (max-width: 959px) {
-  /* line 134, ../sass/component-styles/_views-styles.scss */
+  /* line 137, ../sass/component-styles/_views-styles.scss */
   .view-taxonomy-term .views-row,
   .product-list .views-row {
     width: 41%;
   }
 
-  /* line 139, ../sass/component-styles/_views-styles.scss */
+  /* line 142, ../sass/component-styles/_views-styles.scss */
   .products-latest .views-row {
     width: 41%;
   }
@@ -4408,23 +4413,23 @@ ul.secondary a:active {
 /*
  * Product slideshows
  */
-/* line 149, ../sass/component-styles/_views-styles.scss */
+/* line 152, ../sass/component-styles/_views-styles.scss */
 .jcarousel-skin-tango .jcarousel-container-horizontal {
   padding: 0 40px;
   width: auto;
 }
-/* line 153, ../sass/component-styles/_views-styles.scss */
+/* line 156, ../sass/component-styles/_views-styles.scss */
 .jcarousel-skin-tango .jcarousel-container {
   background: transparent none;
   border: 0 none;
 }
 
-/* line 160, ../sass/component-styles/_views-styles.scss */
+/* line 163, ../sass/component-styles/_views-styles.scss */
 .field-name-field-images .field-slideshow-wrapper .field-slideshow {
   margin-right: 2em;
   width: auto !important;
 }
-/* line 163, ../sass/component-styles/_views-styles.scss */
+/* line 166, ../sass/component-styles/_views-styles.scss */
 .field-name-field-images .field-slideshow-wrapper .field-slideshow .field-slideshow-slide {
   width: auto !important;
 }
@@ -4432,16 +4437,16 @@ ul.secondary a:active {
 /*
  * Cart confirmation message
  */
-/* line 176, ../sass/component-styles/_views-styles.scss */
+/* line 179, ../sass/component-styles/_views-styles.scss */
 div.messages .view-confirm-message-product-display .view-content h2 {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1em;
 }
-/* line 183, ../sass/component-styles/_views-styles.scss */
+/* line 186, ../sass/component-styles/_views-styles.scss */
 div.messages.commerce-add-to-cart-confirmation .added-product-title {
   color: #2e5f80;
 }
-/* line 189, ../sass/component-styles/_views-styles.scss */
+/* line 192, ../sass/component-styles/_views-styles.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.checkout {
   background-color: #8bae52;
 }
@@ -4449,22 +4454,22 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
 /*
  * Cart
  */
-/* line 203, ../sass/component-styles/_views-styles.scss */
+/* line 206, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form h2 {
   font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1em;
   margin: .5em 2em .5em 0;
 }
-/* line 208, ../sass/component-styles/_views-styles.scss */
+/* line 211, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form .field-name-field-images {
   float: left;
   margin: 0 1em 1em 0;
 }
-/* line 212, ../sass/component-styles/_views-styles.scss */
+/* line 215, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form .views-field-commerce-total {
   font-weight: bold;
 }
-/* line 216, ../sass/component-styles/_views-styles.scss */
+/* line 219, ../sass/component-styles/_views-styles.scss */
 .view-commerce-cart-form .commerce-line-item-views-form #edit-submit {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4500,26 +4505,26 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
 /*
  * Exposed filters
  */
-/* line 227, ../sass/component-styles/_views-styles.scss */
+/* line 230, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form {
   margin-bottom: 2em;
 }
-/* line 230, ../sass/component-styles/_views-styles.scss */
+/* line 233, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link {
   border-right: 1px solid #333333;
   float: left;
   padding: 0 .5em;
 }
-/* line 234, ../sass/component-styles/_views-styles.scss */
+/* line 237, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:first-child {
   padding-left: 0;
 }
-/* line 237, ../sass/component-styles/_views-styles.scss */
+/* line 240, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-exposed-widget .form-type-bef-link:last-child {
   border-right: 0 none;
   padding-right: 0;
 }
-/* line 243, ../sass/component-styles/_views-styles.scss */
+/* line 246, ../sass/component-styles/_views-styles.scss */
 .view-filters .views-exposed-form .views-widget-per-page {
   float: right;
 }

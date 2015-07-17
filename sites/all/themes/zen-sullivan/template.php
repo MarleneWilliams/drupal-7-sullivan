@@ -173,8 +173,8 @@ function zen_sullivan_preprocess_node(&$variables, $hook) {
 
   // Add a class if the product is out of stock
   if ($variables['type'] = 'product_display') {
-    if ($variables['content']['product:commerce_stock']['#items'][0]['value'] < '1') {
-      $variables['classes_array'][] = ' out-of-stock';
+    if (isset($variables['content']['product:commerce_stock']) && $variables['content']['product:commerce_stock']['#items'][0]['value'] < '1') {
+      $variables['classes_array'][] = 'out-of-stock';
     }
   }
 
