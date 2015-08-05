@@ -905,6 +905,13 @@ tbody {
 /*[class^="icon-"]:before,
 [class*=" icon-"]:before {
 }*/
+/* line 2, ../sass/component-styles/_announcement.scss */
+.block.announcement h2 {
+  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.35;
+}
+
 /**
  * @file
  * Block Styling
