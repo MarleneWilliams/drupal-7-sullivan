@@ -1458,60 +1458,64 @@ table.checkout-review .pane-data td {
   padding-bottom: 1em;
 }
 
-/* line 41, ../sass/component-styles/_commerce.scss */
+/* line 39, ../sass/component-styles/_commerce.scss */
+div.messages.commerce-add-to-cart-confirmation {
+  z-index: 500;
+}
+/* line 42, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 37%;
 }
-/* line 45, ../sass/component-styles/_commerce.scss */
+/* line 46, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button a {
   text-decoration: none;
 }
-/* line 51, ../sass/component-styles/_commerce.scss */
+/* line 52, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display {
   margin-right: 37%;
 }
-/* line 53, ../sass/component-styles/_commerce.scss */
+/* line 54, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
 }
-/* line 57, ../sass/component-styles/_commerce.scss */
+/* line 58, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .views-field-commerce-total .views-label-commerce-total {
   float: none;
 }
-/* line 63, ../sass/component-styles/_commerce.scss */
+/* line 64, ../sass/component-styles/_commerce.scss */
 div.messages.commerce-add-to-cart-confirmation .views-field-commerce-product {
   min-height: 4em;
 }
 
-/* line 70, ../sass/component-styles/_commerce.scss */
+/* line 71, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li {
   color: #bfbfbf;
   display: block;
   margin-right: 2em;
   width: auto;
 }
-/* line 75, ../sass/component-styles/_commerce.scss */
+/* line 76, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li::after {
   content: ">>";
   padding-left: 1em;
 }
-/* line 79, ../sass/component-styles/_commerce.scss */
+/* line 80, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.active {
   color: black;
 }
-/* line 83, ../sass/component-styles/_commerce.scss */
+/* line 84, ../sass/component-styles/_commerce.scss */
 ol.inline.commerce-checkout-progress li.last::after {
   content: "";
   padding-left: 0;
 }
 
-/* line 91, ../sass/component-styles/_commerce.scss */
+/* line 92, ../sass/component-styles/_commerce.scss */
 fieldset.checkout-buttons {
   border: 0 none;
   margin-left: 0;
@@ -1519,12 +1523,12 @@ fieldset.checkout-buttons {
   padding: 0;
 }
 
-/* line 97, ../sass/component-styles/_commerce.scss */
+/* line 98, ../sass/component-styles/_commerce.scss */
 .checkout-continue {
   margin-right: 1em;
 }
 
-/* line 101, ../sass/component-styles/_commerce.scss */
+/* line 102, ../sass/component-styles/_commerce.scss */
 .checkout-help {
   font-weight: bold;
   margin-bottom: 2em;

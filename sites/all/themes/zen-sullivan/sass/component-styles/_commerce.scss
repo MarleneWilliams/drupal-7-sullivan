@@ -37,6 +37,7 @@ table {
 
 // Add-to-cart message
 div.messages.commerce-add-to-cart-confirmation {
+  z-index: 500;
   .message-inner {
     .button-wrapper {
       @include box-sizing(border-box);
