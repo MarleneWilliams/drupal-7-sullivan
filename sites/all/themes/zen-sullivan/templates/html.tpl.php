@@ -77,7 +77,7 @@
 
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
-  <title><?php print $head_title; ?></title>
+  <title><?php print $head_title; ?> Mint Error Coins</title>
 
   <?php if ($default_mobile_metatags): ?>
     <meta name="MobileOptimized" content="width">
