@@ -240,14 +240,18 @@
 
 // Subscription blocks
 .block-mailchimp-lists {
-  float: left;
-  padding-bottom: 3em;
-  width: 43%;
-  &.first {
-    border-right: 1px solid lighten($gray, 30%);
-    margin-right: 10.5%;
-    padding-right: 3%
-  }
+  // float: left;
+  // padding-bottom: 3em;
+  // width: 43%;
+  // &.first {
+  //   border-right: 1px solid lighten($gray, 30%);
+  //   margin-right: 10.5%;
+  //   padding-right: 3%
+  // }
+}
+#edit-mailchimp-lists-mailchimp-new-coins-alert-title {
+  color: $green;
+  font-weight: bold;
 }
 
 // Homepage sidebar blocks

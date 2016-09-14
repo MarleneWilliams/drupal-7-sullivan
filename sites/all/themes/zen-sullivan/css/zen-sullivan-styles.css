@@ -1281,29 +1281,22 @@ tbody {
   display: none;
 }
 
-/* line 242, ../sass/component-styles/_blocks.scss */
-.block-mailchimp-lists {
-  float: left;
-  padding-bottom: 3em;
-  width: 43%;
-}
-/* line 246, ../sass/component-styles/_blocks.scss */
-.block-mailchimp-lists.first {
-  border-right: 1px solid #cccccc;
-  margin-right: 10.5%;
-  padding-right: 3%;
+/* line 252, ../sass/component-styles/_blocks.scss */
+#edit-mailchimp-lists-mailchimp-new-coins-alert-title {
+  color: #8bae52;
+  font-weight: bold;
 }
 
-/* line 263, ../sass/component-styles/_blocks.scss */
+/* line 267, ../sass/component-styles/_blocks.scss */
 .sidebar .block .item-list .views-row {
   margin-bottom: 1em;
 }
-/* line 265, ../sass/component-styles/_blocks.scss */
+/* line 269, ../sass/component-styles/_blocks.scss */
 .sidebar .block .item-list .views-row:last-child {
   margin-bottom: 0;
 }
 
-/* line 275, ../sass/component-styles/_blocks.scss */
+/* line 279, ../sass/component-styles/_blocks.scss */
 .subscribe-block p {
   margin: 0;
 }
