@@ -30,3 +30,8 @@ h2.out-of-stock-label {
 		display: none;
 	}
 }
+
+// Special order link
+.button--alt-order {
+	@include button-green;
+}

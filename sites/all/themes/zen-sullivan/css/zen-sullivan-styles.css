@@ -2563,6 +2563,38 @@ h2.out-of-stock-label {
   display: none;
 }
 
+/* line 35, ../sass/component-styles/_products.scss */
+.button--alt-order {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #bacf97;
+  border: 1px solid #97b663;
+  border-bottom: 1px solid #7d9d4a;
+  color: #333333;
+  line-height: 1;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #bacf97;
+}
+/* line 180, ../sass/global/_custom.scss */
+.button--alt-order:hover {
+  background-color: #c5d7a9;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #c5d7a9;
+}
+/* line 186, ../sass/global/_custom.scss */
+.button--alt-order:active {
+  border: 1px solid #a2be75;
+  border-bottom: 1px solid #8bae52;
+  -webkit-box-shadow: inset 0 0 5px 2px #a2be75, 0 1px 0 0 #bacf97;
+  -moz-box-shadow: inset 0 0 5px 2px #a2be75, 0 1px 0 0 #bacf97;
+  box-shadow: inset 0 0 5px 2px #a2be75, 0 1px 0 0 #bacf97;
+}
+
 /* line 6, ../sass/component-styles/_reusable-styles.scss */
 .inline {
   display: inline;
