@@ -2564,12 +2564,12 @@ h2.out-of-stock-label {
 }
 
 /* line 36, ../sass/component-styles/_products.scss */
-.node-product .field-name-field-product {
+.node-product-display .field-name-field-product {
   margin-top: 15px;
 }
 
 /* line 42, ../sass/component-styles/_products.scss */
-.node-product .group-left {
+.node-product-display .group-left {
   padding-right: 15px;
 }
 
