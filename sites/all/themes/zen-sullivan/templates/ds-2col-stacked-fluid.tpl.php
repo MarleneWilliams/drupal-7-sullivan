@@ -29,7 +29,6 @@
   <?php if ($right): ?>
     <<?php print $right_wrapper ?> class="group-right<?php print $right_classes; ?>">
       <?php print $right; ?>
-      <a href="/node/4764" class="button--alt-order">Order</a>
     </<?php print $right_wrapper ?>>
   <?php endif; ?>
 
