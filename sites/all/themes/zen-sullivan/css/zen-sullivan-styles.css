@@ -2563,7 +2563,17 @@ h2.out-of-stock-label {
   display: none;
 }
 
-/* line 35, ../sass/component-styles/_products.scss */
+/* line 36, ../sass/component-styles/_products.scss */
+.node-product .field-name-field-product {
+  margin-top: 15px;
+}
+
+/* line 42, ../sass/component-styles/_products.scss */
+.node-product .group-left {
+  padding-right: 15px;
+}
+
+/* line 48, ../sass/component-styles/_products.scss */
 a.button--alt-order {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

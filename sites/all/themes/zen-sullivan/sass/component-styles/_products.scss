@@ -31,6 +31,19 @@ h2.out-of-stock-label {
 	}
 }
 
+// Add to cart button
+.field-name-field-product {
+	.node-product & {
+		margin-top: 15px;
+	}
+}
+
+.group-left {
+	.node-product & {
+		padding-right: 15px;
+	}
+}
+
 // Special order link
 a.button--alt-order {
 	@include button-green;
