@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Product overrides feature.
+ */
+
+include_once 'product_overrides.features.inc';
