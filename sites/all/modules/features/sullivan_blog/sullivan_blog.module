@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Sullivan Blog feature.
- */
-
-include_once 'sullivan_blog.features.inc';
