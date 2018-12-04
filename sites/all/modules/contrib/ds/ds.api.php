@@ -196,10 +196,13 @@ function hook_ds_fields_info($entity_type) {
       'use_token' => TRUE, // or FALSE,
 
       // block: the module and delta of the block, only for block fields.
-      'block' => 'user-menu',
+      //
+      // @note: Display Suite uses a "|" token to split the module from
+      // the delta.
+      'block' => 'user|menu',
 
       // block_render: block render type, only for block fields.
-      // - DS_BLOCK_CONTENT       : render through block template file.
+      // - DS_BLOCK_TEMPLATE      : render through block template file.
       // - DS_BLOCK_TITLE_CONTENT : render only title and content.
       // - DS_BLOCK_CONTENT       : render only content.
       'block_render' => DS_BLOCK_CONTENT,
@@ -238,7 +241,7 @@ function hook_ds_custom_fields_info() {
   );
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<? print "this is a custom field"; ?>',
+      'value' => '<?php print "this is a custom field"; ?>',
       'format' => 'ds_code',
     ),
     'use_token' => 0,
@@ -268,7 +271,9 @@ function hook_ds_vd_info() {
 }
 
 /**
- * Alter fields defined by Display Suite
+ * Alter fields defined by Display Suite.
+ *
+ * This function is called for each entity type.
  *
  * @param $fields
  *   An array with fields which can be altered just before they get cached.
@@ -420,9 +425,12 @@ function hook_ds_layout_info() {
  *   - entity_type
  *   - bundle
  *   - view_mode
+ * @param array $vars
+ *   All variables available for render. You can use this to add css classes.
  */
-function hook_ds_pre_render_alter(&$layout_render_array, $context) {
+function hook_ds_pre_render_alter(&$layout_render_array, $context, &$vars) {
   $layout_render_array['left'][] = array('#markup' => 'cool!', '#weight' => 20);
+  $vars['attributes_array']['class'][] = 'custom';
 }
 
 /**
@@ -553,6 +561,28 @@ function ds_views_row_adv_VIEWS_NAME(&$vars, $view_mode) {
 }
 
 /**
+ * Modify the entity render array in the context of a view.
+ *
+ * @param array $content
+ *   By reference. An entity view render array.
+ * @param array $context
+ *   By reference. An associative array containing:
+ *   - row: The current active row object being rendered.
+ *   - view: By reference. The current view object.
+ *   - view_mode: The view mode which is set in the Views' options.
+ *   - load_comments: The same param passed to each row function.
+ *
+ * @see ds_views_row_render_entity()
+ */
+function hook_ds_views_row_render_entity_alter(&$content, &$context) {
+  if ($context['view_mode'] == 'my_mode') {
+    // Modify the view, or the content render array in the context of a view.
+    $view = &$context['view'];
+    $element = &drupal_array_get_nested_value($content, array('field_example', 0));
+  }
+}
+
+/**
  * Alter the strings used to separate taxonomy terms.
  */
 function hook_ds_taxonomy_term_separators(&$separators) {
@@ -560,6 +590,30 @@ function hook_ds_taxonomy_term_separators(&$separators) {
   unset($separators[' - ']);
   // Add the option to use a pipe.
   $separators[' | '] = t('pipe');
+}
+
+/**
+ * Allow modules to provide additional classes for regions and layouts.
+ */
+function hook_ds_classes_alter(&$classes, $name) {
+  if ('ds_classes_regions' === $name) {
+    $classes['css-class-name'] = t('Custom Styling');
+  }
+}
+
+/**
+ * Alter the field template settings form
+ *
+ * @param array $form
+ *   The form containing the field settings
+ * @param array $field_settings
+ *   The settings of the field
+ */
+function hook_ds_field_theme_functions_settings_alter(&$form, $field_settings) {
+  $form['something'] = array(
+    '#type' => 'textfield',
+    '#title' => 'test',
+  );
 }
 
 /*
