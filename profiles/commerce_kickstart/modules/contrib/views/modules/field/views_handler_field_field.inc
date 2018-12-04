@@ -383,6 +383,10 @@ class views_handler_field_field extends views_handler_field {
       'default' => FALSE,
       'bool' => TRUE,
     );
+    $options['delta_random'] = array(
+      'default' => FALSE,
+      'bool' => TRUE,
+    );
 
     $options['multi_type'] = array(
       'default' => 'separator'
@@ -576,6 +580,14 @@ class views_handler_field_field extends views_handler_field {
       '#title' => t('First and last only'),
       '#type' => 'checkbox',
       '#default_value' => $this->options['delta_first_last'],
+      '#suffix' => $suffix,
+      '#dependency' => array('edit-options-group-rows' => array(TRUE)),
+      '#fieldset' => 'multiple_field_settings',
+    );
+    $form['delta_random'] = array(
+      '#title' => t('Random order'),
+      '#type' => 'checkbox',
+      '#default_value' => $this->options['delta_random'],
       '#suffix' => '</div>',
       '#dependency' => array('edit-options-group-rows' => array(TRUE)),
       '#fieldset' => 'multiple_field_settings',
@@ -716,6 +728,10 @@ class views_handler_field_field extends views_handler_field {
   }
 
   function get_value($values, $field = NULL) {
+    if (!isset($values->_field_data[$this->field_alias]['entity']) || !is_object($values->_field_data[$this->field_alias]['entity'])) {
+      return array();
+    }
+
     // Go ahead and render and store in $this->items.
     $entity = clone $values->_field_data[$this->field_alias]['entity'];
 
@@ -755,6 +771,11 @@ class views_handler_field_field extends views_handler_field {
     // The field we are trying to display doesn't exist on this entity.
     if (!isset($entity->{$this->definition['field_name']})) {
       return array();
+    }
+
+    // If requested, randomize the order of the deltas.
+    if ($this->options['delta_random'] && !empty($entity->{$this->definition['field_name']})) {
+      shuffle($entity->{$this->definition['field_name']}[$langcode]);
     }
 
     // We are supposed to show only certain deltas.
@@ -831,12 +852,12 @@ class views_handler_field_field extends views_handler_field {
       'type' => $this->options['type'],
       'settings' => $this->options['settings'],
       'label' => 'hidden',
-      // Pass information about the View in the display so that fields can act on it.
-      'views_view_name' => $this->view->name,
-      'views_display_name' => $this->view->current_display,
+      // Pass the View object in the display so that fields can act on it.
+      'views_view' => $this->view,
       'views_field' => $this,
       'views_row_id' => $row_id,
     );
+
 
     $entity_type = $values->_field_data[$this->field_alias]['entity_type'];
     $entity = $this->get_value($values, 'entity');

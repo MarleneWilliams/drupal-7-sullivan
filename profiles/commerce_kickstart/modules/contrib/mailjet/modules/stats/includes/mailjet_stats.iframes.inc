@@ -12,14 +12,14 @@ function mailjet_stats_iframe() {
   if (!empty($token)) {
     global $base_url;
     global $language;
-  
+
     $langCodesMap = array('en' => 'en_US', 'fr' => 'fr_FR', 'de' => 'de_DE', 'es' => 'es_ES');
     $defaultLang = 'en';
     $locale = isset($langCodesMap[$language->language]) ? $langCodesMap[$language->language] : $langCodesMap[$defaultLang];
-    
-    $callbackurl = 'r=commerceguys&t='.$token.'&show_menu=none&u=Drupal-3.0&locale='.$locale;
 
-    $default_url = IFRAME_URL."stats/?";
+    $callbackurl = 'r=commerceguys&t='.$token.'&show_menu=none&sp=display&u=Drupal-3.0&locale='.$locale;
+
+    $default_url = IFRAME_URL."stats?";
 
     return '<iframe src="' . $default_url . $callbackurl . '" width="100%" height="1080px" frameborder="0"></iframe>';
   }

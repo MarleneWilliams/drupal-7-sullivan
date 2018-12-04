@@ -3,7 +3,7 @@ Feature: Responsive product facet search api
   As any user
   I should see concise search facets
 
-  @javascript @demo
+  @javascript @demo @skip
   Scenario: Search facets should be presented as select lists
     When I go to "/products"
       And I click "To wear (12)"
@@ -12,5 +12,5 @@ Feature: Responsive product facet search api
       And I resize the browser to mobile
       # Facets don't react on resize
       And I reload the page
-    When I select "Select a collection..." from "selectnav3"
-    When I select "To wear (12)" from "selectnav3"
+    When I select "Select a collection..." from collection dropdown
+    When I select "To wear (12)" from collection dropdown
