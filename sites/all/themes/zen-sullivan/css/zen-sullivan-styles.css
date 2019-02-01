@@ -2609,7 +2609,7 @@ a.button--alt-order:active {
 
 /* line 54, ../sass/component-styles/_products.scss */
 div.commerce_add_to_cart_confirmation_overlay {
-  z-index: 0;
+  z-index: 499;
 }
 
 /* line 62, ../sass/component-styles/_products.scss */
