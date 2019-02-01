@@ -2607,6 +2607,17 @@ a.button--alt-order:active {
   box-shadow: inset 0 0 5px 2px #a2be75, 0 1px 0 0 #bacf97;
 }
 
+/* line 54, ../sass/component-styles/_products.scss */
+div.commerce_add_to_cart_confirmation_overlay {
+  z-index: 0;
+}
+
+/* line 62, ../sass/component-styles/_products.scss */
+div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .content .field-name-field-images {
+  position: static;
+  text-align: left;
+}
+
 /* line 6, ../sass/component-styles/_reusable-styles.scss */
 .inline {
   display: inline;

@@ -50,3 +50,20 @@ a.button--alt-order {
 	display: inline-block;
 	margin-top: 25px;
 }
+
+div.commerce_add_to_cart_confirmation_overlay {
+	z-index: 0;
+}
+
+div.messages.commerce-add-to-cart-confirmation {
+	.view-confirm-message-product-display {
+		.view-content {
+			.content {
+				.field-name-field-images {
+					position: static;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
